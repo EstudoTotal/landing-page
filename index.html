@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mentoria Nazli — [Nome do Curso]</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --verde: #A4D048;
+      --verde-escuro: #7faa2a;
+      --cinza: #F2F2F2;
+      --preto: #000000;
+      --branco: #ffffff;
+      --texto: #1a1a1a;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--branco);
+      color: var(--texto);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 6vw;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: var(--preto);
+    }
+
+    .nav-logo span { color: var(--verde-escuro); }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--preto);
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--verde-escuro); }
+
+    .nav-cta {
+      background: var(--verde);
+      color: var(--preto) !important;
+      padding: 0.6rem 1.4rem;
+      border-radius: 100px;
+      font-weight: 600 !important;
+      transition: background 0.2s, transform 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--verde-escuro); transform: translateY(-1px); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 8rem 6vw 5rem;
+      gap: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -10%; right: -5%;
+      width: 55vw; height: 110vh;
+      background: var(--cinza);
+      clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+      z-index: 0;
+    }
+
+    .hero-content { position: relative; z-index: 1; }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--verde);
+      color: var(--preto);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: var(--preto);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--verde-escuro);
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: #444;
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--preto);
+      color: var(--branco);
+      padding: 1rem 2.2rem;
+      border-radius: 100px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover { background: #222; transform: translateY(-2px); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--preto);
+      padding: 1rem 2.2rem;
+      border-radius: 100px;
+      border: 2px solid var(--preto);
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      display: inline-block;
+    }
+
+    .btn-secondary:hover { background: var(--preto); color: var(--branco); transform: translateY(-2px); }
+
+    /* hero stats */
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .stat-item { }
+
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--preto);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.78rem;
+      color: #888;
+      margin-top: 0.3rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+
+    /* hero visual */
+    .hero-visual {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-card {
+      background: var(--branco);
+      border-radius: 24px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.12);
+      padding: 2.5rem;
+      width: 100%;
+      max-width: 400px;
+      position: relative;
+    }
+
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      top: -12px; right: -12px;
+      width: 100%; height: 100%;
+      border-radius: 24px;
+      border: 3px solid var(--verde);
+      z-index: -1;
+    }
+
+    .card-tag {
+      background: var(--cinza);
+      border-radius: 8px;
+      padding: 0.6rem 1rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #666;
+      margin-bottom: 1.5rem;
+      display: inline-block;
+    }
+
+    .card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--preto);
+      margin-bottom: 1.2rem;
+      line-height: 1.3;
+    }
+
+    .card-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .card-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 0.9rem;
+      color: #444;
+    }
+
+    .card-list li::before {
+      content: '✓';
+      width: 22px; height: 22px;
+      background: var(--verde);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--preto);
+      flex-shrink: 0;
+    }
+
+    .card-divider {
+      height: 1px;
+      background: var(--cinza);
+      margin: 1.5rem 0;
+    }
+
+    .card-price {
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+    }
+
+    .price-label { font-size: 0.8rem; color: #888; }
+
+    .price-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--preto);
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 6rem 6vw; }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--verde-escuro);
+      margin-bottom: 1rem;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 24px; height: 2px;
+      background: var(--verde);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      color: var(--preto);
+      margin-bottom: 1.2rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: #555;
+      line-height: 1.7;
+      max-width: 600px;
+    }
+
+    /* ── SOBRE O CURSO ── */
+    #curso {
+      background: var(--cinza);
+    }
+
+    .curso-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      margin-top: 3.5rem;
+    }
+
+    .curso-features {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .feature-item {
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+    }
+
+    .feature-icon {
+      width: 46px; height: 46px;
+      background: var(--verde);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .feature-text h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--preto);
+      margin-bottom: 0.3rem;
+    }
+
+    .feature-text p {
+      font-size: 0.88rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* módulos */
+    .modulos-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .modulo-item {
+      background: var(--branco);
+      border-radius: 12px;
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .modulo-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: var(--verde);
+      min-width: 2rem;
+    }
+
+    .modulo-info h5 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--preto);
+    }
+
+    .modulo-info span {
+      font-size: 0.78rem;
+      color: #999;
+    }
+
+    /* ── NAZLI ── */
+    #mentora {
+      background: var(--preto);
+      color: var(--branco);
+    }
+
+    #mentora .section-label { color: var(--verde); }
+    #mentora .section-title { color: var(--branco); }
+    #mentora .section-subtitle { color: #aaa; }
+
+    .mentora-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 6rem;
+      align-items: center;
+      margin-top: 4rem;
+    }
+
+    .mentora-photo-wrap {
+      position: relative;
+    }
+
+    .mentora-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: #1a1a1a;
+      border-radius: 20px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .photo-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #1f1f1f 0%, #2a2a2a 100%);
+      color: #555;
+      font-size: 0.85rem;
+      gap: 0.8rem;
+    }
+
+    .photo-placeholder svg { opacity: 0.3; }
+
+    .mentora-accent {
+      position: absolute;
+      bottom: -16px; left: -16px;
+      width: 80%; height: 80%;
+      border: 3px solid var(--verde);
+      border-radius: 20px;
+      z-index: -1;
+    }
+
+    .mentora-content { }
+
+    .mentora-quote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.4rem;
+      line-height: 1.5;
+      color: var(--verde);
+      margin-bottom: 2rem;
+    }
+
+    .mentora-bio {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #bbb;
+      margin-bottom: 2.5rem;
+    }
+
+    .mentora-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .badge {
+      border: 1px solid #333;
+      border-radius: 100px;
+      padding: 0.4rem 1rem;
+      font-size: 0.8rem;
+      color: #ccc;
+    }
+
+    .badge-green {
+      border-color: var(--verde);
+      color: var(--verde);
+    }
+
+    /* ── COMPARATIVO ── */
+    #comparativo {
+      background: var(--branco);
+    }
+
+    .comparativo-wrap {
+      margin-top: 4rem;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+
+    thead tr {
+      border-bottom: 3px solid var(--preto);
+    }
+
+    thead th {
+      padding: 1rem 1.5rem;
+      text-align: left;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #999;
+    }
+
+    thead th.col-feature { color: var(--preto); }
+
+    .col-course {
+      text-align: center;
+      background: var(--cinza);
+    }
+
+    .col-mentoria {
+      text-align: center;
+      background: var(--preto);
+      color: var(--branco);
+      border-radius: 12px 12px 0 0;
+    }
+
+    .col-mentoria .col-header-name { color: var(--verde); }
+
+    .col-header-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.2rem;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid var(--cinza);
+      transition: background 0.15s;
+    }
+
+    tbody tr:hover { background: rgba(164,208,72,0.04); }
+
+    tbody td {
+      padding: 1.1rem 1.5rem;
+      vertical-align: middle;
+    }
+
+    .td-feature {
+      font-weight: 500;
+      color: var(--preto);
+    }
+
+    .td-feature small {
+      display: block;
+      font-weight: 300;
+      font-size: 0.8rem;
+      color: #888;
+      margin-top: 0.15rem;
+    }
+
+    .td-course, .td-mentoria {
+      text-align: center;
+    }
+
+    .td-mentoria { background: rgba(0,0,0,0.02); }
+
+    .check {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .check-yes {
+      background: var(--verde);
+      color: var(--preto);
+    }
+
+    .check-no {
+      background: var(--cinza);
+      color: #bbb;
+    }
+
+    tfoot td {
+      padding: 1.5rem;
+      background: var(--preto);
+      color: var(--branco);
+    }
+
+    .tfoot-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--branco);
+      display: block;
+    }
+
+    .tfoot-price-label {
+      font-size: 0.78rem;
+      color: #888;
+      margin-bottom: 0.3rem;
+      display: block;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    tfoot .td-course {
+      background: var(--cinza);
+      border-radius: 0 0 0 0;
+    }
+
+    tfoot .td-course .tfoot-price { color: var(--preto); }
+
+    .tfoot-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.8rem;
+      border-radius: 100px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .tfoot-btn-dark {
+      background: var(--verde);
+      color: var(--preto);
+    }
+
+    .tfoot-btn-dark:hover { background: var(--verde-escuro); transform: translateY(-2px); }
+
+    .tfoot-btn-light {
+      background: var(--preto);
+      color: var(--branco);
+      border: 2px solid #333;
+    }
+
+    .tfoot-btn-light:hover { background: #111; transform: translateY(-2px); }
+
+    /* categoria row */
+    .cat-row td {
+      background: var(--cinza);
+      padding: 0.6rem 1.5rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #999;
+    }
+
+    /* ── CTA FINAL ── */
+    #cta {
+      background: var(--verde);
+      text-align: center;
+      padding: 7rem 6vw;
+    }
+
+    #cta .section-title { color: var(--preto); }
+    #cta .section-subtitle { color: rgba(0,0,0,0.6); margin: 0 auto 2.5rem; }
+    #cta .section-label { color: var(--preto); }
+    #cta .section-label::before { background: var(--preto); }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-black {
+      background: var(--preto);
+      color: var(--branco);
+      padding: 1.1rem 2.4rem;
+      border-radius: 100px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      display: inline-block;
+    }
+
+    .btn-black:hover { background: #222; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+
+    .btn-outline-black {
+      background: transparent;
+      color: var(--preto);
+      padding: 1.1rem 2.4rem;
+      border-radius: 100px;
+      border: 2px solid var(--preto);
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      display: inline-block;
+    }
+
+    .btn-outline-black:hover { background: var(--preto); color: var(--branco); transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--preto);
+      color: #666;
+      text-align: center;
+      padding: 2rem 6vw;
+      font-size: 0.82rem;
+    }
+
+    footer a { color: #666; text-decoration: none; }
+    footer a:hover { color: var(--verde); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      #hero { grid-template-columns: 1fr; padding: 7rem 5vw 4rem; }
+      #hero::before { display: none; }
+      .hero-visual { display: none; }
+      .curso-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .mentora-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .mentora-photo { max-width: 320px; margin: 0 auto; }
+      nav ul { display: none; }
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-badge { animation: fadeUp 0.6s ease both; }
+    .hero-title { animation: fadeUp 0.6s 0.15s ease both; }
+    .hero-desc { animation: fadeUp 0.6s 0.3s ease both; }
+    .hero-actions { animation: fadeUp 0.6s 0.45s ease both; }
+    .hero-stats { animation: fadeUp 0.6s 0.6s ease both; }
+    .hero-card { animation: fadeUp 0.7s 0.3s ease both; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Nazli<span>.</span></div>
+    <ul>
+      <li><a href="#curso">O Curso</a></li>
+      <li><a href="#mentora">A Mentora</a></li>
+      <li><a href="#comparativo">Planos</a></li>
+      <li><a href="#cta" class="nav-cta">Quero participar</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-content">
+      <span class="hero-badge">Inscrições abertas · Turma [Número]</span>
+      <h1 class="hero-title">
+        [Título principal<br>do curso <em>aqui</em>]
+      </h1>
+      <p class="hero-desc">
+        [Subtítulo ou proposta de valor do curso. Descreva em 2–3 frases o que o aluno vai conquistar ao final desta experiência.]
+      </p>
+      <div class="hero-actions">
+        <a href="#cta" class="btn-primary">Quero a mentoria</a>
+        <a href="#comparativo" class="btn-secondary">Ver planos</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">+000</div>
+          <div class="stat-label">Alunos formados</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">00h</div>
+          <div class="stat-label">De conteúdo</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">00+</div>
+          <div class="stat-label">Módulos</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <span class="card-tag">✦ Mentoria + Curso</span>
+        <div class="card-title">[O que você vai aprender]</div>
+        <ul class="card-list">
+          <li>Benefício ou entrega principal 1</li>
+          <li>Benefício ou entrega principal 2</li>
+          <li>Benefício ou entrega principal 3</li>
+          <li>Benefício ou entrega principal 4</li>
+          <li>Benefício ou entrega principal 5</li>
+        </ul>
+        <div class="card-divider"></div>
+        <div class="card-price">
+          <span class="price-label">A partir de</span>
+          <span class="price-value">R$ 0.000</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE O CURSO -->
+  <section id="curso">
+    <span class="section-label">O Programa</span>
+    <h2 class="section-title">Tudo que você precisa<br>para [resultado desejado]</h2>
+    <div class="curso-grid">
+      <div>
+        <p class="section-subtitle">
+          [Descrição do curso. Explique a metodologia, o público-alvo e por que este programa é diferente de outros disponíveis no mercado.]
+        </p>
+        <div class="curso-features">
+          <div class="feature-item">
+            <div class="feature-icon">📹</div>
+            <div class="feature-text">
+              <h4>Aulas gravadas</h4>
+              <p>Acesse o conteúdo no seu ritmo, de qualquer lugar e a qualquer hora.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">📄</div>
+            <div class="feature-text">
+              <h4>Materiais de apoio</h4>
+              <p>Planilhas, templates e recursos para aplicar o aprendizado na prática.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🎯</div>
+            <div class="feature-text">
+              <h4>Exercícios práticos</h4>
+              <p>Atividades ao final de cada módulo para fixar o conteúdo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="modulos-list">
+          <div class="modulo-item">
+            <div class="modulo-num">01</div>
+            <div class="modulo-info">
+              <h5>Nome do Módulo 1</h5>
+              <span>0 aulas · 0h 00min</span>
+            </div>
+          </div>
+          <div class="modulo-item">
+            <div class="modulo-num">02</div>
+            <div class="modulo-info">
+              <h5>Nome do Módulo 2</h5>
+              <span>0 aulas · 0h 00min</span>
+            </div>
+          </div>
+          <div class="modulo-item">
+            <div class="modulo-num">03</div>
+            <div class="modulo-info">
+              <h5>Nome do Módulo 3</h5>
+              <span>0 aulas · 0h 00min</span>
+            </div>
+          </div>
+          <div class="modulo-item">
+            <div class="modulo-num">04</div>
+            <div class="modulo-info">
+              <h5>Nome do Módulo 4</h5>
+              <span>0 aulas · 0h 00min</span>
+            </div>
+          </div>
+          <div class="modulo-item">
+            <div class="modulo-num">05</div>
+            <div class="modulo-info">
+              <h5>Nome do Módulo 5</h5>
+              <span>0 aulas · 0h 00min</span>
+            </div>
+          </div>
+          <div class="modulo-item">
+            <div class="modulo-num">06</div>
+            <div class="modulo-info">
+              <h5>Nome do Módulo 6</h5>
+              <span>0 aulas · 0h 00min</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENTORA -->
+  <section id="mentora">
+    <span class="section-label">A Mentora</span>
+    <h2 class="section-title">Conheça a Nazli</h2>
+    <div class="mentora-grid">
+      <div class="mentora-photo-wrap">
+        <div class="mentora-photo">
+          <div class="photo-placeholder">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="8" r="4"/>
+              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+            </svg>
+            <span>Foto da Nazli</span>
+          </div>
+        </div>
+        <div class="mentora-accent"></div>
+      </div>
+      <div class="mentora-content">
+        <p class="mentora-quote">
+          "[Frase marcante ou slogan da Nazli que resume sua filosofia ou abordagem de ensino.]"
+        </p>
+        <p class="mentora-bio">
+          [Parágrafo 1: Apresentação da Nazli — quem ela é, sua área de atuação e o que a torna referência no assunto.]
+        </p>
+        <p class="mentora-bio">
+          [Parágrafo 2: Resultados concretos, experiência acumulada, projetos relevantes ou reconhecimentos que ela conquistou ao longo da carreira.]
+        </p>
+        <div class="mentora-badges">
+          <span class="badge badge-green">✦ [Credencial 1]</span>
+          <span class="badge">[Credencial 2]</span>
+          <span class="badge">[Credencial 3]</span>
+          <span class="badge">[Credencial 4]</span>
+          <span class="badge">[Experiência em anos]</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARATIVO -->
+  <section id="comparativo">
+    <span class="section-label">Planos</span>
+    <h2 class="section-title">Escolha o seu caminho</h2>
+    <p class="section-subtitle">
+      Compare os planos e escolha o que melhor se encaixa na sua jornada de aprendizado.
+    </p>
+
+    <div class="comparativo-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th class="col-feature" style="width:45%">O que está incluso</th>
+            <th class="col-course" style="width:27.5%">
+              <span class="col-header-name">Somente o Curso</span>
+              Acesso ao conteúdo
+            </th>
+            <th class="col-mentoria" style="width:27.5%">
+              <span class="col-header-name">Curso + Mentoria</span>
+              Experiência completa
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Categoria -->
+          <tr class="cat-row">
+            <td colspan="3">Conteúdo do Curso</td>
+          </tr>
+          <tr>
+            <td class="td-feature">Acesso às aulas gravadas<small>Todos os módulos do programa</small></td>
+            <td class="td-course"><span class="check check-yes">✓</span></td>
+            <td class="td-mentoria"><span class="check check-yes">✓</span></td>
+          </tr>
+          <tr>
+            <td class="td-feature">Materiais de apoio e templates<small>Planilhas, PDFs e recursos práticos</small></td>
+            <td class="td-course"><span class="check check-yes">✓</span></td>
+            <td class="td-mentoria"><span class="check check-yes">✓</span></td>
+          </tr>
+          <tr>
+            <td class="td-feature">Acesso à comunidade de alunos<small>Grupo exclusivo para troca entre pares</small></td>
+            <td class="td-course"><span class="check check-yes">✓</span></td>
+            <td class="td-mentoria"><span class="check check-yes">✓</span></td>
+          </tr>
+          <tr>
+            <td class="td-feature">Certificado de conclusão</td>
+            <td class="td-course"><span class="check check-yes">✓</span></td>
+            <td class="td-mentoria"><span class="check check-yes">✓</span></td>
+          </tr>
+          <tr>
+            <td class="td-feature">[Bônus incluso no curso]<small>Descrição breve do bônus</small></td>
+            <td class="td-course"><span class="check check-yes">✓</span></td>
+            <td class="td-mentoria"><span class="check check-yes">✓</span></td>
+          </tr>
+
+          <!-- Categoria -->
+          <tr class="cat-row">
+            <td colspan="3">Mentoria Exclusiva</td>
+          </tr>
+          <tr>
+            <td class="td-feature">Sessões ao vivo com a Nazli<small>[Periodicidade] · [Duração] cada</small></td>
+            <td class="td-course"><span class="check check-no">✕</span></td>
+            <td class="td-mentoria"><span class="check check-yes">✓</span></td>
+          </tr>
+          <tr>
+            <td class="td-feature">Feedback personalizado<small>Revisão dos seus projetos e entregas</small></td>
+            <td class="td-course"><span class="check check-no">✕</span></td>
+            <td class="td-mentoria"><span class="check check-yes">✓</span></td>
+          </tr>
+          <tr>
+            <td class="td-feature">Acesso direto à mentora<small>Canal exclusivo para dúvidas</small></td>
+            <td class="td-course"><span class="check check-no">✕</span></td>
+            <td class="td-mentoria"><span class="check check-yes">✓</span></td>
+          </tr>
+          <tr>
+            <td class="td-feature">[Benefício exclusivo da mentoria 1]<small>Descrição breve</small></td>
+            <td class="td-course"><span class="check check-no">✕</span></td>
+            <td class="td-mentoria"><span class="check check-yes">✓</span></td>
+          </tr>
+          <tr>
+            <td class="td-feature">[Benefício exclusivo da mentoria 2]<small>Descrição breve</small></td>
+            <td class="td-course"><span class="check check-no">✕</span></td>
+            <td class="td-mentoria"><span class="check check-yes">✓</span></td>
+          </tr>
+
+          <!-- Categoria -->
+          <tr class="cat-row">
+            <td colspan="3">Suporte & Acesso</td>
+          </tr>
+          <tr>
+            <td class="td-feature">Período de acesso ao curso<small>Após a compra</small></td>
+            <td class="td-course">0 meses</td>
+            <td class="td-mentoria"><strong>Vitalício</strong></td>
+          </tr>
+          <tr>
+            <td class="td-feature">Suporte por e-mail / chat<small>Tempo de resposta</small></td>
+            <td class="td-course">[Prazo]</td>
+            <td class="td-mentoria"><strong>[Prazo prioritário]</strong></td>
+          </tr>
+          <tr>
+            <td class="td-feature">Atualizações futuras do conteúdo</td>
+            <td class="td-course"><span class="check check-no">✕</span></td>
+            <td class="td-mentoria"><span class="check check-yes">✓</span></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td class="td-course" style="text-align:center; border-radius:0 0 12px 12px;">
+              <span class="tfoot-price-label">Investimento</span>
+              <span class="tfoot-price" style="color:var(--preto)">R$ 0.000</span>
+              <br>
+              <a href="#" class="tfoot-btn tfoot-btn-light">Quero só o curso</a>
+            </td>
+            <td class="td-mentoria" style="text-align:center; border-radius:0 0 12px 12px;">
+              <span class="tfoot-price-label" style="color:#666;">Investimento</span>
+              <span class="tfoot-price">R$ 0.000</span>
+              <br>
+              <a href="#" class="tfoot-btn tfoot-btn-dark">Quero a mentoria</a>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="cta">
+    <span class="section-label">Vagas limitadas</span>
+    <h2 class="section-title">Pronta para dar<br>o próximo passo?</h2>
+    <p class="section-subtitle">
+      [Chamada final motivadora. Reforce o valor da transformação e crie urgência sem artificialismo.]
+    </p>
+    <div class="cta-buttons">
+      <a href="#" class="btn-black">Quero a mentoria completa</a>
+      <a href="#" class="btn-outline-black">Somente o curso</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Nazli · Todos os direitos reservados · <a href="#">Política de privacidade</a> · <a href="#">Termos de uso</a></p>
+  </footer>
+
+</body>
+</html>
