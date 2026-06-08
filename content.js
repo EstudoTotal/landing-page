@@ -182,9 +182,6 @@ Ao longo dos meus estudos, dediquei-me a estudar não só as matérias de concur
   faq_title:   `Perguntas frequentes`,    // Título da seção
 
   // Cada item: _q = pergunta | _a = resposta
-  faq0_q: `Já fiz vários cursos e/ou mentorias. O que o Estudo Total tem de diferente?`,
-  faq0_a: `O Estudo Total sai do padrão dos cursos e mentorias atuais, no conteúdo, no modo de ensinar e no modo de pensar a preparação para concursos.
-           Veja o que duas alunas que já tinham passado por diversas mentorias disseram:`,
   faq1_q: `Para quem é o Estudo Total?`,
   faq1_a: `Para qualquer pessoa que esteja estudando para concursos públicos, do iniciante absoluto a quem já estuda, mas não alcança os resultados desejados.`,
   faq2_q: `Sou bem iniciante. O Estudo Total é para mim?`,
@@ -200,29 +197,37 @@ Ao longo dos meus estudos, dediquei-me a estudar não só as matérias de concur
   • <strong>Você sente que está no caminho certo e que conseguirá atingir suas metas mantendo seus estudos atual: nesse caso, o Estudo Total NÃO é para você.</strong> Mantenha-se fazendo o que já está dando resultado e funcionou para você, ok?`,
   faq4_q: `O Estudo Total serve para qualquer concurso?`,
   faq4_a: `<strong>Com certeza!</strong> Apesar de eu ter focado na área fiscal e de controle, o conteúdo é aplicável para qualquer área de concurso público. Eu já ajudei concurseiros a serem aprovados não só nas áreas fiscal e de controle, mas também nas áreas bancária, de tribunais e de TI, por exemplo.`,
-  faq5_q: `Eu não ia bem na escola/faculdade. Ainda tenho esperança de ser aprovado(a)?`,
-  faq5_a: `<strong>Com certeza!</strong> O que veremos não depende do seu histórico até aqui. Colocando em prática o que aprenderemos, você terá condições de ser aprovado(a) nos concursos dos seus sonhos!`,
-  faq6_q: `Qual é a diferença entre o curso e a mentoria?`,
-  faq6_a: `Tanto o curso quanto a mentoria ensinam exatamente os mesmos conteúdos técnicos. 
+  faq5_q: `Já fiz vários cursos e/ou mentorias. O que o Estudo Total tem de diferente?`,
+  faq5_a: `O Estudo Total sai do padrão dos cursos e mentorias atuais, no conteúdo, no modo de ensinar e no modo de pensar a preparação para concursos.
+           <br><br> Diferentemente de mentorias/consultorias que desejam que você se torne dependente e seja aluno por muito tempo, meu foco é te ensinar a estudar de modo autônomo e independente. Não quero ficar pescando por você até a sua aprovação - quero te ensinar a pescar! 
+           Meu objetivo é que, em 6 meses, você tenha segurança de caminhar com as próprias pernas e não precise mais de mim ou de outro serviço de mentoria/consultoria.
+           Veja o que alguns alunos que passaram por outros cursos/mentorias/consultorias disseram:<br><br>
+           • “Top demais viu!! Conheço muitas mentorias mas ninguém apresentou um material como o seu!! Muito feliz com o investimento!!” (Karla, aluna da T0)<br><br>
+           • “Você consegue me trazer clareza e segurança, resolver meus anseios e inseguranças. Todas as outras mentorias que eu fiz não entregaram um décimo do que você entrega.” (Veronica Bocalon, aluna da T0)<br><br>
+           • “O curso é MARAVILHOSO ❤️❤️. São detalhes que fazem muita diferença. Muito obrigada por dividir tanto conhecimento. ❤️ Estou amando o curso!” (Nayanny Cruz, aluna da T0)`,
+  faq6_q: `Eu não ia bem na escola/faculdade. Ainda tenho esperança de ser aprovado(a)?`,
+  faq6_a: `<strong>Com certeza!</strong> O que veremos não depende do seu histórico até aqui. Colocando em prática o que aprenderemos, você terá condições de ser aprovado(a) nos concursos dos seus sonhos!`,
+  faq7_q: `Qual é a diferença entre o curso e a mentoria?`,
+  faq7_a: `Tanto o curso quanto a mentoria ensinam exatamente os mesmos conteúdos técnicos. 
            Em ambos você aprenderá a se planejar e estudar de modo eficiente e efetivo em pré e pós-edital. 
            <strong>Ambos têm conteúdo suficiente para a sua aprovação.</strong>
            <br><br>
            A diferença da mentoria é o diagnóstico e acompanhamento individuais, acesso privado ao WhatsApp da Nazli e sessões ao vivo em grupo.`,
-  faq7_q: `Por quanto tempo terei acesso?`,
-  faq7_a: `No curso, o acesso às aulas e ao material é liberado por 12 meses após a inscrição, incluindo todas as atualizações do conteúdo. <br><br>
+  faq8_q: `Por quanto tempo terei acesso?`,
+  faq8_a: `No curso, o acesso às aulas e ao material é liberado por 12 meses após a inscrição, incluindo todas as atualizações do conteúdo. <br><br>
            Na mentoria, o acompanhamento individual, o acesso privado ao WhatsApp da Nazli e as sessões ao vivo em grupo são disponibilizados por 6 meses. Já o acesso às aulas e ao material é liberado por 12 meses após a inscrição, incluindo todas as atualizações do conteúdo.`,
-  faq8_q: `Como funciona a lista de espera da mentoria?`,
-  faq8_a: `A inscrição é feita <u><strong><a href="https://forms.gle/w4GXwxcodELVWpbD6" target="_blank" rel="noopener">neste link</a></strong></u>. Semanalmente, novas vagas são liberadas e você será notificado(a) por e-mail e/ou WhatsApp. <br><br>
+  faq9_q: `Como funciona a lista de espera da mentoria?`,
+  faq9_a: `A inscrição é feita <u><strong><a href="https://forms.gle/w4GXwxcodELVWpbD6" target="_blank" rel="noopener">neste link</a></strong></u>. Semanalmente, novas vagas são liberadas e você será notificado(a) por e-mail e/ou WhatsApp. <br><br>
            Não há garantia do prazo exato para chegar sua vez, mas, no primeiro semestre de 2026, a lista de espera foi de cerca de 3 meses. 
            <strong>É por isso que recomendo fortemente que você entre desde já no curso</strong>, pois, no tempo da espera, já conseguirá avanços significativos nos estudos. Inclusive, aproveitará melhor a mentoria com a bagagem do curso.`,
-  faq9_q: `Como funciona o upgrade do curso para a mentoria?`,
-  faq9_a: `Estando no curso, você pode fazer o upgrade para a mentoria. Para isso, é necessário se inscrever na lista de espera da mentoria e aguardar (leia a pergunta anterior). <br><br>
+  faq10_q: `Como funciona o upgrade do curso para a mentoria?`,
+  faq10_a: `Estando no curso, você pode fazer o upgrade para a mentoria. Para isso, é necessário se inscrever na lista de espera da mentoria e aguardar (leia a pergunta anterior). <br><br>
            Quando chegar sua vez, você receberá um desconto na mentoria equivalente ao preço do curso à vista.`,
-  faq10_q: `Como funciona a garantia?`,
-  faq10_a: `Você tem 7 dias para testar o Estudo Total. Se não gostar, o valor integral é devolvido sem burocracia. Basta solicitar seu reembolso <u><strong><a href="https://refund.hotmart.com/" target="_blank" rel="noopener">neste link</a></strong></u>.`,
-  faq10_q: `Como acesso as aulas?`,
-  faq10_a: `Assim que se tornar aluno(a), você receberá um login e senha por e-mail (cheque o spam). <br><br>
+  faq11_q: `Como acesso as aulas?`,
+  faq11_a: `Assim que se tornar aluno(a), você receberá um login e senha por e-mail (cheque o spam). <br><br>
             As aulas são acessadas pelo site <u><strong><a href="https://www.nazlisetton.com.br/" target="_blank" rel="noopener">nazlisetton.com.br</a></strong></u>. Você também pode acessar pelo botão <strong>Área do aluno</strong> no topo desta página.`,
+  faq12_q: `Como funciona a garantia?`,
+  faq12_a: `Você tem 7 dias para testar o Estudo Total. Se não gostar, o valor integral é devolvido sem burocracia. Basta solicitar seu reembolso <u><strong><a href="https://refund.hotmart.com/" target="_blank" rel="noopener">neste link</a></strong></u>.`,
 
   /* ---------- CHAMADA FINAL (CTA) ---------- */
   cta_eyebrow: `Sua vaga está esperando`,                 // Texto pequeno acima do título
