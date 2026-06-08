@@ -128,7 +128,7 @@ Ao longo dos meus estudos, dediquei-me a estudar não só as matérias de concur
   price_label:          `Investimento`,                       // Rótulo da linha
   price_desc:           `Escolha a melhor opção para você`,          // Descrição da linha
   price_value:          `R$ 997<small>ou 12x de R$ 103,11</small>`, // Valor do CURSO (o <small> é a observação menor abaixo)
-  price_btn_curso:      `Comprar o curso`,                    // Botão de compra do curso
+  price_btn_curso:      `Adquirir o curso`,                    // Botão de compra do curso
   price_mentoria_label: `Vagas limitadas`,                    // Texto acima do botão da mentoria (a mentoria não exibe valor)
   price_btn_mentoria:   `Entrar na lista de espera`,          // Botão da mentoria
   scroll_hint:          `↔ Arraste para o lado para ver a tabela completa`, // Dica exibida no celular
