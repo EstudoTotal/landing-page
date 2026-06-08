@@ -16,7 +16,7 @@ window.SITE_CONTENT = {
 
   /* ---------- MENU (cabeçalho) ---------- */
   nav_metodo:        `O método`,            // Link do menu
-  nav_mentora:      `A mentora`,          // Link do menu
+  nav_mentora:      `A Nazli`,          // Link do menu
   nav_conteudo:     `Conteúdo`,           // Link do menu
   nav_depoimentos:  `Depoimentos`,        // Link do menu
   nav_faq:          `FAQ`,                // Link do menu
@@ -25,11 +25,9 @@ window.SITE_CONTENT = {
   nav_login_menu:   `Área do aluno`,      // Mesmo login, dentro do menu (mobile)
 
   /* ---------- HERO (primeira tela) ---------- */
-  hero_eyebrow:     `Método de estudo para concursos`,                          // Texto pequeno acima do título
-  hero_title:       `Desempenho de outro mundo.<br><em></em>`, // Título principal — o que estiver em <em> fica verde
-  hero_lead:        `Prepare-se para alcançar o cargo dos seus sonhos com um desempenho de outro mundo. <br><br> 
-  Aprenda a estudar de modo autônomo e completo com o Estudo Total e transforme seu estudo em algo que realmente funciona para você. <br><br> 
-  Assista ao vídeo para entender como funciona o Estudo Total!`, // Parágrafo de apoio
+  hero_eyebrow:     `O método de estudo da Nazli para concursos`,                          // Texto pequeno acima do título
+  hero_title:       `Aprenda a estudar com autonomia, eficiência e confiança.<br><em>Descubra como estruturar sua preparação em um sistema previsível e adaptado à sua realidade. Desenvolva a independência para aumentar seus índices de acertos sem ficar refém de cronogramas engessados.</em>`, // Título principal — o que estiver em <em> fica verde
+  hero_lead:        `<strong>Aviso:</strong> Assista ao vídeo para entender exatamente como funciona o Estudo Total!`, // Parágrafo de apoio
   hero_btn_primary: `Garantir minha vaga →`,        // Botão principal (verde)
   hero_btn_ghost:   `Entender como funciona`,        // Botão secundário (contornado)
   hero_stat1_num:   `+5.000`,                        // Número da estatística 1
@@ -46,50 +44,33 @@ window.SITE_CONTENT = {
   mentor_eyebrow: `Quem vai te guiar`,                    // Texto pequeno acima do título
   mentor_title:   `Conheça a Nazli`,                      // Título da seção
   mentor_role:    `01 da área fiscal e de controle <br> Mentora e especialista em métodos de estudo`, // Cargo / especialidade
-  mentor_p1:      `Engenheira de formação. Auditora de profissão. Estudei para concursos de 2018 a 2023 (e brevemente em um pós-edital em 2025/2026). Inicialmente, foquei na área fiscal. Depois migrei para a área de controle e, por fim, voltei para a área fiscal.`, // 1º parágrafo
-  mentor_p2:      `<strong>Minhas aprovações:</strong>
-
-<br>
-
-• Sefaz SP – Auditor Fiscal da Receita Estadual (2026): 1º lugar <br>
-• ISS SP – Auditor Fiscal Tributário Municipal (2023): 1º lugar <br>
-• Receita Federal – Auditor Fiscal (2023): 6º lugar <br>
-• TCU – Auditor Federal de Controle Externo (2022): 1º lugar <br>
-• CGU – Auditor Federal de Finanças e Controle (2022): 3º lugar <br>
-• TCDF – Auditor de Controle Externo (2021): 5º lugar <br> 
-• TCE RJ – Auditor de Controle Externo (2021): 6º lugar <br> 
-• ISS Campinas – Auditor Fiscal Tributário Municipal (2019): 5º lugar <br>
-• ISS Campo Grande – Auditor Fiscal da Receita Municipal (2019): 14º lugar <br>
-• ISS Valinhos – Auditor Fiscal (2019): 1º lugar <br>
-• ISS Guarulhos – Inspetor Fiscal de Rendas (2019): 1º lugar <br>
-• ISS Itapevi – Auditor Fiscal Tributário (2019): 3º lugar <br>
-
-
-<br>
-Ao longo dos meus estudos, dediquei-me a estudar não só as matérias de concursos, mas também sobre como estudar cada vez mais e melhor.  Isso se transformou em grande diferencial competitivo e agora estou aqui para transmitir esse conhecimento para você! Vamos juntos(as) rumo à sua aprovação? :)`, // 2º parágrafo
+  mentor_p1:      `🏆 1º lugar TCU <br> 🏆 1º lugar SEFAZ-SP <br> 🏆 1º lugar ISS-SP <br> 🏆 3º lugar CGU <br> 🏆 6º lugar RFB <br> 🏆 E outras 7 aprovações no topo das listas da área fiscal e de controle! `, // 1º parágrafo
+  mentor_p2:      `Engenheira de formação. Auditora de profissão. Mais de 8 anos de experiência em concursos públicos. 
+<br><br>
+Ao longo dos meus estudos, dediquei-me a entender como estudar cada vez mais e melhor.  Isso se transformou em grande diferencial competitivo e agora estou aqui para transmitir esse conhecimento para você! Vamos juntos(as) rumo à sua aprovação? :)`, // 2º parágrafo
   mentor_cred1:   `Método validado com milhares de alunos`,                  // Item da lista de credenciais
   mentor_cred2:   `Foco em diagnóstico e plano de estudo individual`,        // Item da lista de credenciais
   mentor_cred3:   `Conteúdo direto, sem enrolação e aplicável desde a primeira aula`, // Item da lista de credenciais
 
   /* ---------- CONTEÚDO / TABELA COMPARATIVA ---------- */
-  modules_eyebrow:  `O que está incluso`,             // Texto pequeno acima do título
-  modules_title:    `Tudo o que você precisa para a aprovação`,     // Título da seção
-  modules_subtitle: `O Estudo Total foi o método que desenvolvi para passar em 12 concursos de alto nível, sempre nas primeiras colocações.
+  modules_eyebrow:  `Tudo o que você precisa para a aprovação em termos de técnica e método`,             // Texto pequeno acima do título
+  modules_title:    `O que é o Estudo Total?`,     // Título da seção
+  modules_subtitle: `É o método que a Nazli desenvolveu para passar em 12 concursos de alto nível, nas primeiras colocações.
 
-<br><br> Desde cedo, entendi que não bastava "só estudar" para ser aprovada. Eu precisei aprimorar meu foco, minha disciplina e minha capacidade de planejamento para ganhar vantagem competitiva real e aproveitar melhor cada momento de estudo.
+<br><br> Desde cedo, entendeu que não bastava "só estudar" para ser aprovada. Precisou melhorar o foco, a disciplina e a capacidade de planejamento para ganhar vantagem competitiva e aproveitar melhor cada momento de estudo.
 
-<br><br> Entendi que ser aprovado(a) não é só sobre estudar, é sobre a pessoa que você se torna enquanto estuda. 
-
-<br><br>O Estudo Total é o resultado da bagagem que acumulei em mais de 8 anos de experiência no mundo dos concursos sobre como se tornar uma pessoa apta a ser aprovada em qualquer concurso.
-
+<br><br>O Estudo Total é o resultado da bagagem acumulada em mais de 8 anos de experiência em concursos sobre como se tornar uma pessoa apta a ser aprovada em qualquer concurso.
+<br><br>Aqui você encontrará o método estruturado em um passo a passo pronto para replicar e alcançar um desempenho de outro mundo nas provas! Preparado(a)? A sua aprovação te aguarda!
 <br><br> Os módulos do Estudo Total foram pensados na ordem exata em que você precisa deles. Veja os módulos abaixo, bem como o comparativo do curso com a mentoria.`, // Subtítulo
-  modules_highlight_lead: `Aqui você encontrará o método estruturado em um passo a passo pronto para replicar e alcançar um desempenho de outro mundo nas provas! Preparado(a)? A sua aprovação te aguarda!`, // Texto verde de destaque ao lado do subtítulo
-  modules_hl1_title: `Aulas em vídeo gravadas`,                                                                  // Título do destaque 1
-  modules_hl1_desc:  `Acesse o conteúdo no seu ritmo, de qualquer lugar e a qualquer hora. Assista quantas vezes quiser.`,             // Descrição do destaque 1
-  modules_hl2_title: `Materiais de apoio`,                                                              // Título do destaque 2
-  modules_hl2_desc:  `Resumos do método em PDF, planilhas estratégicas e outros recursos para aplicar o método na prática.`,          // Descrição do destaque 2
-  modules_hl3_title: `Exemplos práticos`,                                                             // Título do destaque 3
-  modules_hl3_desc:  `Diversos vídeos de mão na massa em que mostro na prática a aplicação do método.`,                       // Descrição do destaque 3
+  modules_highlight_lead: `O Estudo Total existe sob a forma de um CURSO e de uma MENTORIA`, // Texto verde de destaque ao lado do subtítulo
+  modules_hl1_title: `Curso`,                                                                  // Título do destaque 1
+  modules_hl1_desc:  `Formato principal. Aprenda o método completo e eleve seu nível desde já.`,             // Descrição do destaque 1
+  modules_hl2_title: `Mentoria`,                                                              // Título do destaque 2
+  modules_hl2_desc:  `Upgrade para quem busca acompanhamento individualizado com a Nazli.`,          // Descrição do destaque 2
+  modules_hl3_title: `Diferenças entre o curso e a mentoria`,                                                             // Título do destaque 3
+  modules_hl3_desc:  `Em ambos você aprenderá TUDO o que a Nazli aplicou em termos de método e técnicas de estudo para ser aprovada. O conteúdo técnico é idêntico. Nos dois formatos, o objetivo é que você caminhe sozinho(a) depois de pouco tempo.
+                      <br><br> A mentoria é para quem busca acompanhamento individualizado e tem vagas limitadas. Novas vagas são disponibilizadas gradualmente para quem está na lista de espera.
+                      <br><br> É recomendado que você entre no curso desde já e comece a aplicar o método. Se optar pelo upgrade da mentoria posteriormente, conseguirá inclusive aproveitar melhor com a bagagem do curso. `,                       // Descrição do destaque 3
 
   th_modulo:   `Módulos`,    // Cabeçalho da coluna 1
   th_curso:    `Curso`,     // Cabeçalho da coluna 2
@@ -128,7 +109,7 @@ Ao longo dos meus estudos, dediquei-me a estudar não só as matérias de concur
   price_label:          `Investimento`,                       // Rótulo da linha
   price_desc:           `Escolha a melhor opção para você`,          // Descrição da linha
   price_value:          `R$ 997<small>ou 12x de R$ 103,11</small>`, // Valor do CURSO (o <small> é a observação menor abaixo)
-  price_btn_curso:      `Adquirir o curso`,                    // Botão de compra do curso
+  price_btn_curso:      `Entrar agora`,                    // Botão de compra do curso
   price_mentoria_label: `Vagas limitadas`,                    // Texto acima do botão da mentoria (a mentoria não exibe valor)
   price_btn_mentoria:   `Entrar na lista de espera`,          // Botão da mentoria
   scroll_hint:          `↔ Arraste para o lado para ver a tabela completa`, // Dica exibida no celular
@@ -150,32 +131,35 @@ Ao longo dos meus estudos, dediquei-me a estudar não só as matérias de concur
   t3_text: `Com a ajuda da Nazli, consegui montar um planejamento de estudos e adaptá-lo ao longo do tempo, focando nas matérias que eu mais precisava e deixando minha rotina mais produtiva e direcionada. Ela também me ajudou com dicas de como organizar minhas anotações e criar meu próprio material para a revisão final pré-prova.`,
   t3_initial: `C`, t3_name: `Fabio`, t3_role: `Aprovado para Técnico Bancário na Caixa Econômica Federal`,
 
-  t4_text: `Melhorei 1000% os meus horários e estou rendendo muito mais. Agora eu consigo terminar de estudar bem mais cedo (cumprindo todas as metas). Estou muito mais seguro com seu método e seguindo o que você ensina. É bizarro como eu não tinha segurança alguma no jeito que eu estava estudando. Tenho certeza que sem isso, eu "bateria cabeça" em diversos pontos. Estou aprendendo muito agora.`,
-  t4_initial: `D`, t5_name: `Antenor`, t5_role: `Aluno da Turma 0`,
-
-  t5_text: `Esse curso ET está sendo o divisor de águas pra mim. Agora estou estudando com direção e sabendo o passo a passo. Muito obrigado, Nazli.`,
-  t5_initial: `D`, t4_name: `José Emerson`, t4_role: `Aluno da Turma 0`,
-
-  t6_text: `Os vídeos dela explodem a mente da gente. Só dá vontade de agradecer enquanto assisto.`,
-  t6_initial: `D`, t6_name: `Audy`, t6_role: `Aluno da Turma 0`,
-
-  t7_text: `Top demais viu!! Conheço muitas mentorias, mas ninguém apresentou um material como o seu!! Muito feliz com o investimento!`,
-  t7_initial: `D`, t7_name: `Karla`, t7_role: `Aluna da Turma 0`,
-
-  t8_text: `Simplesmente FAN-TÁS-TI-CO! AMEI!`,
-  t8_initial: `D`, t8_name: `Aparício Geraldes`, t8_role: `Aluno da Turma 0`,
-
-  t9_text: `O curso é MARAVILHOSO ❤️❤️. <br><br> São detalhes que fazem muita diferença. Tenho certeza de que, com as suas instruções e muitas horas de estudo, alcançarei meu objetivo de ser Auditora. Muito obrigada por dividir tanto conhecimento. Estou amando o curso ❤️!`,
-  t9_initial: `D`, t9_name: `Nayanny Cruz`, t9_role: `Aluna da Turma 0`,
+  t4_text: `Já percebi uma melhora significativa em decorrência do ET!! Consegui uns 10 pontos acima da média que vinha fazendo.`,
+  t4_initial: `D`, t4_name: `Geraldo Rodeiguez`, t4_role: `Aluno da Turma 0, com menos de 2 meses de ET`,
   
-  t10_text: `Não é à toa que você é o “Pelé dos concursos”. Tem tantos detalhes que eu sei que vou rever mais de uma vez com calma, porque cada vírgula ali importa muito, ensinamentos de um mestre. Pessoas que já estão há anos na mesma metodologia sabem o quanto é difícil confiar e mudar baseado em outro método, corrigir vícios antigos, manias, desconstruir, mas você é literalmente de outro planeta (ET). Já admirava. Após o cuidado e profissionalismo com que você fez o curso, admiro mais ainda.`,
-  t10_initial: `D`, t10_name: `Ricardo`, t10_role: `Aluno da Turma 0`,
+  t5_text: `Melhorei 1000% os meus horários e estou rendendo muito mais. Agora eu consigo terminar de estudar bem mais cedo (cumprindo todas as metas). Estou muito mais seguro com seu método e seguindo o que você ensina. É bizarro como eu não tinha segurança alguma no jeito que eu estava estudando. Tenho certeza que sem isso, eu "bateria cabeça" em diversos pontos. Estou aprendendo muito agora.`,
+  t5_initial: `D`, t5_name: `Antenor`, t5_role: `Aluno da Turma 0`,
 
-  t11_text: `Só passando pra dar o feedback que assisti todos os vídeos liberados e dizer que AMEI o conteúdo. Muito obrigada por tanta informação! Simplesmente IMPECÁVEL! Pra cima 👏🏻😍🚀🚀`,
-  t11_initial: `D`, t11_name: `Georgia`, t11_role: `Aluna da Turma 0`,
+  t6_text: `Esse curso ET está sendo o divisor de águas pra mim. Agora estou estudando com direção e sabendo o passo a passo. Muito obrigado, Nazli.`,
+  t6_initial: `D`, t6_name: `José Emerson`, t6_role: `Aluno da Turma 0`,
 
-  t12_text: `Suas aulas são excelentes e sua técnica é absurda de boa!`,
-  t12_initial: `D`, t12_name: `Thais`, t12_role: `Aluna da Turma 0`,
+  t7_text: `Os vídeos dela explodem a mente da gente. Só dá vontade de agradecer enquanto assisto.`,
+  t7_initial: `D`, t7_name: `Audy`, t7_role: `Aluno da Turma 0`,
+
+  t8_text: `Top demais viu!! Conheço muitas mentorias, mas ninguém apresentou um material como o seu!! Muito feliz com o investimento!`,
+  t8_initial: `D`, t8_name: `Karla`, t8_role: `Aluna da Turma 0`,
+
+  t9_text: `Simplesmente FAN-TÁS-TI-CO! AMEI!`,
+  t9_initial: `D`, t9_name: `Aparício Geraldes`, t9_role: `Aluno da Turma 0`,
+
+  t10_text: `O curso é MARAVILHOSO ❤️❤️. <br><br> São detalhes que fazem muita diferença. Tenho certeza de que, com as suas instruções e muitas horas de estudo, alcançarei meu objetivo de ser Auditora. Muito obrigada por dividir tanto conhecimento. Estou amando o curso ❤️!`,
+  t10_initial: `D`, t10_name: `Nayanny Cruz`, t10_role: `Aluna da Turma 0`,
+  
+  t11_text: `Não é à toa que você é o “Pelé dos concursos”. Tem tantos detalhes que eu sei que vou rever mais de uma vez com calma, porque cada vírgula ali importa muito, ensinamentos de um mestre. Pessoas que já estão há anos na mesma metodologia sabem o quanto é difícil confiar e mudar baseado em outro método, corrigir vícios antigos, manias, desconstruir, mas você é literalmente de outro planeta (ET). Já admirava. Após o cuidado e profissionalismo com que você fez o curso, admiro mais ainda.`,
+  t11_initial: `D`, t11_name: `Ricardo`, t11_role: `Aluno da Turma 0`,
+
+  t12_text: `Só passando pra dar o feedback que assisti todos os vídeos liberados e dizer que AMEI o conteúdo. Muito obrigada por tanta informação! Simplesmente IMPECÁVEL! Pra cima 👏🏻😍🚀🚀`,
+  t12_initial: `D`, t12_name: `Georgia`, t12_role: `Aluna da Turma 0`,
+
+  t13_text: `Suas aulas são excelentes e sua técnica é absurda de boa!`,
+  t13_initial: `D`, t13_name: `Thais`, t13_role: `Aluna da Turma 0`,
 
   /* ---------- PERGUNTAS FREQUENTES (FAQ) ---------- */
   faq_eyebrow: `Tire suas dúvidas`,       // Texto pequeno acima do título
@@ -183,7 +167,8 @@ Ao longo dos meus estudos, dediquei-me a estudar não só as matérias de concur
 
   // Cada item: _q = pergunta | _a = resposta
   faq1_q: `Para quem é o Estudo Total?`,
-  faq1_a: `Para qualquer pessoa que esteja estudando para concursos públicos, do iniciante absoluto a quem já estuda, mas não alcança os resultados desejados.`,
+  faq1_a: `Para qualquer pessoa que esteja estudando para concursos públicos, do iniciante absoluto a quem já estuda, mas não alcança os resultados desejados.
+           <br><br> O Estudo Total NÃO é para quem sente que está no caminho certo e que conseguirá atingir a aprovação desejada mantendo seus estudos atual. Nesse caso, continue o que está fazendo.`,
   faq2_q: `Sou bem iniciante. O Estudo Total é para mim?`,
   faq2_a: `Sem dúvidas! O Estudo Total é ideal para você, começando agora. Você aprenderá como organizar seus estudos de modo eficiente e independente, do zero, antes de ter vícios de estudo. <br><br> 
   Inclusive, vou contar uma curiosidade sobre mim. Decidi estudar para concursos em 2017, no último ano da faculdade. Mas eu tinha decidido começar os estudos mesmo em 2018, quando me formasse, pois em 2017 estava conciliando estudo, trabalho e TCC. <br><br> 
@@ -218,7 +203,7 @@ Ao longo dos meus estudos, dediquei-me a estudar não só as matérias de concur
            Na mentoria, o acompanhamento individual, o acesso privado ao WhatsApp da Nazli e as sessões ao vivo em grupo são disponibilizados por 6 meses. Já o acesso às aulas e ao material é liberado por 12 meses após a inscrição, incluindo todas as atualizações do conteúdo.`,
   faq9_q: `Como funciona a lista de espera da mentoria?`,
   faq9_a: `A inscrição é feita <u><strong><a href="https://forms.gle/w4GXwxcodELVWpbD6" target="_blank" rel="noopener">neste link</a></strong></u>. Semanalmente, novas vagas são liberadas e você será notificado(a) por e-mail e/ou WhatsApp. <br><br>
-           Não há garantia do prazo exato para chegar sua vez, mas, no primeiro semestre de 2026, a lista de espera foi de cerca de 3 meses. 
+           Não há garantia do prazo exato para chegar sua vez, mas, nos últimos meses, a lista de espera foi de cerca de 3 meses. 
            <strong>É por isso que recomendo fortemente que você entre desde já no curso</strong>, pois, no tempo da espera, já conseguirá avanços significativos nos estudos. Inclusive, aproveitará melhor a mentoria com a bagagem do curso.`,
   faq10_q: `Como funciona o upgrade do curso para a mentoria?`,
   faq10_a: `Estando no curso, você pode fazer o upgrade para a mentoria. Para isso, é necessário se inscrever na lista de espera da mentoria e aguardar (leia a pergunta anterior). <br><br>
@@ -230,18 +215,19 @@ Ao longo dos meus estudos, dediquei-me a estudar não só as matérias de concur
   faq12_a: `Você tem 7 dias para testar o Estudo Total. Se não gostar, o valor integral é devolvido sem burocracia. Basta solicitar seu reembolso <u><strong><a href="https://refund.hotmart.com/" target="_blank" rel="noopener">neste link</a></strong></u>.`,
 
   /* ---------- CHAMADA FINAL (CTA) ---------- */
-  cta_eyebrow: `Sua vaga está esperando`,                 // Texto pequeno acima do título
-  cta_title:   `Comece hoje no <br>Estudo Total`,        // Título
+  cta_eyebrow: `Sua aprovação está te esperando`,                 // Texto pequeno acima do título
+  cta_title:   `Construa um sistema de estudo que funciona`,        // Título
   cta_text:    `Alcance o cargo dos seus sonhos com um desempenho de outro mundo.`, // Apoio
   // cta_text:    `Junte-se aos alunos que passaram a estudar de modo eficiente e com segurança.`, // Apoio
-  cta_btn:     `Quero me inscrever no curso Estudo Total desde já →`,    // Botão
-  cta_btn2:    `Entrar na lista de espera da mentoria`,    // Botão secundário (mentoria)
+  cta_btn:     `Quero me inscrever no Estudo Total desde já →`,    // Botão
+  cta_guarantee: `Experimente por 7 dias. Se achar que não é para você, basta pedir o reembolso dentro do prazo - sem burocracia.`, // Texto de garantia entre os botões
+  cta_btn2:    `Lista de espera da mentoria`,    // Botão secundário (mentoria)
 
   /* ---------- RODAPÉ ---------- */
   footer_tagline:       `Desempenho de outro mundo`, // Frase abaixo do logo
   footer_nav_title:     `Navegação`,   // Título da coluna de links
   footer_nav_metodo:     `O método`,
-  footer_nav_mentora:   `A mentora`,
+  footer_nav_mentora:   `A Nazli`,
   footer_nav_conteudo:  `Conteúdo`,
   footer_nav_depoimentos:  `Depoimentos`,
   footer_nav_faq:       `FAQ`,
