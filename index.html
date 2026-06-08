@@ -1,1457 +1,460 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mentoria Nazli — [Nome do Curso]</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --verde: #A4D048;
-      --verde-escuro: #7faa2a;
-      --cinza: #F2F2F2;
-      --preto: #000000;
-      --branco: #ffffff;
-      --texto: #1a1a1a;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--branco);
-      color: var(--texto);
-      overflow-x: hidden;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.2rem 6vw;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-    }
-
-    .nav-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      font-weight: 900;
-      letter-spacing: -0.02em;
-      color: var(--preto);
-    }
-
-    .nav-logo span { color: var(--verde-escuro); }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2.5rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      font-size: 0.88rem;
-      font-weight: 500;
-      color: var(--preto);
-      letter-spacing: 0.02em;
-      transition: color 0.2s;
-    }
-
-    nav a:hover { color: var(--verde-escuro); }
-
-    .nav-cta {
-      background: var(--verde);
-      color: var(--preto) !important;
-      padding: 0.6rem 1.4rem;
-      border-radius: 100px;
-      font-weight: 600 !important;
-      transition: background 0.2s, transform 0.2s !important;
-    }
-
-    .nav-cta:hover { background: var(--verde-escuro); transform: translateY(-1px); }
-
-    /* ── HERO ── */
-    #hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      padding: 8rem 6vw 5rem;
-      gap: 4rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    #hero::before {
-      content: '';
-      position: absolute;
-      top: -10%; right: -5%;
-      width: 55vw; height: 110vh;
-      background: var(--cinza);
-      clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
-      z-index: 0;
-    }
-
-    .hero-content { position: relative; z-index: 1; }
-
-    .hero-badge {
-      display: inline-block;
-      background: var(--verde);
-      color: var(--preto);
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.4rem 1rem;
-      border-radius: 100px;
-      margin-bottom: 1.8rem;
-    }
-
-    .hero-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.8rem, 5vw, 4.5rem);
-      font-weight: 900;
-      line-height: 1.08;
-      letter-spacing: -0.03em;
-      color: var(--preto);
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-title em {
-      font-style: italic;
-      color: var(--verde-escuro);
-    }
-
-    .hero-desc {
-      font-size: 1.1rem;
-      font-weight: 300;
-      line-height: 1.75;
-      color: #444;
-      max-width: 480px;
-      margin-bottom: 2.5rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      background: var(--preto);
-      color: var(--branco);
-      padding: 1rem 2.2rem;
-      border-radius: 100px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.2s;
-      display: inline-block;
-    }
-
-    .btn-primary:hover { background: #222; transform: translateY(-2px); }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--preto);
-      padding: 1rem 2.2rem;
-      border-radius: 100px;
-      border: 2px solid var(--preto);
-      font-size: 0.95rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s;
-      display: inline-block;
-    }
-
-    .btn-secondary:hover { background: var(--preto); color: var(--branco); transform: translateY(-2px); }
-
-    /* hero stats */
-    .hero-stats {
-      display: flex;
-      gap: 2.5rem;
-      margin-top: 3rem;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(0,0,0,0.1);
-    }
-
-    .stat-item { }
-
-    .stat-number {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      font-weight: 900;
-      color: var(--preto);
-      line-height: 1;
-    }
-
-    .stat-label {
-      font-size: 0.78rem;
-      color: #888;
-      margin-top: 0.3rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-    }
-
-    /* hero visual */
-    .hero-visual {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      justify-content: center;
-    }
-
-    .hero-card {
-      background: var(--branco);
-      border-radius: 24px;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.12);
-      padding: 2.5rem;
-      width: 100%;
-      max-width: 400px;
-      position: relative;
-    }
-
-    .hero-card::before {
-      content: '';
-      position: absolute;
-      top: -12px; right: -12px;
-      width: 100%; height: 100%;
-      border-radius: 24px;
-      border: 3px solid var(--verde);
-      z-index: -1;
-    }
-
-    .card-tag {
-      background: var(--cinza);
-      border-radius: 8px;
-      padding: 0.6rem 1rem;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: #666;
-      margin-bottom: 1.5rem;
-      display: inline-block;
-    }
-
-    .card-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--preto);
-      margin-bottom: 1.2rem;
-      line-height: 1.3;
-    }
-
-    .card-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-    }
-
-    .card-list li {
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      font-size: 0.9rem;
-      color: #444;
-    }
-
-    .card-list li::before {
-      content: '✓';
-      width: 22px; height: 22px;
-      background: var(--verde);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: var(--preto);
-      flex-shrink: 0;
-    }
-
-    .card-divider {
-      height: 1px;
-      background: var(--cinza);
-      margin: 1.5rem 0;
-    }
-
-    .card-price {
-      display: flex;
-      align-items: baseline;
-      gap: 0.4rem;
-    }
-
-    .price-label { font-size: 0.8rem; color: #888; }
-
-    .price-value {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      font-weight: 900;
-      color: var(--preto);
-    }
-
-    /* ── SECTION BASE ── */
-    section { padding: 6rem 6vw; }
-
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--verde-escuro);
-      margin-bottom: 1rem;
-    }
-
-    .section-label::before {
-      content: '';
-      width: 24px; height: 2px;
-      background: var(--verde);
-    }
-
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      font-weight: 900;
-      line-height: 1.15;
-      letter-spacing: -0.025em;
-      color: var(--preto);
-      margin-bottom: 1.2rem;
-    }
-
-    .section-subtitle {
-      font-size: 1.05rem;
-      font-weight: 300;
-      color: #555;
-      line-height: 1.7;
-      max-width: 600px;
-    }
-
-    /* ── SOBRE O CURSO ── */
-    #curso {
-      background: var(--cinza);
-    }
-
-    .curso-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-      margin-top: 3.5rem;
-    }
-
-    .curso-features {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .feature-item {
-      display: flex;
-      gap: 1.2rem;
-      align-items: flex-start;
-    }
-
-    .feature-icon {
-      width: 46px; height: 46px;
-      background: var(--verde);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      flex-shrink: 0;
-    }
-
-    .feature-text h4 {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--preto);
-      margin-bottom: 0.3rem;
-    }
-
-    .feature-text p {
-      font-size: 0.88rem;
-      color: #666;
-      line-height: 1.6;
-    }
-
-    /* módulos */
-    .modulos-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-    }
-
-    .modulo-item {
-      background: var(--branco);
-      border-radius: 12px;
-      padding: 1.2rem 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .modulo-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      font-weight: 900;
-      color: var(--verde);
-      min-width: 2rem;
-    }
-
-    .modulo-info h5 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--preto);
-    }
-
-    .modulo-info span {
-      font-size: 0.78rem;
-      color: #999;
-    }
-
-    /* ── NAZLI ── */
-    #mentora {
-      background: var(--preto);
-      color: var(--branco);
-    }
-
-    #mentora .section-label { color: var(--verde); }
-    #mentora .section-title { color: var(--branco); }
-    #mentora .section-subtitle { color: #aaa; }
-
-    .mentora-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.3fr;
-      gap: 6rem;
-      align-items: center;
-      margin-top: 4rem;
-    }
-
-    .mentora-photo-wrap {
-      position: relative;
-    }
-
-    .mentora-photo {
-      width: 100%;
-      aspect-ratio: 3/4;
-      background: #1a1a1a;
-      border-radius: 20px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .mentora-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 20px;
-      display: block;
-    }
-
-    .photo-placeholder {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #1f1f1f 0%, #2a2a2a 100%);
-      color: #555;
-      font-size: 0.85rem;
-      gap: 0.8rem;
-    }
-
-    .photo-placeholder svg { opacity: 0.3; }
-
-    .mentora-accent {
-      position: absolute;
-      bottom: -16px; left: -16px;
-      width: 80%; height: 80%;
-      border: 3px solid var(--verde);
-      border-radius: 20px;
-      z-index: -1;
-    }
-
-    .mentora-content { }
-
-    .mentora-quote {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 1.4rem;
-      line-height: 1.5;
-      color: var(--verde);
-      margin-bottom: 2rem;
-    }
-
-    .mentora-bio {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: #bbb;
-      margin-bottom: 2.5rem;
-    }
-
-    .mentora-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-    }
-
-    .badge {
-      border: 1px solid #333;
-      border-radius: 100px;
-      padding: 0.4rem 1rem;
-      font-size: 0.8rem;
-      color: #ccc;
-    }
-
-    .badge-green {
-      border-color: var(--verde);
-      color: var(--verde);
-    }
-
-    /* ── COMPARATIVO ── */
-    #comparativo {
-      background: var(--branco);
-    }
-
-    .comparativo-wrap {
-      margin-top: 4rem;
-      overflow-x: auto;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.95rem;
-    }
-
-    thead tr {
-      border-bottom: 3px solid var(--preto);
-    }
-
-    thead th {
-      padding: 1rem 1.5rem;
-      text-align: left;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #999;
-    }
-
-    thead th.col-feature { color: var(--preto); }
-
-    .col-course {
-      text-align: center;
-      background: var(--cinza);
-    }
-
-    .col-mentoria {
-      text-align: center;
-      background: var(--preto);
-      color: var(--branco);
-      border-radius: 12px 12px 0 0;
-    }
-
-    .col-mentoria .col-header-name { color: var(--verde); }
-
-    .col-header-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      font-weight: 700;
-      display: block;
-      margin-bottom: 0.2rem;
-      text-transform: none;
-      letter-spacing: 0;
-    }
-
-    tbody tr {
-      border-bottom: 1px solid var(--cinza);
-      transition: background 0.15s;
-    }
-
-    tbody tr:hover { background: rgba(164,208,72,0.04); }
-
-    tbody td {
-      padding: 1.1rem 1.5rem;
-      vertical-align: middle;
-    }
-
-    .td-feature {
-      font-weight: 500;
-      color: var(--preto);
-    }
-
-    .td-feature small {
-      display: block;
-      font-weight: 300;
-      font-size: 0.8rem;
-      color: #888;
-      margin-top: 0.15rem;
-    }
-
-    .td-course, .td-mentoria {
-      text-align: center;
-    }
-
-    .td-mentoria { background: rgba(0,0,0,0.02); }
-
-    .check {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 28px; height: 28px;
-      border-radius: 50%;
-      font-size: 0.85rem;
-      font-weight: 700;
-    }
-
-    .check-yes {
-      background: var(--verde);
-      color: var(--preto);
-    }
-
-    .check-no {
-      background: var(--cinza);
-      color: #bbb;
-    }
-
-    tfoot td {
-      padding: 1.5rem;
-      background: var(--preto);
-      color: var(--branco);
-    }
-
-    .tfoot-price {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      font-weight: 900;
-      color: var(--branco);
-      display: block;
-    }
-
-    .tfoot-price-label {
-      font-size: 0.78rem;
-      color: #888;
-      margin-bottom: 0.3rem;
-      display: block;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    tfoot .td-course {
-      background: var(--cinza);
-      border-radius: 0 0 0 0;
-    }
-
-    tfoot .td-course .tfoot-price { color: var(--preto); }
-
-    .tfoot-btn {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.75rem 1.8rem;
-      border-radius: 100px;
-      font-size: 0.88rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-
-    .tfoot-btn-dark {
-      background: var(--verde);
-      color: var(--preto);
-    }
-
-    .tfoot-btn-dark:hover { background: var(--verde-escuro); transform: translateY(-2px); }
-
-    .tfoot-btn-light {
-      background: var(--preto);
-      color: var(--branco);
-      border: 2px solid #333;
-    }
-
-    .tfoot-btn-light:hover { background: #111; transform: translateY(-2px); }
-
-    /* categoria row */
-    .cat-row td {
-      background: var(--cinza);
-      padding: 0.6rem 1.5rem;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #999;
-    }
-
-    /* ── DEPOIMENTOS ── */
-    #depoimentos {
-      background: var(--cinza);
-      overflow: hidden;
-    }
-
-    .carousel-outer {
-      position: relative;
-      margin-top: 3.5rem;
-    }
-
-    .carousel-track-wrap {
-      overflow: hidden;
-    }
-
-    .carousel-track {
-      display: flex;
-      gap: 1.5rem;
-      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      will-change: transform;
-    }
-
-    .depoimento-card {
-      background: var(--branco);
-      border-radius: 20px;
-      padding: 2.2rem 2rem;
-      /* 3 cards visíveis: (100% - 2 gaps de 1.5rem) / 3 */
-      width: calc((100% - 3rem) / 3);
-      min-width: calc((100% - 3rem) / 3);
-      flex-shrink: 0;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 1.5rem;
-      border: 1px solid rgba(0,0,0,0.05);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .depoimento-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 48px rgba(0,0,0,0.08);
-    }
-
-    .depo-aspas {
-      font-family: 'Playfair Display', serif;
-      font-size: 4rem;
-      line-height: 1;
-      color: var(--verde);
-      margin-bottom: -0.5rem;
-    }
-
-    .depo-texto {
-      font-size: 0.97rem;
-      line-height: 1.75;
-      color: #444;
-      flex: 1;
-    }
-
-    .depo-autor {
-      display: flex;
-      align-items: center;
-      gap: 0.9rem;
-      padding-top: 1.2rem;
-      border-top: 1px solid var(--cinza);
-    }
-
-    .depo-avatar {
-      width: 42px; height: 42px;
-      border-radius: 50%;
-      background: var(--verde);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--preto);
-      flex-shrink: 0;
-    }
-
-    .depo-nome {
-      font-weight: 600;
-      font-size: 0.92rem;
-      color: var(--preto);
-    }
-
-    .depo-label {
-      font-size: 0.78rem;
-      color: #999;
-      margin-top: 0.1rem;
-    }
-
-    /* controles */
-    .carousel-controls {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 2.5rem;
-    }
-
-    .carousel-btn {
-      width: 46px; height: 46px;
-      border-radius: 50%;
-      border: 2px solid var(--preto);
-      background: transparent;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s;
-      color: var(--preto);
-    }
-
-    .carousel-btn:hover {
-      background: var(--preto);
-      color: var(--branco);
-    }
-
-    .carousel-btn svg { width: 18px; height: 18px; stroke: currentColor; }
-
-    .carousel-dots {
-      display: flex;
-      gap: 0.5rem;
-      align-items: center;
-    }
-
-    .carousel-dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: #ccc;
-      border: none;
-      cursor: pointer;
-      transition: all 0.25s;
-      padding: 0;
-    }
-
-    .carousel-dot.active {
-      background: var(--preto);
-      width: 24px;
-      border-radius: 100px;
-    }
-
-    @media (max-width: 900px) {
-      .depoimento-card {
-        width: 100%;
-        min-width: 100%;
-      }
-    }
-
-    /* ── CTA FINAL ── */
-    #cta {
-      background: var(--verde);
-      text-align: center;
-      padding: 7rem 6vw;
-    }
-
-    #cta .section-title { color: var(--preto); }
-    #cta .section-subtitle { color: rgba(0,0,0,0.6); margin: 0 auto 2.5rem; }
-    #cta .section-label { color: var(--preto); }
-    #cta .section-label::before { background: var(--preto); }
-
-    .cta-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn-black {
-      background: var(--preto);
-      color: var(--branco);
-      padding: 1.1rem 2.4rem;
-      border-radius: 100px;
-      font-size: 1rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s;
-      display: inline-block;
-    }
-
-    .btn-black:hover { background: #222; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
-
-    .btn-outline-black {
-      background: transparent;
-      color: var(--preto);
-      padding: 1.1rem 2.4rem;
-      border-radius: 100px;
-      border: 2px solid var(--preto);
-      font-size: 1rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s;
-      display: inline-block;
-    }
-
-    .btn-outline-black:hover { background: var(--preto); color: var(--branco); transform: translateY(-2px); }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--preto);
-      color: #666;
-      text-align: center;
-      padding: 2rem 6vw;
-      font-size: 0.82rem;
-    }
-
-    footer a { color: #666; text-decoration: none; }
-    footer a:hover { color: var(--verde); }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      #hero { grid-template-columns: 1fr; padding: 7rem 5vw 4rem; }
-      #hero::before { display: none; }
-      .hero-visual { display: none; }
-      .curso-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .mentora-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .mentora-photo { max-width: 320px; margin: 0 auto; }
-      nav ul { display: none; }
-    }
-
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .hero-badge { animation: fadeUp 0.6s ease both; }
-    .hero-title { animation: fadeUp 0.6s 0.15s ease both; }
-    .hero-desc { animation: fadeUp 0.6s 0.3s ease both; }
-    .hero-actions { animation: fadeUp 0.6s 0.45s ease both; }
-    .hero-stats { animation: fadeUp 0.6s 0.6s ease both; }
-    .hero-card { animation: fadeUp 0.7s 0.3s ease both; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estudo Total · Nazli — Aprovação em concursos públicos</title>
+<meta name="description" content="Curso completo de método de estudo para concursos públicos, com a mentora Nazli.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <div class="nav-logo">Nazli<span>.</span></div>
-    <ul>
-      <li><a href="#curso">O Curso</a></li>
-      <li><a href="#mentora">A Mentora</a></li>
-      <li><a href="#comparativo">Planos</a></li>
-      <li><a href="#depoimentos">Depoimentos</a></li>
-      <li><a href="#cta" class="nav-cta">Quero participar</a></li>
-    </ul>
-  </nav>
+<!-- ===================== HEADER ===================== -->
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo" data-content="logo"><span class="g">E</span>studo <span class="g">T</span>otal</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#" data-content="nav_metodo">O método</a>
+      <a href="#mentora" data-content="nav_mentora">A mentora</a>
+      <a href="#conteudo" data-content="nav_conteudo">Conteúdo</a>
+      <a href="#depoimentos" data-content="nav_depoimentos">Depoimentos</a>
+      <a href="#faq" data-content="nav_faq">FAQ</a>
+      <!-- Link de login dentro do menu (aparece só no mobile) -->
+      <a href="https://www.nazlisetton.com.br/login" class="nav-login" target="_blank" rel="noopener" data-content="nav_login_menu">Entrar na plataforma</a>
+    </nav>
+    <div class="nav-cta">
+      <!-- Botão de login (link externo da plataforma) — troque a URL abaixo -->
+      <a href="https://www.nazlisetton.com.br/login" class="btn btn-ghost btn-login" target="_blank" rel="noopener" data-content="nav_login">Entrar</a>
+      <a href="#inscricao" class="btn btn-primary" data-content="nav_cta">Quero me inscrever</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
 
-  <!-- HERO -->
-  <section id="hero">
-    <div class="hero-content">
-      <span class="hero-badge">Inscrições abertas · Turma [Número]</span>
-      <h1 class="hero-title">
-        [Título principal<br>do curso <em>aqui</em>]
-      </h1>
-      <p class="hero-desc">
-        [Subtítulo ou proposta de valor do curso. Descreva em 2–3 frases o que o aluno vai conquistar ao final desta experiência.]
-      </p>
+<!-- ===================== HERO / CURSO ===================== -->
+<section class="hero" id="topo">
+  <div class="wrap hero-grid">
+    <div class="hero-intro" data-reveal>
+      <span class="eyebrow" data-content="hero_eyebrow">Método de estudo para concursos</span>
+      <h1 data-content="hero_title">Pare de estudar muito.<br><em>Comece a estudar certo.</em></h1>
+      <p class="lead" data-content="hero_lead">O Estudo Total é o curso que reorganiza a sua rotina de preparação para concursos públicos — do diagnóstico inicial à aprovação. Menos achismo, mais método.</p>
       <div class="hero-actions">
-        <a href="#cta" class="btn-primary">Quero a mentoria</a>
-        <a href="#comparativo" class="btn-secondary">Ver planos</a>
+        <a href="#inscricao" class="btn btn-primary" data-content="hero_btn_primary">Garantir minha vaga →</a>
+        <a href="#metodo" class="btn btn-ghost" data-content="hero_btn_ghost" id="watchVideoBtn">Assistir apresentação</a>
       </div>
-      <div class="hero-stats">
-        <div class="stat-item">
-          <div class="stat-number">+000</div>
-          <div class="stat-label">Alunos formados</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">00h</div>
-          <div class="stat-label">De conteúdo</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">00+</div>
-          <div class="stat-label">Módulos</div>
-        </div>
-      </div>
+      <!-- <div class="hero-stats">
+        <div><div class="num" data-content="hero_stat1_num">+5.000</div><div class="lbl" data-content="hero_stat1_label">alunos preparados</div></div>
+        <div><div class="num" data-content="hero_stat2_num">8</div><div class="lbl" data-content="hero_stat2_label">módulos completos</div></div>
+        <div><div class="num" data-content="hero_stat3_num">4,9★</div><div class="lbl" data-content="hero_stat3_label">avaliação média</div></div>
+      </div> -->
     </div>
-    <div class="hero-visual">
-      <div class="hero-card">
-        <span class="card-tag">✦ Mentoria + Curso</span>
-        <div class="card-title">[O que você vai aprender]</div>
-        <ul class="card-list">
-          <li>Benefício ou entrega principal 1</li>
-          <li>Benefício ou entrega principal 2</li>
-          <li>Benefício ou entrega principal 3</li>
-          <li>Benefício ou entrega principal 4</li>
-          <li>Benefício ou entrega principal 5</li>
-        </ul>
-        <div class="card-divider"></div>
-        <div class="card-price">
-          <span class="price-label">A partir de</span>
-          <span class="price-value">R$ 0.000</span>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- SOBRE O CURSO -->
-  <section id="curso">
-    <span class="section-label">O Programa</span>
-    <h2 class="section-title">Tudo que você precisa<br>para [resultado desejado]</h2>
-    <div class="curso-grid">
-      <div>
-        <p class="section-subtitle">
-          [Descrição do curso. Explique a metodologia, o público-alvo e por que este programa é diferente de outros disponíveis no mercado.]
-        </p>
+    <div class="hero-video" data-reveal>
+      <div class="video-card" id="metodo">
+        <!-- <span class="video-tag" data-content="hero_video_tag">▶ Apresentação completa do curso</span> -->
+        <div class="video-ratio">
+          <iframe
+            src="https://www.youtube.com/embed/BBNSEMkvXBE?rel=0"
+            title="Apresentação do curso Estudo Total"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MENTORA ===================== -->
+<section class="section mentor" id="mentora">
+  <div class="wrap mentor-grid">
+    <div class="mentor-photo" data-reveal>
+      <!-- A foto real fica em assets/images/nazli.jpg. Se o arquivo não existir, aparece o placeholder abaixo. -->
+      <img src="assets/images/nazli.jpg" alt="Nazli" onerror="this.style.display='none'">
+      <span class="ph" data-content="mentor_photo_placeholder">[ Foto da mentora Nazli ]</span>
+      <!-- <div class="mentor-badge" data-content="mentor_badge">Mentora <b>Nazli</b></div> -->
+    </div>
+    <div data-reveal>
+      <span class="eyebrow" data-content="mentor_eyebrow">Quem vai te guiar</span>
+      <h2 data-content="mentor_title">Conheça a Nazli</h2>
+      <div class="role" data-content="mentor_role">Mentora de concurseiros e especialista em método de estudo</div>
+      <p data-content="mentor_p1">[Texto provisório] Nazli ajuda candidatos a transformarem horas dispersas de estudo em uma rotina objetiva e mensurável. Sua abordagem une planejamento, técnicas de revisão e acompanhamento de desempenho.</p>
+      <p data-content="mentor_p2">[Texto provisório] Ao longo dos anos, desenvolveu um método próprio que prioriza diagnóstico, constância e revisão inteligente — pensado para quem concilia o estudo com trabalho e vida pessoal.</p>
+      <!-- <ul class="mentor-creds">
+        <li><span class="ck">✓</span> <span data-content="mentor_cred1">Método validado com milhares de alunos</span></li>
+        <li><span class="ck">✓</span> <span data-content="mentor_cred2">Foco em diagnóstico e plano de estudo individual</span></li>
+        <li><span class="ck">✓</span> <span data-content="mentor_cred3">Conteúdo direto, sem enrolação e aplicável desde a primeira aula</span></li>
+      </ul> -->
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTEÚDO / TABELA ===================== -->
+<section class="section modules" id="conteudo">
+  <div class="wrap">
+    <div class="modules-head-grid" data-reveal>
+      <div class="section-head">
+        <span class="eyebrow" data-content="modules_eyebrow">O que está incluso</span>
+        <h2 data-content="modules_title">Curso ou mentoria? Compare</h2>
+        <p data-content="modules_subtitle">Os módulos do Estudo Total foram pensados na ordem exata em que você precisa deles. Veja o que está incluso no curso e o que a mentoria adiciona de acompanhamento individual.</p>
+      </div>
+      <div class="modules-highlight">
+        <div class="highlight-spacer" aria-hidden="true">
+          <span class="eyebrow" data-content="modules_eyebrow">O que está incluso</span>
+          <h2 data-content="modules_title">Curso ou mentoria? Compare</h2>
+        </div>
+        <p class="highlight-lead" data-content="modules_highlight_lead">Aqui você encontrará o método estruturado em um passo a passo pronto para replicar e alcançar um desempenho de outro mundo nas provas! Preparado(a)? A sua aprovação te aguarda!</p>
         <div class="curso-features">
           <div class="feature-item">
-            <div class="feature-icon">📹</div>
+            <div class="feature-icon" aria-hidden="true">📹</div>
             <div class="feature-text">
-              <h4>Aulas gravadas</h4>
-              <p>Acesse o conteúdo no seu ritmo, de qualquer lugar e a qualquer hora.</p>
+              <h4 data-content="modules_hl1_title">Aulas gravadas</h4>
+              <p data-content="modules_hl1_desc">Acesse o conteúdo no seu ritmo, de qualquer lugar e a qualquer hora.</p>
             </div>
           </div>
           <div class="feature-item">
-            <div class="feature-icon">📄</div>
+            <div class="feature-icon" aria-hidden="true">📄</div>
             <div class="feature-text">
-              <h4>Materiais de apoio</h4>
-              <p>Planilhas, templates e recursos para aplicar o aprendizado na prática.</p>
+              <h4 data-content="modules_hl2_title">Materiais de apoio</h4>
+              <p data-content="modules_hl2_desc">Planilhas, templates e recursos para aplicar o aprendizado na prática.</p>
             </div>
           </div>
           <div class="feature-item">
-            <div class="feature-icon">🎯</div>
+            <div class="feature-icon" aria-hidden="true">🎯</div>
             <div class="feature-text">
-              <h4>Exercícios práticos</h4>
-              <p>Atividades ao final de cada módulo para fixar o conteúdo.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="modulos-list">
-          <div class="modulo-item">
-            <div class="modulo-num">01</div>
-            <div class="modulo-info">
-              <h5>Nome do Módulo 1</h5>
-              <span>0 aulas · 0h 00min</span>
-            </div>
-          </div>
-          <div class="modulo-item">
-            <div class="modulo-num">02</div>
-            <div class="modulo-info">
-              <h5>Nome do Módulo 2</h5>
-              <span>0 aulas · 0h 00min</span>
-            </div>
-          </div>
-          <div class="modulo-item">
-            <div class="modulo-num">03</div>
-            <div class="modulo-info">
-              <h5>Nome do Módulo 3</h5>
-              <span>0 aulas · 0h 00min</span>
-            </div>
-          </div>
-          <div class="modulo-item">
-            <div class="modulo-num">04</div>
-            <div class="modulo-info">
-              <h5>Nome do Módulo 4</h5>
-              <span>0 aulas · 0h 00min</span>
-            </div>
-          </div>
-          <div class="modulo-item">
-            <div class="modulo-num">05</div>
-            <div class="modulo-info">
-              <h5>Nome do Módulo 5</h5>
-              <span>0 aulas · 0h 00min</span>
-            </div>
-          </div>
-          <div class="modulo-item">
-            <div class="modulo-num">06</div>
-            <div class="modulo-info">
-              <h5>Nome do Módulo 6</h5>
-              <span>0 aulas · 0h 00min</span>
+              <h4 data-content="modules_hl3_title">Exercícios práticos</h4>
+              <p data-content="modules_hl3_desc">Atividades ao final de cada módulo para fixar o conteúdo.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- MENTORA -->
-  <section id="mentora">
-    <span class="section-label">A Mentora</span>
-    <h2 class="section-title">Conheça a Nazli</h2>
-    <div class="mentora-grid">
-      <div class="mentora-photo-wrap">
-        <div class="mentora-photo">
-          <!-- Substitua pelo caminho da foto: assets/images/nazli-foto.jpg -->
-          <div class="photo-placeholder">
-            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <circle cx="12" cy="8" r="4"/>
-              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-            </svg>
-            <span>Foto da Nazli</span>
-          </div>
-          <!-- Quando tiver a foto, remova o div.photo-placeholder acima e descomente a linha abaixo: -->
-          <!-- <img src="assets/images/nazli-foto.jpg" alt="Foto da Nazli" /> -->
+    <div data-reveal>
+      <div class="table-scroll">
+        <table class="compare">
+          <thead>
+            <tr>
+              <th data-content="th_modulo">Módulo</th>
+              <th class="center" data-content="th_curso">Curso</th>
+              <th class="center" data-content="th_mentoria">Mentoria</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="cat-row"><td colspan="3" data-content="cat1_label">Conteúdo do curso</td></tr>
+            <tr>
+              <td><div class="mod-name" data-content="mod1_name">1 · Diagnóstico inicial</div><div class="mod-desc" data-content="mod1_desc">Onde você está e onde quer chegar</div></td>
+              <td class="center"><span class="yes">✓</span></td>
+              <td class="center"><span class="yes">✓</span></td>
+            </tr>
+            <tr>
+              <td><div class="mod-name" data-content="mod2_name">2 · Planejamento de estudos</div><div class="mod-desc" data-content="mod2_desc">Montando um cronograma realista</div></td>
+              <td class="center"><span class="yes">✓</span></td>
+              <td class="center"><span class="yes">✓</span></td>
+            </tr>
+            <tr>
+              <td><div class="mod-name" data-content="mod3_name">3 · Técnicas de leitura</div><div class="mod-desc" data-content="mod3_desc">Lendo edital e materiais com eficiência</div></td>
+              <td class="center"><span class="yes">✓</span></td>
+              <td class="center"><span class="yes">✓</span></td>
+            </tr>
+            <tr>
+              <td><div class="mod-name" data-content="mod4_name">4 · Memorização e revisão</div><div class="mod-desc" data-content="mod4_desc">Revisão espaçada e flashcards</div></td>
+              <td class="center"><span class="yes">✓</span></td>
+              <td class="center"><span class="yes">✓</span></td>
+            </tr>
+            <tr>
+              <td><div class="mod-name" data-content="mod5_name">5 · Resolução de questões</div><div class="mod-desc" data-content="mod5_desc">Estratégia por banca examinadora</div></td>
+              <td class="center"><span class="yes">✓</span></td>
+              <td class="center"><span class="yes">✓</span></td>
+            </tr>
+            <tr>
+              <td><div class="mod-name" data-content="mod6_name">6 · Controle emocional</div><div class="mod-desc" data-content="mod6_desc">Ansiedade e dia da prova</div></td>
+              <td class="center"><span class="yes">✓</span></td>
+              <td class="center"><span class="yes">✓</span></td>
+            </tr>
+            <tr>
+              <td><div class="mod-name" data-content="mod7_name">7 · Acompanhamento individual</div><div class="mod-desc" data-content="mod7_desc">Métricas, ajuste de rota e feedback 1:1</div></td>
+              <td class="center"><span class="yes">✓</span></td>
+              <td class="center"><span class="yes">✓</span></td>
+            </tr>
+            <tr>
+              <td><div class="mod-name" data-content="mod8_name">8 · Encontros ao vivo</div><div class="mod-desc" data-content="mod8_desc">Sessões individuais com a Nazli</div></td>
+              <td class="center"><span class="yes">✓</span></td>
+              <td class="center"><span class="yes">✓</span></td>
+            </tr>
+            <tr>
+              <td><div class="mod-name" data-content="mod9_name">9 · Reta final</div><div class="mod-desc" data-content="mod9_desc">Simulados e revisão intensiva</div></td>
+              <td class="center"><span class="yes">✓</span></td>
+              <td class="center"><span class="yes">✓</span></td>
+            </tr>
+            <tr>
+              <td><div class="mod-name" data-content="mod10_name">10 · Reta final</div><div class="mod-desc" data-content="mod10_desc">Simulados e revisão intensiva</div></td>
+              <td class="center"><span class="yes">✓</span></td>
+              <td class="center"><span class="yes">✓</span></td>
+            </tr>
+
+            <tr class="cat-row"><td colspan="3" data-content="cat2_label">Recursos exclusivos da mentoria</td></tr>
+            <tr>
+              <td><div class="mod-name" data-content="ment1_name">Diagnóstico completo e individual</div></td>
+              <td class="center"><span class="no">✕</span></td>
+              <td class="center"><span class="yes">✓</span></td>
+            </tr>
+            <tr>
+              <td><div class="mod-name" data-content="ment2_name">Acesso individual ao WhatsApp da Nazli</div></td>
+              <td class="center"><span class="no">✕</span></td>
+              <td class="center"><span class="yes">✓</span></td>
+            </tr>
+            <tr>
+              <td><div class="mod-name" data-content="ment3_name">Acompanhamento individual com a Nazli</div></td>
+              <td class="center"><span class="no">✕</span></td>
+              <td class="center"><span class="yes">✓</span></td>
+            </tr>
+            <tr>
+              <td><div class="mod-name" data-content="ment4_name">Sessões ao vivo em grupo com a Nazli</div></td>
+              <td class="center"><span class="no">✕</span></td>
+              <td class="center"><span class="yes">✓</span></td>
+            </tr>
+
+            <tr class="cat-row"><td colspan="3" data-content="cat3_label">Suporte e acesso</td></tr>
+            <tr>
+              <td><div class="mod-name" data-content="sup1_name">Período de acesso ao curso</div></td>
+              <td class="center">12 meses</td>
+              <td class="center">12 meses</td>
+            </tr>
+            <tr>
+              <td><div class="mod-name" data-content="sup2_name">Período de acesso à mentoria</div></td>
+              <td class="center">—</td>
+              <td class="center">6 meses</td>
+            </tr>
+            <tr>
+              <td><div class="mod-name" data-content="sup3_name">Suporte no fórum de dúvidas (dúvidas sobre o método)</div></td>
+              <td class="center"><span class="yes">✓</span></td>
+              <td class="center"><span class="yes">✓</span></td>
+            </tr>
+            <tr>
+              <td><div class="mod-name" data-content="sup4_name">Suporte por WhatsApp (dúvidas sobre seu caso pessoal)</div></td>
+              <td class="center"><span class="no">✕</span></td>
+              <td class="center"><span class="yes">✓</span></td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr class="price-row">
+              <td><div class="mod-name" data-content="price_label">Investimento</div><div class="mod-desc" data-content="price_desc">Escolha como quer estudar</div></td>
+              <td class="center">
+                <div class="price" data-content="price_value">R$ 497<small>ou 12x de R$ 49</small></div>
+                <a href="#inscricao" class="btn btn-primary btn-sm" data-content="price_btn_curso">Comprar o curso</a>
+              </td>
+              <td class="center">
+                <div class="price-soon" data-content="price_mentoria_label">Vagas limitadas</div>
+                <a href="https://forms.gle/w4GXwxcodELVWpbD6" class="btn btn-outline btn-sm" target="_blank" rel="noopener" data-content="price_btn_mentoria">Entrar na lista de espera</a>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <p class="scroll-hint" data-content="scroll_hint">↔ Arraste para o lado para ver a tabela completa</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DEPOIMENTOS ===================== -->
+<section class="section testi" id="depoimentos">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow" data-content="testi_eyebrow">Depoimentos</span>
+      <h2 data-content="testi_title">O que dizem os alunos</h2>
+      <p data-content="testi_subtitle">Histórias reais de quem já passou pelo programa.</p>
+    </div>
+
+    <div class="track" id="track" data-reveal>
+      <div class="quote">
+        <svg class="qmark" viewBox="0 0 32 22" aria-hidden="true"><path d="M7 0C10.87 0 14 3.13 14 7 14 13 7 22 7 22 7 22 0 13 0 7 0 3.13 3.13 0 7 0Z"/><path d="M25 0C28.87 0 32 3.13 32 7 32 13 25 22 25 22 25 22 18 13 18 7 18 3.13 21.13 0 25 0Z"/></svg>
+        <p data-content="t1_text">[Depoimento do aluno 1. Descreva aqui a transformação, resultado ou experiência vivida durante a mentoria. Seja específico e autêntico.]</p>
+        <div class="who"><div><b data-content="t1_name">[Nome do Aluno 1]</b><span data-content="t1_role">[Profissão ou contexto, opcional]</span></div></div>
+      </div>
+      <div class="quote">
+        <svg class="qmark" viewBox="0 0 32 22" aria-hidden="true"><path d="M7 0C10.87 0 14 3.13 14 7 14 13 7 22 7 22 7 22 0 13 0 7 0 3.13 3.13 0 7 0Z"/><path d="M25 0C28.87 0 32 3.13 32 7 32 13 25 22 25 22 25 22 18 13 18 7 18 3.13 21.13 0 25 0Z"/></svg>
+        <p data-content="t2_text">[Depoimento do aluno 2. Descreva aqui a transformação, resultado ou experiência vivida durante a mentoria. Seja específico e autêntico.]</p>
+        <div class="who"><div><b data-content="t2_name">[Nome do Aluno 2]</b><span data-content="t2_role">[Profissão ou contexto, opcional]</span></div></div>
+      </div>
+      <div class="quote">
+        <svg class="qmark" viewBox="0 0 32 22" aria-hidden="true"><path d="M7 0C10.87 0 14 3.13 14 7 14 13 7 22 7 22 7 22 0 13 0 7 0 3.13 3.13 0 7 0Z"/><path d="M25 0C28.87 0 32 3.13 32 7 32 13 25 22 25 22 25 22 18 13 18 7 18 3.13 21.13 0 25 0Z"/></svg>
+        <p data-content="t3_text">[Depoimento do aluno 3. Descreva aqui a transformação, resultado ou experiência vivida durante a mentoria. Seja específico e autêntico.]</p>
+        <div class="who"><div><b data-content="t3_name">[Nome do Aluno 3]</b><span data-content="t3_role">[Profissão ou contexto, opcional]</span></div></div>
+      </div>
+      <div class="quote">
+        <svg class="qmark" viewBox="0 0 32 22" aria-hidden="true"><path d="M7 0C10.87 0 14 3.13 14 7 14 13 7 22 7 22 7 22 0 13 0 7 0 3.13 3.13 0 7 0Z"/><path d="M25 0C28.87 0 32 3.13 32 7 32 13 25 22 25 22 25 22 18 13 18 7 18 3.13 21.13 0 25 0Z"/></svg>
+        <p data-content="t4_text">[Depoimento do aluno 4. Descreva aqui a transformação, resultado ou experiência vivida durante a mentoria. Seja específico e autêntico.]</p>
+        <div class="who"><div><b data-content="t4_name">[Nome do Aluno 4]</b><span data-content="t4_role">[Profissão ou contexto, opcional]</span></div></div>
+      </div>
+      <div class="quote">
+        <svg class="qmark" viewBox="0 0 32 22" aria-hidden="true"><path d="M7 0C10.87 0 14 3.13 14 7 14 13 7 22 7 22 7 22 0 13 0 7 0 3.13 3.13 0 7 0Z"/><path d="M25 0C28.87 0 32 3.13 32 7 32 13 25 22 25 22 25 22 18 13 18 7 18 3.13 21.13 0 25 0Z"/></svg>
+        <p data-content="t5_text">[Depoimento do aluno 5. Descreva aqui a transformação, resultado ou experiência vivida durante a mentoria. Seja específico e autêntico.]</p>
+        <div class="who"><div><b data-content="t5_name">[Nome do Aluno 5]</b><span data-content="t5_role">[Profissão ou contexto, opcional]</span></div></div>
+      </div>
+      <div class="quote">
+        <svg class="qmark" viewBox="0 0 32 22" aria-hidden="true"><path d="M7 0C10.87 0 14 3.13 14 7 14 13 7 22 7 22 7 22 0 13 0 7 0 3.13 3.13 0 7 0Z"/><path d="M25 0C28.87 0 32 3.13 32 7 32 13 25 22 25 22 25 22 18 13 18 7 18 3.13 21.13 0 25 0Z"/></svg>
+        <p data-content="t6_text">[Depoimento do aluno 6. Descreva aqui a transformação, resultado ou experiência vivida durante a mentoria. Seja específico e autêntico.]</p>
+        <div class="who"><div><b data-content="t6_name">[Nome do Aluno 6]</b><span data-content="t6_role">[Profissão ou contexto, opcional]</span></div></div>
+      </div>
+      <div class="quote">
+        <svg class="qmark" viewBox="0 0 32 22" aria-hidden="true"><path d="M7 0C10.87 0 14 3.13 14 7 14 13 7 22 7 22 7 22 0 13 0 7 0 3.13 3.13 0 7 0Z"/><path d="M25 0C28.87 0 32 3.13 32 7 32 13 25 22 25 22 25 22 18 13 18 7 18 3.13 21.13 0 25 0Z"/></svg>
+        <p data-content="t7_text">[Depoimento do aluno 7. Descreva aqui a transformação, resultado ou experiência vivida durante a mentoria. Seja específico e autêntico.]</p>
+        <div class="who"><div><b data-content="t7_name">[Nome do Aluno 7]</b><span data-content="t7_role">[Profissão ou contexto, opcional]</span></div></div>
+      </div>
+      <div class="quote">
+        <svg class="qmark" viewBox="0 0 32 22" aria-hidden="true"><path d="M7 0C10.87 0 14 3.13 14 7 14 13 7 22 7 22 7 22 0 13 0 7 0 3.13 3.13 0 7 0Z"/><path d="M25 0C28.87 0 32 3.13 32 7 32 13 25 22 25 22 25 22 18 13 18 7 18 3.13 21.13 0 25 0Z"/></svg>
+        <p data-content="t8_text">[Depoimento do aluno 8. Descreva aqui a transformação, resultado ou experiência vivida durante a mentoria. Seja específico e autêntico.]</p>
+        <div class="who"><div><b data-content="t8_name">[Nome do Aluno 8]</b><span data-content="t8_role">[Profissão ou contexto, opcional]</span></div></div>
+      </div>
+      <div class="quote">
+        <svg class="qmark" viewBox="0 0 32 22" aria-hidden="true"><path d="M7 0C10.87 0 14 3.13 14 7 14 13 7 22 7 22 7 22 0 13 0 7 0 3.13 3.13 0 7 0Z"/><path d="M25 0C28.87 0 32 3.13 32 7 32 13 25 22 25 22 25 22 18 13 18 7 18 3.13 21.13 0 25 0Z"/></svg>
+        <p data-content="t9_text">[Depoimento do aluno 9. Descreva aqui a transformação, resultado ou experiência vivida durante a mentoria. Seja específico e autêntico.]</p>
+        <div class="who"><div><b data-content="t9_name">[Nome do Aluno 9]</b><span data-content="t9_role">[Profissão ou contexto, opcional]</span></div></div>
+      </div>
+      <div class="quote">
+        <svg class="qmark" viewBox="0 0 32 22" aria-hidden="true"><path d="M7 0C10.87 0 14 3.13 14 7 14 13 7 22 7 22 7 22 0 13 0 7 0 3.13 3.13 0 7 0Z"/><path d="M25 0C28.87 0 32 3.13 32 7 32 13 25 22 25 22 25 22 18 13 18 7 18 3.13 21.13 0 25 0Z"/></svg>
+        <p data-content="t10_text">[Depoimento do aluno 10. Descreva aqui a transformação, resultado ou experiência vivida durante a mentoria. Seja específico e autêntico.]</p>
+        <div class="who"><div><b data-content="t10_name">[Nome do Aluno 10]</b><span data-content="t10_role">[Profissão ou contexto, opcional]</span></div></div>
+      </div>
+      <div class="quote">
+        <svg class="qmark" viewBox="0 0 32 22" aria-hidden="true"><path d="M7 0C10.87 0 14 3.13 14 7 14 13 7 22 7 22 7 22 0 13 0 7 0 3.13 3.13 0 7 0Z"/><path d="M25 0C28.87 0 32 3.13 32 7 32 13 25 22 25 22 25 22 18 13 18 7 18 3.13 21.13 0 25 0Z"/></svg>
+        <p data-content="t11_text">[Depoimento do aluno 11. Descreva aqui a transformação, resultado ou experiência vivida durante a mentoria. Seja específico e autêntico.]</p>
+        <div class="who"><div><b data-content="t11_name">[Nome do Aluno 11]</b><span data-content="t11_role">[Profissão ou contexto, opcional]</span></div></div>
+      </div>
+      <div class="quote">
+        <svg class="qmark" viewBox="0 0 32 22" aria-hidden="true"><path d="M7 0C10.87 0 14 3.13 14 7 14 13 7 22 7 22 7 22 0 13 0 7 0 3.13 3.13 0 7 0Z"/><path d="M25 0C28.87 0 32 3.13 32 7 32 13 25 22 25 22 25 22 18 13 18 7 18 3.13 21.13 0 25 0Z"/></svg>
+        <p data-content="t12_text">[Depoimento do aluno 12. Descreva aqui a transformação, resultado ou experiência vivida durante a mentoria. Seja específico e autêntico.]</p>
+        <div class="who"><div><b data-content="t12_name">[Nome do Aluno 12]</b><span data-content="t12_role">[Profissão ou contexto, opcional]</span></div></div>
+      </div>
+    </div>
+
+    <div class="carousel-controls" data-reveal>
+      <button id="prevBtn" aria-label="Anterior">‹</button>
+      <div class="dots" id="dots"></div>
+      <button id="nextBtn" aria-label="Próximo">›</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="section faq" id="faq">
+  <div class="wrap">
+    <div class="section-head" style="margin:0 auto 48px;text-align:center" data-reveal>
+      <span class="eyebrow" style="justify-content:center" data-content="faq_eyebrow">Tire suas dúvidas</span>
+      <h2 data-content="faq_title">Perguntas frequentes</h2>
+    </div>
+    <div class="faq-list" data-reveal>
+      <details class="faq-item" open>
+        <summary><span data-content="faq1_q">Para quem é o curso Estudo Total?</span> <span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary>
+        <div class="ans" data-content="faq1_a">[Resposta provisória] Para qualquer pessoa que esteja estudando para concursos públicos, do iniciante absoluto a quem já estuda mas não vê resultado.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span data-content="faq2_q">Por quanto tempo terei acesso?</span> <span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary>
+        <div class="ans" data-content="faq2_a">[Resposta provisória] O acesso é liberado por [período a definir] após a inscrição, incluindo todas as atualizações do conteúdo.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span data-content="faq3_q">O curso serve para qualquer concurso?</span> <span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary>
+        <div class="ans" data-content="faq3_a">[Resposta provisória] Sim. O método é sobre como estudar, então se aplica a qualquer banca e qualquer área de concurso.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span data-content="faq4_q">Preciso de conhecimento prévio?</span> <span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary>
+        <div class="ans" data-content="faq4_a">[Resposta provisória] Não. Começamos pelo diagnóstico e pelo planejamento, do zero.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span data-content="faq5_q">Como funciona a garantia?</span> <span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary>
+        <div class="ans" data-content="faq5_a">[Resposta provisória] Você tem [X] dias para testar o curso. Se não gostar, devolvemos o valor integral.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span data-content="faq6_q">Como funciona a garantia?</span> <span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary>
+        <div class="ans" data-content="faq6_a">[Resposta provisória] Você tem [X] dias para testar o curso. Se não gostar, devolvemos o valor integral.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span data-content="faq7_q">Como funciona a garantia?</span> <span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary>
+        <div class="ans" data-content="faq7_a">[Resposta provisória] Você tem [X] dias para testar o curso. Se não gostar, devolvemos o valor integral.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span data-content="faq8_q">Como funciona a garantia?</span> <span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary>
+        <div class="ans" data-content="faq8_a">[Resposta provisória] Você tem [X] dias para testar o curso. Se não gostar, devolvemos o valor integral.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span data-content="faq9_q">Como funciona a garantia?</span> <span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary>
+        <div class="ans" data-content="faq9_a">[Resposta provisória] Você tem [X] dias para testar o curso. Se não gostar, devolvemos o valor integral.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span data-content="faq10_q">Como funciona a garantia?</span> <span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary>
+        <div class="ans" data-content="faq10_a">[Resposta provisória] Você tem [X] dias para testar o curso. Se não gostar, devolvemos o valor integral.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA FINAL ===================== -->
+<section class="section cta-final" id="inscricao">
+  <div class="wrap" data-reveal>
+    <span class="eyebrow" style="justify-content:center" data-content="cta_eyebrow">Sua vaga está esperando</span>
+    <h2 style="margin-top:16px" data-content="cta_title">Comece hoje a estudar com método</h2>
+    <p data-content="cta_text">Junte-se aos alunos que pararam de adivinhar e passaram a estudar de forma estratégica.</p>
+    <div class="cta-actions">
+      <a href="https://pay.hotmart.com/R105136958K" class="btn btn-dark" target="_blank" rel="noopener" data-content="cta_btn">Quero me inscrever no Estudo Total →</a>
+      <a href="https://forms.gle/w4GXwxcodELVWpbD6" class="btn btn-outline" target="_blank" rel="noopener" data-content="cta_btn2">Entrar na lista de espera da mentoria</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div style="max-width:300px">
+        <div class="logo" data-content="logo"><span class="g">E</span>studo <span class="g">T</span>otal</div>
+        <p style="font-size:.92rem" data-content="footer_tagline">O método de estudo para concursos públicos, com a mentora Nazli.</p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h4 data-content="footer_nav_title">Navegação</h4>
+          <a href="#" data-content="footer_nav_metodo">O método</a>
+          <a href="#mentora" data-content="footer_nav_mentora">A mentora</a>
+          <a href="#conteudo" data-content="footer_nav_conteudo">Conteúdo</a>
+          <a href="#depoimentos" data-content="footer_nav_depoimentos">Depoimentos</a>
+          <a href="#faq" data-content="footer_nav_faq">FAQ</a>
         </div>
-        <div class="mentora-accent"></div>
-      </div>
-      <div class="mentora-content">
-        <p class="mentora-quote">
-          "[Frase marcante ou slogan da Nazli que resume sua filosofia ou abordagem de ensino.]"
-        </p>
-        <p class="mentora-bio">
-          [Parágrafo 1: Apresentação da Nazli — quem ela é, sua área de atuação e o que a torna referência no assunto.]
-        </p>
-        <p class="mentora-bio">
-          [Parágrafo 2: Resultados concretos, experiência acumulada, projetos relevantes ou reconhecimentos que ela conquistou ao longo da carreira.]
-        </p>
-        <div class="mentora-badges">
-          <span class="badge badge-green">✦ [Credencial 1]</span>
-          <span class="badge">[Credencial 2]</span>
-          <span class="badge">[Credencial 3]</span>
-          <span class="badge">[Credencial 4]</span>
-          <span class="badge">[Experiência em anos]</span>
+        <div class="foot-col">
+          <h4 data-content="footer_contact_title">Contato</h4>
+          <a href="https://www.instagram.com/nazlisetton/" target="_blank" rel="noopener" data-content="footer_contact_1">Instagram</a>
+          <a href="https://www.youtube.com/@nazlisetton" target="_blank" rel="noopener" data-content="footer_contact_2">YouTube</a>
+          <a href="https://nazlisetton-newsletter.beehiiv.com/" target="_blank" rel="noopener" data-content="footer_contact_3">Newsletter</a>
+          <a href="#" data-content="footer_contact_4">E-mail</a>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- COMPARATIVO -->
-  <section id="comparativo">
-    <span class="section-label">Planos</span>
-    <h2 class="section-title">Escolha o seu caminho</h2>
-    <p class="section-subtitle">
-      Compare os planos e escolha o que melhor se encaixa na sua jornada de aprendizado.
-    </p>
-
-    <div class="comparativo-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th class="col-feature" style="width:45%">O que está incluso</th>
-            <th class="col-course" style="width:27.5%">
-              <span class="col-header-name">Somente o Curso</span>
-              Acesso ao conteúdo
-            </th>
-            <th class="col-mentoria" style="width:27.5%">
-              <span class="col-header-name">Curso + Mentoria</span>
-              Experiência completa
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Categoria -->
-          <tr class="cat-row">
-            <td colspan="3">Conteúdo do Curso</td>
-          </tr>
-          <tr>
-            <td class="td-feature">Acesso às aulas gravadas<small>Todos os módulos do programa</small></td>
-            <td class="td-course"><span class="check check-yes">✓</span></td>
-            <td class="td-mentoria"><span class="check check-yes">✓</span></td>
-          </tr>
-          <tr>
-            <td class="td-feature">Materiais de apoio e templates<small>Planilhas, PDFs e recursos práticos</small></td>
-            <td class="td-course"><span class="check check-yes">✓</span></td>
-            <td class="td-mentoria"><span class="check check-yes">✓</span></td>
-          </tr>
-          <tr>
-            <td class="td-feature">Acesso à comunidade de alunos<small>Grupo exclusivo para troca entre pares</small></td>
-            <td class="td-course"><span class="check check-yes">✓</span></td>
-            <td class="td-mentoria"><span class="check check-yes">✓</span></td>
-          </tr>
-          <tr>
-            <td class="td-feature">Certificado de conclusão</td>
-            <td class="td-course"><span class="check check-yes">✓</span></td>
-            <td class="td-mentoria"><span class="check check-yes">✓</span></td>
-          </tr>
-          <tr>
-            <td class="td-feature">[Bônus incluso no curso]<small>Descrição breve do bônus</small></td>
-            <td class="td-course"><span class="check check-yes">✓</span></td>
-            <td class="td-mentoria"><span class="check check-yes">✓</span></td>
-          </tr>
-
-          <!-- Categoria -->
-          <tr class="cat-row">
-            <td colspan="3">Mentoria Exclusiva</td>
-          </tr>
-          <tr>
-            <td class="td-feature">Sessões ao vivo com a Nazli<small>[Periodicidade] · [Duração] cada</small></td>
-            <td class="td-course"><span class="check check-no">✕</span></td>
-            <td class="td-mentoria"><span class="check check-yes">✓</span></td>
-          </tr>
-          <tr>
-            <td class="td-feature">Feedback personalizado<small>Revisão dos seus projetos e entregas</small></td>
-            <td class="td-course"><span class="check check-no">✕</span></td>
-            <td class="td-mentoria"><span class="check check-yes">✓</span></td>
-          </tr>
-          <tr>
-            <td class="td-feature">Acesso direto à mentora<small>Canal exclusivo para dúvidas</small></td>
-            <td class="td-course"><span class="check check-no">✕</span></td>
-            <td class="td-mentoria"><span class="check check-yes">✓</span></td>
-          </tr>
-          <tr>
-            <td class="td-feature">[Benefício exclusivo da mentoria 1]<small>Descrição breve</small></td>
-            <td class="td-course"><span class="check check-no">✕</span></td>
-            <td class="td-mentoria"><span class="check check-yes">✓</span></td>
-          </tr>
-          <tr>
-            <td class="td-feature">[Benefício exclusivo da mentoria 2]<small>Descrição breve</small></td>
-            <td class="td-course"><span class="check check-no">✕</span></td>
-            <td class="td-mentoria"><span class="check check-yes">✓</span></td>
-          </tr>
-
-          <!-- Categoria -->
-          <tr class="cat-row">
-            <td colspan="3">Suporte & Acesso</td>
-          </tr>
-          <tr>
-            <td class="td-feature">Período de acesso ao curso<small>Após a compra</small></td>
-            <td class="td-course">0 meses</td>
-            <td class="td-mentoria"><strong>Vitalício</strong></td>
-          </tr>
-          <tr>
-            <td class="td-feature">Suporte por e-mail / chat<small>Tempo de resposta</small></td>
-            <td class="td-course">[Prazo]</td>
-            <td class="td-mentoria"><strong>[Prazo prioritário]</strong></td>
-          </tr>
-          <tr>
-            <td class="td-feature">Atualizações futuras do conteúdo</td>
-            <td class="td-course"><span class="check check-no">✕</span></td>
-            <td class="td-mentoria"><span class="check check-yes">✓</span></td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td></td>
-            <td class="td-course" style="text-align:center; border-radius:0 0 12px 12px;">
-              <span class="tfoot-price-label">Investimento</span>
-              <span class="tfoot-price" style="color:var(--preto)">R$ 0.000</span>
-              <br>
-              <a href="#" class="tfoot-btn tfoot-btn-light">Quero só o curso</a>
-            </td>
-            <td class="td-mentoria" style="text-align:center; border-radius:0 0 12px 12px;">
-              <span class="tfoot-price-label" style="color:#666;">Investimento</span>
-              <span class="tfoot-price">R$ 0.000</span>
-              <br>
-              <a href="#" class="tfoot-btn tfoot-btn-dark">Quero a mentoria</a>
-            </td>
-          </tr>
-        </tfoot>
-      </table>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> <span data-content="footer_copy">Estudo Total · Nazli. Todos os direitos reservados.</span></span>
+      <span data-content="footer_made">Feito com método.</span>
     </div>
-  </section>
+  </div>
+</footer>
 
-  <!-- DEPOIMENTOS -->
-  <section id="depoimentos">
-    <span class="section-label">Depoimentos</span>
-    <h2 class="section-title">O que dizem os alunos</h2>
-    <p class="section-subtitle">
-      Histórias reais de quem já passou pelo programa.
-    </p>
-
-    <div class="carousel-outer">
-      <div class="carousel-track-wrap">
-        <div class="carousel-track" id="carouselTrack">
-
-          <div class="depoimento-card">
-            <div>
-              <div class="depo-aspas">"</div>
-              <p class="depo-texto">[Depoimento do aluno 1. Descreva aqui a transformação, resultado ou experiência vivida durante a mentoria. Seja específico e autêntico.]</p>
-            </div>
-            <div class="depo-autor">
-              <div class="depo-avatar">A</div>
-              <div>
-                <div class="depo-nome">[Nome do Aluno 1]</div>
-                <div class="depo-label">[Profissão ou contexto, opcional]</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="depoimento-card">
-            <div>
-              <div class="depo-aspas">"</div>
-              <p class="depo-texto">[Depoimento do aluno 2. Descreva aqui a transformação, resultado ou experiência vivida durante a mentoria. Seja específico e autêntico.]</p>
-            </div>
-            <div class="depo-autor">
-              <div class="depo-avatar">B</div>
-              <div>
-                <div class="depo-nome">[Nome do Aluno 2]</div>
-                <div class="depo-label">[Profissão ou contexto, opcional]</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="depoimento-card">
-            <div>
-              <div class="depo-aspas">"</div>
-              <p class="depo-texto">[Depoimento do aluno 3. Descreva aqui a transformação, resultado ou experiência vivida durante a mentoria. Seja específico e autêntico.]</p>
-            </div>
-            <div class="depo-autor">
-              <div class="depo-avatar">C</div>
-              <div>
-                <div class="depo-nome">[Nome do Aluno 3]</div>
-                <div class="depo-label">[Profissão ou contexto, opcional]</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="depoimento-card">
-            <div>
-              <div class="depo-aspas">"</div>
-              <p class="depo-texto">[Depoimento do aluno 4. Descreva aqui a transformação, resultado ou experiência vivida durante a mentoria. Seja específico e autêntico.]</p>
-            </div>
-            <div class="depo-autor">
-              <div class="depo-avatar">D</div>
-              <div>
-                <div class="depo-nome">[Nome do Aluno 4]</div>
-                <div class="depo-label">[Profissão ou contexto, opcional]</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="depoimento-card">
-            <div>
-              <div class="depo-aspas">"</div>
-              <p class="depo-texto">[Depoimento do aluno 5. Descreva aqui a transformação, resultado ou experiência vivida durante a mentoria. Seja específico e autêntico.]</p>
-            </div>
-            <div class="depo-autor">
-              <div class="depo-avatar">E</div>
-              <div>
-                <div class="depo-nome">[Nome do Aluno 5]</div>
-                <div class="depo-label">[Profissão ou contexto, opcional]</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="depoimento-card">
-            <div>
-              <div class="depo-aspas">"</div>
-              <p class="depo-texto">[Depoimento do aluno 6. Descreva aqui a transformação, resultado ou experiência vivida durante a mentoria. Seja específico e autêntico.]</p>
-            </div>
-            <div class="depo-autor">
-              <div class="depo-avatar">F</div>
-              <div>
-                <div class="depo-nome">[Nome do Aluno 6]</div>
-                <div class="depo-label">[Profissão ou contexto, opcional]</div>
-              </div>
-            </div>
-          </div>
-
-        </div><!-- /carousel-track -->
-      </div><!-- /carousel-track-wrap -->
-
-      <div class="carousel-controls">
-        <button class="carousel-btn" id="btnPrev" aria-label="Anterior">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-        </button>
-        <div class="carousel-dots" id="carouselDots"></div>
-        <button class="carousel-btn" id="btnNext" aria-label="Próximo">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-        </button>
-      </div>
+<div class="video-modal" id="videoModal" aria-hidden="true">
+  <div class="video-modal-backdrop" data-modal-close></div>
+  <div class="video-modal-dialog" role="dialog" aria-modal="true" aria-label="Apresentação do curso Estudo Total">
+    <button class="video-modal-close" data-modal-close aria-label="Fechar vídeo">✕</button>
+    <div class="video-ratio">
+      <iframe
+        title="Apresentação do curso Estudo Total"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
     </div>
-  </section>
+  </div>
+</div>
 
-  <!-- CTA FINAL -->
-  <section id="cta">
-    <span class="section-label">Vagas limitadas</span>
-    <h2 class="section-title">Pronta para dar<br>o próximo passo?</h2>
-    <p class="section-subtitle">
-      [Chamada final motivadora. Reforce o valor da transformação e crie urgência sem artificialismo.]
-    </p>
-    <div class="cta-buttons">
-      <a href="#" class="btn-black">Quero a mentoria completa</a>
-      <a href="#" class="btn-outline-black">Somente o curso</a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Nazli · Todos os direitos reservados · <a href="#">Política de privacidade</a> · <a href="#">Termos de uso</a></p>
-  </footer>
-
-  <script>
-    // ── CARROSSEL DE DEPOIMENTOS ──
-    (function () {
-      const track = document.getElementById('carouselTrack');
-      const dotsContainer = document.getElementById('carouselDots');
-      const btnPrev = document.getElementById('btnPrev');
-      const btnNext = document.getElementById('btnNext');
-      const cards = Array.from(track.children);
-
-      let current = 0;
-      let perView = getPerView();
-
-      function getPerView() {
-        return window.innerWidth <= 900 ? 1 : 3;
-      }
-
-      const total = cards.length;
-      const maxIndex = Math.max(0, total - perView);
-
-      // cria dots
-      function buildDots() {
-        dotsContainer.innerHTML = '';
-        const dotCount = maxIndex + 1;
-        for (let i = 0; i <= maxIndex; i++) {
-          const d = document.createElement('button');
-          d.className = 'carousel-dot' + (i === current ? ' active' : '');
-          d.setAttribute('aria-label', 'Ir para depoimento ' + (i + 1));
-          d.addEventListener('click', () => goTo(i));
-          dotsContainer.appendChild(d);
-        }
-      }
-
-      function updateDots() {
-        Array.from(dotsContainer.children).forEach((d, i) => {
-          d.classList.toggle('active', i === current);
-        });
-      }
-
-      function goTo(index) {
-        current = Math.max(0, Math.min(index, maxIndex));
-        // gap de 1.5rem = 24px; pega a largura real do card
-        const gap = parseFloat(getComputedStyle(track).gap) || 24;
-        const cardWidth = cards[0].getBoundingClientRect().width + gap;
-        track.style.transform = `translateX(-${current * cardWidth}px)`;
-        updateDots();
-      }
-
-      btnPrev.addEventListener('click', () => goTo(current - 1));
-      btnNext.addEventListener('click', () => goTo(current + 1));
-
-      // swipe touch
-      let startX = 0;
-      track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
-      track.addEventListener('touchend', e => {
-        const diff = startX - e.changedTouches[0].clientX;
-        if (Math.abs(diff) > 50) goTo(diff > 0 ? current + 1 : current - 1);
-      });
-
-      // responsive
-      window.addEventListener('resize', () => {
-        const newPer = getPerView();
-        if (newPer !== perView) {
-          perView = newPer;
-          current = 0;
-          buildDots();
-          goTo(0);
-        }
-      });
-
-      buildDots();
-      goTo(0);
-    })();
-  </script>
+<script src="content.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
