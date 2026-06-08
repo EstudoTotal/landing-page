@@ -461,6 +461,14 @@
       position: relative;
     }
 
+    .mentora-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+      display: block;
+    }
+
     .photo-placeholder {
       width: 100%;
       height: 100%;
@@ -696,6 +704,157 @@
       color: #999;
     }
 
+    /* ── DEPOIMENTOS ── */
+    #depoimentos {
+      background: var(--cinza);
+      overflow: hidden;
+    }
+
+    .carousel-outer {
+      position: relative;
+      margin-top: 3.5rem;
+    }
+
+    .carousel-track-wrap {
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: 1.5rem;
+      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      will-change: transform;
+    }
+
+    .depoimento-card {
+      background: var(--branco);
+      border-radius: 20px;
+      padding: 2.2rem 2rem;
+      /* 3 cards visíveis: (100% - 2 gaps de 1.5rem) / 3 */
+      width: calc((100% - 3rem) / 3);
+      min-width: calc((100% - 3rem) / 3);
+      flex-shrink: 0;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.5rem;
+      border: 1px solid rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .depoimento-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.08);
+    }
+
+    .depo-aspas {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      line-height: 1;
+      color: var(--verde);
+      margin-bottom: -0.5rem;
+    }
+
+    .depo-texto {
+      font-size: 0.97rem;
+      line-height: 1.75;
+      color: #444;
+      flex: 1;
+    }
+
+    .depo-autor {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--cinza);
+    }
+
+    .depo-avatar {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: var(--verde);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--preto);
+      flex-shrink: 0;
+    }
+
+    .depo-nome {
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--preto);
+    }
+
+    .depo-label {
+      font-size: 0.78rem;
+      color: #999;
+      margin-top: 0.1rem;
+    }
+
+    /* controles */
+    .carousel-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    .carousel-btn {
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      border: 2px solid var(--preto);
+      background: transparent;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      color: var(--preto);
+    }
+
+    .carousel-btn:hover {
+      background: var(--preto);
+      color: var(--branco);
+    }
+
+    .carousel-btn svg { width: 18px; height: 18px; stroke: currentColor; }
+
+    .carousel-dots {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .carousel-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #ccc;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s;
+      padding: 0;
+    }
+
+    .carousel-dot.active {
+      background: var(--preto);
+      width: 24px;
+      border-radius: 100px;
+    }
+
+    @media (max-width: 900px) {
+      .depoimento-card {
+        width: 100%;
+        min-width: 100%;
+      }
+    }
+
     /* ── CTA FINAL ── */
     #cta {
       background: var(--verde);
@@ -790,6 +949,7 @@
       <li><a href="#curso">O Curso</a></li>
       <li><a href="#mentora">A Mentora</a></li>
       <li><a href="#comparativo">Planos</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
       <li><a href="#cta" class="nav-cta">Quero participar</a></li>
     </ul>
   </nav>
@@ -932,6 +1092,7 @@
     <div class="mentora-grid">
       <div class="mentora-photo-wrap">
         <div class="mentora-photo">
+          <!-- Substitua pelo caminho da foto: assets/images/nazli-foto.jpg -->
           <div class="photo-placeholder">
             <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <circle cx="12" cy="8" r="4"/>
@@ -939,6 +1100,8 @@
             </svg>
             <span>Foto da Nazli</span>
           </div>
+          <!-- Quando tiver a foto, remova o div.photo-placeholder acima e descomente a linha abaixo: -->
+          <!-- <img src="assets/images/nazli-foto.jpg" alt="Foto da Nazli" /> -->
         </div>
         <div class="mentora-accent"></div>
       </div>
@@ -1088,6 +1251,117 @@
     </div>
   </section>
 
+  <!-- DEPOIMENTOS -->
+  <section id="depoimentos">
+    <span class="section-label">Depoimentos</span>
+    <h2 class="section-title">O que dizem os alunos</h2>
+    <p class="section-subtitle">
+      Histórias reais de quem já passou pelo programa.
+    </p>
+
+    <div class="carousel-outer">
+      <div class="carousel-track-wrap">
+        <div class="carousel-track" id="carouselTrack">
+
+          <div class="depoimento-card">
+            <div>
+              <div class="depo-aspas">"</div>
+              <p class="depo-texto">[Depoimento do aluno 1. Descreva aqui a transformação, resultado ou experiência vivida durante a mentoria. Seja específico e autêntico.]</p>
+            </div>
+            <div class="depo-autor">
+              <div class="depo-avatar">A</div>
+              <div>
+                <div class="depo-nome">[Nome do Aluno 1]</div>
+                <div class="depo-label">[Profissão ou contexto, opcional]</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="depoimento-card">
+            <div>
+              <div class="depo-aspas">"</div>
+              <p class="depo-texto">[Depoimento do aluno 2. Descreva aqui a transformação, resultado ou experiência vivida durante a mentoria. Seja específico e autêntico.]</p>
+            </div>
+            <div class="depo-autor">
+              <div class="depo-avatar">B</div>
+              <div>
+                <div class="depo-nome">[Nome do Aluno 2]</div>
+                <div class="depo-label">[Profissão ou contexto, opcional]</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="depoimento-card">
+            <div>
+              <div class="depo-aspas">"</div>
+              <p class="depo-texto">[Depoimento do aluno 3. Descreva aqui a transformação, resultado ou experiência vivida durante a mentoria. Seja específico e autêntico.]</p>
+            </div>
+            <div class="depo-autor">
+              <div class="depo-avatar">C</div>
+              <div>
+                <div class="depo-nome">[Nome do Aluno 3]</div>
+                <div class="depo-label">[Profissão ou contexto, opcional]</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="depoimento-card">
+            <div>
+              <div class="depo-aspas">"</div>
+              <p class="depo-texto">[Depoimento do aluno 4. Descreva aqui a transformação, resultado ou experiência vivida durante a mentoria. Seja específico e autêntico.]</p>
+            </div>
+            <div class="depo-autor">
+              <div class="depo-avatar">D</div>
+              <div>
+                <div class="depo-nome">[Nome do Aluno 4]</div>
+                <div class="depo-label">[Profissão ou contexto, opcional]</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="depoimento-card">
+            <div>
+              <div class="depo-aspas">"</div>
+              <p class="depo-texto">[Depoimento do aluno 5. Descreva aqui a transformação, resultado ou experiência vivida durante a mentoria. Seja específico e autêntico.]</p>
+            </div>
+            <div class="depo-autor">
+              <div class="depo-avatar">E</div>
+              <div>
+                <div class="depo-nome">[Nome do Aluno 5]</div>
+                <div class="depo-label">[Profissão ou contexto, opcional]</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="depoimento-card">
+            <div>
+              <div class="depo-aspas">"</div>
+              <p class="depo-texto">[Depoimento do aluno 6. Descreva aqui a transformação, resultado ou experiência vivida durante a mentoria. Seja específico e autêntico.]</p>
+            </div>
+            <div class="depo-autor">
+              <div class="depo-avatar">F</div>
+              <div>
+                <div class="depo-nome">[Nome do Aluno 6]</div>
+                <div class="depo-label">[Profissão ou contexto, opcional]</div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /carousel-track -->
+      </div><!-- /carousel-track-wrap -->
+
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="btnPrev" aria-label="Anterior">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="carousel-dots" id="carouselDots"></div>
+        <button class="carousel-btn" id="btnNext" aria-label="Próximo">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA FINAL -->
   <section id="cta">
     <span class="section-label">Vagas limitadas</span>
@@ -1106,5 +1380,78 @@
     <p>© 2025 Nazli · Todos os direitos reservados · <a href="#">Política de privacidade</a> · <a href="#">Termos de uso</a></p>
   </footer>
 
+  <script>
+    // ── CARROSSEL DE DEPOIMENTOS ──
+    (function () {
+      const track = document.getElementById('carouselTrack');
+      const dotsContainer = document.getElementById('carouselDots');
+      const btnPrev = document.getElementById('btnPrev');
+      const btnNext = document.getElementById('btnNext');
+      const cards = Array.from(track.children);
+
+      let current = 0;
+      let perView = getPerView();
+
+      function getPerView() {
+        return window.innerWidth <= 900 ? 1 : 3;
+      }
+
+      const total = cards.length;
+      const maxIndex = Math.max(0, total - perView);
+
+      // cria dots
+      function buildDots() {
+        dotsContainer.innerHTML = '';
+        const dotCount = maxIndex + 1;
+        for (let i = 0; i <= maxIndex; i++) {
+          const d = document.createElement('button');
+          d.className = 'carousel-dot' + (i === current ? ' active' : '');
+          d.setAttribute('aria-label', 'Ir para depoimento ' + (i + 1));
+          d.addEventListener('click', () => goTo(i));
+          dotsContainer.appendChild(d);
+        }
+      }
+
+      function updateDots() {
+        Array.from(dotsContainer.children).forEach((d, i) => {
+          d.classList.toggle('active', i === current);
+        });
+      }
+
+      function goTo(index) {
+        current = Math.max(0, Math.min(index, maxIndex));
+        // gap de 1.5rem = 24px; pega a largura real do card
+        const gap = parseFloat(getComputedStyle(track).gap) || 24;
+        const cardWidth = cards[0].getBoundingClientRect().width + gap;
+        track.style.transform = `translateX(-${current * cardWidth}px)`;
+        updateDots();
+      }
+
+      btnPrev.addEventListener('click', () => goTo(current - 1));
+      btnNext.addEventListener('click', () => goTo(current + 1));
+
+      // swipe touch
+      let startX = 0;
+      track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend', e => {
+        const diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 50) goTo(diff > 0 ? current + 1 : current - 1);
+      });
+
+      // responsive
+      window.addEventListener('resize', () => {
+        const newPer = getPerView();
+        if (newPer !== perView) {
+          perView = newPer;
+          current = 0;
+          buildDots();
+          goTo(0);
+        }
+      });
+
+      buildDots();
+      goTo(0);
+    })();
+  </script>
 </body>
 </html>
