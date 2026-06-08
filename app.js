@@ -6,6 +6,10 @@
     });
   }
 
+  // some o placeholder se a foto da mentora não existir
+  const mentorPhoto = document.getElementById('mentorPhoto');
+  if (mentorPhoto) mentorPhoto.addEventListener('error', () => { mentorPhoto.style.display = 'none'; });
+
   // ano dinâmico
   document.getElementById('year').textContent = new Date().getFullYear();
 
