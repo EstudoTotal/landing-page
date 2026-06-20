@@ -16,7 +16,7 @@
 <meta property="og:image" content="https://et.nazlisetton.com.br/assets/images/estudototal_landscape.png">
 <meta property="og:locale" content="pt_BR">
 
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.youtube.com; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://i.ytimg.com; frame-src https://www.youtube.com; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,14 +72,15 @@
     </div>
 
     <div class="hero-video" data-reveal>
-      <div class="video-card" id="metodo">
+      <div class="video-card" id="metodo" data-embed-src="https://www.youtube.com/embed/-ywjjqygiGk?rel=0">
         <!-- <span class="video-tag" data-content="hero_video_tag">▶ Apresentação do Estudo Total</span> -->
         <div class="video-ratio">
-          <iframe
-            src="https://www.youtube.com/embed/-ywjjqygiGk?rel=0"
-            title="Apresentação do Estudo Total"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
+          <button type="button" class="video-facade" id="heroVideoFacade" aria-label="Reproduzir vídeo: Apresentação do Estudo Total">
+            <img id="heroVideoThumb" src="https://i.ytimg.com/vi/-ywjjqygiGk/maxresdefault.jpg" alt="" loading="lazy">
+            <span class="play-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+            </span>
+          </button>
         </div>
       </div>
     </div>
@@ -99,27 +100,10 @@
       <span class="eyebrow" data-content="mentor_eyebrow">Quem vai te guiar</span>
       <h2 data-content="mentor_title">Conheça a Nazli</h2>
       <div class="role" data-content="mentor_role">01 da área fiscal e de controle <br> Mentora e especialista em métodos de estudo</div>
-      <p data-content="mentor_p1">Engenheira de formação. Auditora de profissão. Estudei para concursos de 2018 a 2023 (e brevemente em um pós-edital em 2025/2026). Inicialmente, foquei na área fiscal. Depois migrei para a área de controle e, por fim, voltei para a área fiscal.</p>
-      <p data-content="mentor_p2"><strong>Minhas aprovações:</strong>
-
-<br>
-
-• Sefaz SP – Auditor Fiscal da Receita Estadual (2026): 1º lugar <br>
-• ISS SP – Auditor Fiscal Tributário Municipal (2023): 1º lugar <br>
-• Receita Federal – Auditor Fiscal (2023): 6º lugar <br>
-• TCU – Auditor Federal de Controle Externo (2022): 1º lugar <br>
-• CGU – Auditor Federal de Finanças e Controle (2022): 3º lugar <br>
-• TCDF – Auditor de Controle Externo (2021): 5º lugar <br>
-• TCE RJ – Auditor de Controle Externo (2021): 6º lugar <br>
-• ISS Campinas – Auditor Fiscal Tributário Municipal (2019): 5º lugar <br>
-• ISS Campo Grande – Auditor Fiscal da Receita Municipal (2019): 14º lugar <br>
-• ISS Valinhos – Auditor Fiscal (2019): 1º lugar <br>
-• ISS Guarulhos – Inspetor Fiscal de Rendas (2019): 1º lugar <br>
-• ISS Itapevi – Auditor Fiscal Tributário (2019): 3º lugar <br>
-
-
-<br>
-Ao longo dos meus estudos, dediquei-me a estudar não só as matérias de concursos, mas também sobre como estudar cada vez mais e melhor.  Isso se transformou em grande diferencial competitivo e agora estou aqui para transmitir esse conhecimento para você! Vamos juntos(as) rumo à sua aprovação? :)</p>
+      <p class="mentor-achievements" data-content="mentor_p1">🏆 1º lugar TCU <br> 🏆 1º lugar SEFAZ-SP <br> 🏆 1º lugar ISS-SP <br> 🏆 3º lugar CGU <br> 🏆 6º lugar RFB <br> 🏆 E outras 7 aprovações no topo das listas da área fiscal e de controle! </p>
+      <p data-content="mentor_p2">Engenheira de formação. Auditora de profissão. Mais de 8 anos de experiência em concursos públicos.
+<br><br>
+Ao longo dos meus estudos, dediquei-me a entender como estudar cada vez mais e melhor.  Isso se transformou em grande diferencial competitivo e agora estou aqui para transmitir esse conhecimento para você! Vamos juntos(as) rumo à sua aprovação? :)</p>
       <!-- <ul class="mentor-creds">
         <li><span class="ck">✓</span> <span data-content="mentor_cred1">Método validado com milhares de alunos</span></li>
         <li><span class="ck">✓</span> <span data-content="mentor_cred2">Foco em diagnóstico e plano de estudo individual</span></li>
@@ -180,6 +164,11 @@ Ao longo dos meus estudos, dediquei-me a estudar não só as matérias de concur
     <div data-reveal>
       <div class="table-scroll">
         <table class="compare">
+          <colgroup>
+            <col class="col-name">
+            <col class="col-check">
+            <col class="col-check">
+          </colgroup>
           <thead>
             <tr>
               <th data-content="th_modulo">Módulos</th>
@@ -190,52 +179,52 @@ Ao longo dos meus estudos, dediquei-me a estudar não só as matérias de concur
           <tbody>
             <tr class="cat-row"><td colspan="3" data-content="cat1_label">Conteúdo do Estudo Total</td></tr>
             <tr>
-              <td><div class="mod-name" data-content="mod1_name">1 · Fases do estudo (novo, sólido e final)</div><div class="mod-desc" data-content="mod1_desc">Como estudar no pré e no pós-edital, como revisar de modo eficiente e eficaz, como aumentar seu percentual de acertos, como avaliar se está pronto(a) para uma prova, como ser aprovado(a) sem estudar tudo, como estudar o que realmente cai.</div></td>
+              <td><details class="mod-toggle"><summary><div class="mod-name" data-content="mod1_name">1 · Fases do estudo (novo, sólido e final)</div><span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary><div class="mod-desc" data-content="mod1_desc">Como estudar no pré e no pós-edital, como revisar de modo eficiente e eficaz, como aumentar seu percentual de acertos, como avaliar se está pronto(a) para uma prova, como ser aprovado(a) sem estudar tudo, como estudar o que realmente cai.</div></details></td>
               <td class="center"><span class="yes">✓</span></td>
               <td class="center"><span class="yes">✓</span></td>
             </tr>
             <tr>
-              <td><div class="mod-name" data-content="mod2_name">2 · Planejamento</div><div class="mod-desc" data-content="mod2_desc">Como montar e evoluir um ciclo de estudos realmente personalizado para você, como estabelecer metas desafiadoras e realistas.</div></td>
+              <td><details class="mod-toggle"><summary><div class="mod-name" data-content="mod2_name">2 · Planejamento</div><span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary><div class="mod-desc" data-content="mod2_desc">Como montar e evoluir um ciclo de estudos realmente personalizado para você, como estabelecer metas desafiadoras e realistas.</div></details></td>
               <td class="center"><span class="yes">✓</span></td>
               <td class="center"><span class="yes">✓</span></td>
             </tr>
             <tr>
-              <td><div class="mod-name" data-content="mod3_name">3 · Disciplina e Foco</div><div class="mod-desc" data-content="mod3_desc">Como criar e manter a disciplina e o foco necessários para a aprovação, aplicativos e ferramentas úteis, como maximizar o tempo de estudo, como diminuir e se recuperar de distrações, como mudar seus hábitos, como parar de procrastinar.</div></td>
+              <td><details class="mod-toggle"><summary><div class="mod-name" data-content="mod3_name">3 · Disciplina e Foco</div><span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary><div class="mod-desc" data-content="mod3_desc">Como criar e manter a disciplina e o foco necessários para a aprovação, aplicativos e ferramentas úteis, como maximizar o tempo de estudo, como diminuir e se recuperar de distrações, como mudar seus hábitos, como parar de procrastinar.</div></details></td>
               <td class="center"><span class="yes">✓</span></td>
               <td class="center"><span class="yes">✓</span></td>
             </tr>
             <tr>
-              <td><div class="mod-name" data-content="mod4_name">4 · Acompanhamento e Métricas</div><div class="mod-desc" data-content="mod4_desc">Quais são as poucas métricas que realmente importam, como acompanhar e agir a partir dessas métricas.</div></td>
+              <td><details class="mod-toggle"><summary><div class="mod-name" data-content="mod4_name">4 · Acompanhamento e Métricas</div><span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary><div class="mod-desc" data-content="mod4_desc">Quais são as poucas métricas que realmente importam, como acompanhar e agir a partir dessas métricas.</div></details></td>
               <td class="center"><span class="yes">✓</span></td>
               <td class="center"><span class="yes">✓</span></td>
             </tr>
             <tr>
-              <td><div class="mod-name" data-content="mod5_name">5 · Discursivas</div><div class="mod-desc" data-content="mod5_desc">Como estudar para discursivas, receitas de bolo que funcionam, como corrigir suas próprias discursivas.</div></td>
+              <td><details class="mod-toggle"><summary><div class="mod-name" data-content="mod5_name">5 · Discursivas</div><span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary><div class="mod-desc" data-content="mod5_desc">Como estudar para discursivas, receitas de bolo que funcionam, como corrigir suas próprias discursivas.</div></details></td>
               <td class="center"><span class="yes">✓</span></td>
               <td class="center"><span class="yes">✓</span></td>
             </tr>
             <tr>
-              <td><div class="mod-name" data-content="mod6_name">6 · Recursos</div><div class="mod-desc" data-content="mod6_desc">Como fazer bons recursos de provas objetivas e discursivas (isso economiza muito dinheiro – acredite!).</div></td>
+              <td><details class="mod-toggle"><summary><div class="mod-name" data-content="mod6_name">6 · Recursos</div><span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary><div class="mod-desc" data-content="mod6_desc">Como fazer bons recursos de provas objetivas e discursivas (isso economiza muito dinheiro – acredite!).</div></details></td>
               <td class="center"><span class="yes">✓</span></td>
               <td class="center"><span class="yes">✓</span></td>
             </tr>
             <tr>
-              <td><div class="mod-name" data-content="mod7_name">7 · Estudo com IA</div><div class="mod-desc" data-content="mod7_desc">Como usar a inteligência artificial para alavancar seus estudos de modo seguro.</div></td>
+              <td><details class="mod-toggle"><summary><div class="mod-name" data-content="mod7_name">7 · Estudo com IA</div><span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary><div class="mod-desc" data-content="mod7_desc">Como usar a inteligência artificial para alavancar seus estudos de modo seguro.</div></details></td>
               <td class="center"><span class="yes">✓</span></td>
               <td class="center"><span class="yes">✓</span></td>
             </tr>
             <tr>
-              <td><div class="mod-name" data-content="mod8_name">8 · Como voltar a estudar depois de muito tempo</div><div class="mod-desc" data-content="mod8_desc">Como retomar os estudos depois de um tempo parado(a) sem recomeçar do zero.</div></td>
+              <td><details class="mod-toggle"><summary><div class="mod-name" data-content="mod8_name">8 · Como voltar a estudar depois de muito tempo</div><span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary><div class="mod-desc" data-content="mod8_desc">Como retomar os estudos depois de um tempo parado(a) sem recomeçar do zero.</div></details></td>
               <td class="center"><span class="yes">✓</span></td>
               <td class="center"><span class="yes">✓</span></td>
             </tr>
             <tr>
-              <td><div class="mod-name" data-content="mod9_name">9 · Migrando de área</div><div class="mod-desc" data-content="mod9_desc">Como avaliar se faz sentido mudar de área, como fazê-lo de modo inteligente e eficiente.</div></td>
+              <td><details class="mod-toggle"><summary><div class="mod-name" data-content="mod9_name">9 · Migrando de área</div><span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary><div class="mod-desc" data-content="mod9_desc">Como avaliar se faz sentido mudar de área, como fazê-lo de modo inteligente e eficiente.</div></details></td>
               <td class="center"><span class="yes">✓</span></td>
               <td class="center"><span class="yes">✓</span></td>
             </tr>
             <tr>
-              <td><div class="mod-name" data-content="mod10_name">10 · Bem-estar nos estudos</div><div class="mod-desc" data-content="mod10_desc">Como manter a saúde física e mental durante os estudos com tempo tão limitado.</div></td>
+              <td><details class="mod-toggle"><summary><div class="mod-name" data-content="mod10_name">10 · Bem-estar nos estudos</div><span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary><div class="mod-desc" data-content="mod10_desc">Como manter a saúde física e mental durante os estudos com tempo tão limitado.</div></details></td>
               <td class="center"><span class="yes">✓</span></td>
               <td class="center"><span class="yes">✓</span></td>
             </tr>
@@ -296,10 +285,17 @@ Ao longo dos meus estudos, dediquei-me a estudar não só as matérias de concur
                 <a href="https://forms.gle/w4GXwxcodELVWpbD6" class="btn btn-outline btn-sm" target="_blank" rel="noopener" data-content="price_btn_mentoria">Entrar na lista de espera</a>
               </td>
             </tr>
+            <tr class="upgrade-note-row">
+              <td colspan="3">
+                <p class="upgrade-note" data-content="price_upgrade_note"><span class="note-emoji">💡</span> <strong>Quer a Mentoria?</strong><br>
+Entre no Curso agora e comece a aplicar o método desde já.
+<br><br>
+Quando sua vaga na Mentoria for liberada, o valor do Curso à vista vira desconto integral no upgrade.</p>
+              </td>
+            </tr>
           </tfoot>
         </table>
       </div>
-      <p class="scroll-hint" data-content="scroll_hint">↔ Arraste para o lado para ver a tabela completa</p>
     </div>
   </div>
 </section>

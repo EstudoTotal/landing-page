@@ -40,13 +40,32 @@
   document.getElementById('nextBtn').addEventListener('click', () => track.scrollBy({left: stepSize(), behavior: 'smooth'}));
   document.getElementById('prevBtn').addEventListener('click', () => track.scrollBy({left: -stepSize(), behavior: 'smooth'}));
 
+  // vídeo do hero — facade leve; o iframe do YouTube só é criado quando o usuário clica em reproduzir
+  const heroVideoCard = document.getElementById('metodo');
+  const heroFacade = document.getElementById('heroVideoFacade');
+  const heroThumb = document.getElementById('heroVideoThumb');
+  const embedSrc = heroVideoCard ? heroVideoCard.dataset.embedSrc : '';
+  if (heroThumb) {
+    heroThumb.addEventListener('error', () => { heroThumb.src = heroThumb.src.replace('maxresdefault.jpg', 'hqdefault.jpg'); }, {once: true});
+  }
+  const buildHeroIframe = (autoplay) => {
+    const iframe = document.createElement('iframe');
+    iframe.src = embedSrc + (autoplay ? (embedSrc.includes('?') ? '&' : '?') + 'autoplay=1' : '');
+    iframe.title = 'Apresentação do Estudo Total';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.allowFullscreen = true;
+    return iframe;
+  };
+  if (heroFacade) {
+    heroFacade.addEventListener('click', () => heroFacade.replaceWith(buildHeroIframe(true)), {once: true});
+  }
+
   // modal de vídeo (lightbox)
   const videoModal = document.getElementById('videoModal');
   const watchBtn = document.getElementById('watchVideoBtn');
   if (videoModal && watchBtn) {
     const modalIframe = videoModal.querySelector('iframe');
-    const heroSrc = document.querySelector('#metodo iframe').getAttribute('src');
-    const autoplaySrc = heroSrc + (heroSrc.includes('?') ? '&' : '?') + 'autoplay=1';
+    const autoplaySrc = embedSrc + (embedSrc.includes('?') ? '&' : '?') + 'autoplay=1';
 
     const openModal = (e) => {
       e.preventDefault();
@@ -67,13 +86,14 @@
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && videoModal.classList.contains('open')) closeModal(); });
   }
 
-  // faq — accordion com animação suave ao abrir/fechar (mantém só uma pergunta aberta)
-  class FaqAccordion {
+  // accordion com animação suave ao abrir/fechar — usado no faq (mantém só uma pergunta aberta)
+  // e na tabela comparativa (cada descrição expande/recolhe de modo independente)
+  class Accordion {
     constructor(item, group) {
       this.item = item;
       this.group = group;
       this.summary = item.querySelector('summary');
-      this.content = item.querySelector('.ans');
+      this.content = item.querySelector(':scope > summary + *');
       this.animation = null;
       this.isClosing = false;
       this.isExpanding = false;
@@ -118,7 +138,8 @@
     }
   }
   const faqGroup = [];
-  document.querySelectorAll('.faq-item').forEach(item => faqGroup.push(new FaqAccordion(item, faqGroup)));
+  document.querySelectorAll('.faq-item').forEach(item => faqGroup.push(new Accordion(item, faqGroup)));
+  document.querySelectorAll('.mod-toggle').forEach(item => new Accordion(item, []));
 
   // reveal on scroll
   const io = new IntersectionObserver((entries) => {
