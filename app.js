@@ -13,6 +13,13 @@
   // ano dinâmico
   document.getElementById('year').textContent = new Date().getFullYear();
 
+  // Meta Pixel: rastreia clique no botão que leva ao checkout da Hotmart
+  document.querySelectorAll('a[href^="https://pay.hotmart.com/"]').forEach(a => {
+    a.addEventListener('click', () => {
+      if (typeof fbq === 'function') fbq('track', 'InitiateCheckout');
+    });
+  });
+
   // menu mobile
   const toggle = document.getElementById('menuToggle');
   const links = document.getElementById('navLinks');
