@@ -14,9 +14,16 @@
   document.getElementById('year').textContent = new Date().getFullYear();
 
   // Meta Pixel: rastreia clique no botão que leva ao checkout da Hotmart
-  document.querySelectorAll('a[href^="https://pay.hotmart.com/"]').forEach(a => {
+  document.querySelectorAll('a[href*="pay.hotmart.com"]').forEach(a => {
     a.addEventListener('click', () => {
-      if (typeof fbq === 'function') fbq('track', 'InitiateCheckout');
+      if (window.fbq) fbq('track', 'InitiateCheckout');
+    });
+  });
+
+  // Meta Pixel: rastreia clique no botão da lista de espera da mentoria
+  document.querySelectorAll('a[href*="forms.gle/w4GXwxcodELVWpbD6"]').forEach(a => {
+    a.addEventListener('click', () => {
+      if (window.fbq) fbq('track', 'Lead');
     });
   });
 
