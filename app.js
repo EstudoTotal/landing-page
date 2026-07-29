@@ -27,6 +27,13 @@
     });
   });
 
+  // Meta Pixel: rastreia clique no link da newsletter
+  document.querySelectorAll('a[href*="nazlisetton-newsletter.beehiiv.com"]').forEach(a => {
+    a.addEventListener('click', () => {
+      if (window.fbq) fbq('trackCustom', 'NewsletterClick');
+    });
+  });
+
   // menu mobile
   const toggle = document.getElementById('menuToggle');
   const links = document.getElementById('navLinks');
@@ -71,7 +78,10 @@
     return iframe;
   };
   if (heroFacade) {
-    heroFacade.addEventListener('click', () => heroFacade.replaceWith(buildHeroIframe(true)), {once: true});
+    heroFacade.addEventListener('click', () => {
+      if (window.fbq) fbq('trackCustom', 'WatchVideo');
+      heroFacade.replaceWith(buildHeroIframe(true));
+    }, {once: true});
   }
 
   // modal de vídeo (lightbox)
@@ -83,6 +93,7 @@
 
     const openModal = (e) => {
       e.preventDefault();
+      if (window.fbq) fbq('trackCustom', 'WatchVideo');
       modalIframe.setAttribute('src', autoplaySrc);
       videoModal.classList.add('open');
       videoModal.setAttribute('aria-hidden', 'false');
