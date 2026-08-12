@@ -1,3 +1,24 @@
+// Passagem de UTM: preserva os parâmetros de campanha no link do checkout (Hotmart)
+// e da lista de espera (Google Forms), já que ambos ficam em domínios externos.
+  const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+  const urlParams = new URLSearchParams(window.location.search);
+  const utmParams = {};
+  UTM_KEYS.forEach(key => { if (urlParams.has(key)) utmParams[key] = urlParams.get(key); });
+
+  if (Object.keys(utmParams).length) {
+    sessionStorage.setItem('utm_params', JSON.stringify(utmParams));
+  } else {
+    const storedUtm = sessionStorage.getItem('utm_params');
+    if (storedUtm) Object.assign(utmParams, JSON.parse(storedUtm));
+  }
+
+  if (Object.keys(utmParams).length) {
+    const utmQuery = new URLSearchParams(utmParams).toString();
+    document.querySelectorAll('a[href*="pay.hotmart.com"], a[href*="forms.gle/w4GXwxcodELVWpbD6"]').forEach(a => {
+      a.href += (a.href.includes('?') ? '&' : '?') + utmQuery;
+    });
+  }
+
 // Preenche os textos a partir do content.js (se presente)
   if (window.SITE_CONTENT) {
     document.querySelectorAll('[data-content]').forEach(el => {
