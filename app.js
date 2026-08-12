@@ -9,7 +9,13 @@
     sessionStorage.setItem('utm_params', JSON.stringify(utmParams));
   } else {
     const storedUtm = sessionStorage.getItem('utm_params');
-    if (storedUtm) Object.assign(utmParams, JSON.parse(storedUtm));
+    if (storedUtm) {
+      Object.assign(utmParams, JSON.parse(storedUtm));
+    } else {
+      // sem UTM na URL nem na sessão: marca como tráfego sem campanha, em vez de deixar em branco
+      utmParams.utm_source = 'et-landing';
+      utmParams.utm_medium = 'referral';
+    }
   }
 
   if (Object.keys(utmParams).length) {
