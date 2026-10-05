@@ -1,6 +1,15 @@
-// Passagem de UTM: preserva os parâmetros de campanha no link do checkout (Hotmart)
-// e da lista de espera (Google Forms), já que ambos ficam em domínios externos.
-  const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+  // Preenche os textos a partir do content.js (se presente)
+  if (window.SITE_CONTENT) {
+    document.querySelectorAll('[data-content]').forEach(el => {
+      const k = el.getAttribute('data-content');
+      if (k in window.SITE_CONTENT) el.innerHTML = window.SITE_CONTENT[k];
+    });
+  }
+
+  // Passagem de UTM: preserva os parâmetros de campanha no link do checkout (Hotmart)
+  // e da lista de espera (Google Forms), já que ambos ficam em domínios externos.
+  // fbclid vai junto para o pixel da Hotmart conseguir atribuir a compra ao anúncio (cookie _fbc não cruza domínios)
+  const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'fbclid'];
   const urlParams = new URLSearchParams(window.location.search);
   const utmParams = {};
   UTM_KEYS.forEach(key => { if (urlParams.has(key)) utmParams[key] = urlParams.get(key); });
@@ -25,14 +34,6 @@
     });
   }
 
-// Preenche os textos a partir do content.js (se presente)
-  if (window.SITE_CONTENT) {
-    document.querySelectorAll('[data-content]').forEach(el => {
-      const k = el.getAttribute('data-content');
-      if (k in window.SITE_CONTENT) el.innerHTML = window.SITE_CONTENT[k];
-    });
-  }
-
   // some o placeholder se a foto da mentora não existir
   const mentorPhoto = document.getElementById('mentorPhoto');
   if (mentorPhoto) mentorPhoto.addEventListener('error', () => { mentorPhoto.style.display = 'none'; });
@@ -41,9 +42,11 @@
   document.getElementById('year').textContent = new Date().getFullYear();
 
   // Meta Pixel: rastreia clique no botão que leva ao checkout da Hotmart
+  // Evento personalizado (e não InitiateCheckout) porque a própria Hotmart já
+  // dispara InitiateCheckout ao abrir o checkout — usar o padrão aqui duplicaria a contagem.
   document.querySelectorAll('a[href*="pay.hotmart.com"]').forEach(a => {
     a.addEventListener('click', () => {
-      if (window.fbq) fbq('track', 'InitiateCheckout');
+      if (window.fbq) fbq('trackCustom', 'CheckoutClick');
     });
   });
 
