@@ -196,7 +196,7 @@ Agora estou aqui para te ensinar a construir o seu próprio sistema de estudos, 
   <br><br>
   Aprenda o método. Construa sua preparação. Conquiste a aprovação.`, // Apoio
   // cta_text:    `Junte-se aos alunos que passaram a estudar de modo eficiente e com segurança.`, // Apoio
-  cta_btn: `Quero me inscrever no Estudo Total desde já →`,    // Botão
+  cta_btn: `Quero me inscrever no Estudo Total →`,    // Botão
   cta_guarantee: `Garantia incondicional de 7 dias. Comece agora sem risco.`, // Texto de garantia abaixo do botão
 
   /* ---------- RODAPÉ ---------- */
