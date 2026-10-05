@@ -6,8 +6,8 @@
     });
   }
 
-  // Passagem de UTM: preserva os parâmetros de campanha no link do checkout (Hotmart)
-  // e da lista de espera (Google Forms), já que ambos ficam em domínios externos.
+  // Passagem de UTM: preserva os parâmetros de campanha no link do checkout (Hotmart),
+  // já que ele fica em domínio externo.
   // fbclid vai junto para o pixel da Hotmart conseguir atribuir a compra ao anúncio (cookie _fbc não cruza domínios)
   const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'fbclid'];
   const urlParams = new URLSearchParams(window.location.search);
@@ -29,7 +29,7 @@
 
   if (Object.keys(utmParams).length) {
     const utmQuery = new URLSearchParams(utmParams).toString();
-    document.querySelectorAll('a[href*="pay.hotmart.com"], a[href*="forms.gle/w4GXwxcodELVWpbD6"]').forEach(a => {
+    document.querySelectorAll('a[href*="pay.hotmart.com"]').forEach(a => {
       a.href += (a.href.includes('?') ? '&' : '?') + utmQuery;
     });
   }
@@ -47,13 +47,6 @@
   document.querySelectorAll('a[href*="pay.hotmart.com"]').forEach(a => {
     a.addEventListener('click', () => {
       if (window.fbq) fbq('trackCustom', 'CheckoutClick');
-    });
-  });
-
-  // Meta Pixel: rastreia clique no botão da lista de espera da mentoria
-  document.querySelectorAll('a[href*="forms.gle/w4GXwxcodELVWpbD6"]').forEach(a => {
-    a.addEventListener('click', () => {
-      if (window.fbq) fbq('track', 'Lead');
     });
   });
 
@@ -109,7 +102,7 @@
   };
   if (heroFacade) {
     heroFacade.addEventListener('click', () => {
-      if (window.fbq) fbq('trackCustom', 'WatchVideo');
+      if (window.fbq) fbq('trackCustom', 'WatchVideo', {placement: 'hero'});
       heroFacade.replaceWith(buildHeroIframe(true));
     }, {once: true});
   }
@@ -123,7 +116,7 @@
 
     const openModal = (e) => {
       e.preventDefault();
-      if (window.fbq) fbq('trackCustom', 'WatchVideo');
+      if (window.fbq) fbq('trackCustom', 'WatchVideo', {placement: 'modal'});
       modalIframe.setAttribute('src', autoplaySrc);
       videoModal.classList.add('open');
       videoModal.setAttribute('aria-hidden', 'false');

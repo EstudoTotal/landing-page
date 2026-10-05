@@ -66,20 +66,16 @@ Agora estou aqui para te ensinar a construir o seu próprio sistema de estudos, 
   É o sistema que desenvolvi para conquistar 12 aprovações no topo das listas. Ele nasceu da minha busca por entender o que faz um candidato evoluir, aumentar seu percentual de acertos e construir uma preparação consistente.
   <br><br>
   <strong>Aqui você encontra um método lógico, estruturado passo a passo, para aprender a decidir o que estudar, quando revisar, como acompanhar sua evolução e adaptar sua estratégia à sua realidade.</strong>`, // Subtítulo
-  modules_highlight_lead: `Duas formas de acesso ao Estudo Total`, // Texto verde de destaque ao lado do subtítulo
-  modules_hl1_title: `Curso`,                                                                  // Título do destaque 1
-  modules_hl1_desc: `Formato principal. Aprenda o método completo e comece a aplicar um sistema de estudos mais estratégico desde já.`,             // Descrição do destaque 1
-  modules_hl2_title: `Mentoria`,                                                              // Título do destaque 2
-  modules_hl2_desc: `Para quem busca acompanhamento individualizado comigo durante a aplicação do método.`,          // Descrição do destaque 2
-  modules_hl3_title: `Qual a diferença entre os dois?`,                                                             // Título do destaque 3
-  modules_hl3_desc: `O método aplicado é o mesmo nos dois formatos. Em ambos, você aprende as estratégias e técnicas que utilizei para alcançar minhas aprovações.
-                      <br><br> O objetivo também é o mesmo: desenvolver sua autonomia para conduzir sua preparação com segurança.
-                      <br><br> A diferença está no acompanhamento individual. A Mentoria tem vagas limitadas e é liberada gradualmente para quem está na lista de espera.
-                      <br><br> <strong>Recomendação:</strong> comece pelo Curso desde já. Assim, caso opte pela Mentoria no futuro, você já estará aplicando o método e poderá aproveitar o acompanhamento de forma muito mais produtiva.`,                       // Descrição do destaque 3
+  modules_highlight_lead: `O que você recebe no Estudo Total`, // Texto verde de destaque ao lado do subtítulo
+  modules_hl1_title: `Método completo`,                                                                  // Título do destaque 1
+  modules_hl1_desc: `Aprenda o método passo a passo e comece a aplicar um sistema de estudos mais estratégico desde já.`,             // Descrição do destaque 1
+  modules_hl2_title: `12 meses de acesso`,                                                              // Título do destaque 2
+  modules_hl2_desc: `Acesso às aulas e aos materiais por 12 meses após a inscrição, incluindo todas as atualizações do conteúdo.`,          // Descrição do destaque 2
+  modules_hl3_title: `Suporte e garantia`,                                                             // Título do destaque 3
+  modules_hl3_desc: `Fórum para tirar suas dúvidas sobre o método e garantia incondicional de 7 dias.`,                       // Descrição do destaque 3
 
   th_modulo: `Módulos`,    // Cabeçalho da coluna 1
-  th_curso: `Curso`,     // Cabeçalho da coluna 2
-  th_mentoria: `Mentoria`,  // Cabeçalho da coluna 3
+  th_curso: `Curso`,     // Cabeçalho da coluna de marcações
 
   // Cada módulo tem um NOME e uma DESCRIÇÃO (as marcações ✓ / — são editadas direto no index.html)
   mod1_name: `1 · Fases do estudo (novo, sólido e final)`, mod1_desc: `Como estudar no pré e no pós-edital, como revisar de modo eficiente e eficaz, como aumentar seu percentual de acertos, como avaliar se está pronto(a) para uma prova, como ser aprovado(a) sem estudar tudo, como estudar o que realmente cai.`,
@@ -95,32 +91,17 @@ Agora estou aqui para te ensinar a construir o seu próprio sistema de estudos, 
 
   // Rótulos das categorias que dividem a tabela comparativa (faixas cinza)
   cat1_label: `Conteúdo do Estudo Total`,                          // Categoria 1
-  cat2_label: `Recursos exclusivos da mentoria`,            // Categoria 2
-  cat3_label: `Suporte e acesso`,                           // Categoria 3
-
-  // Itens da categoria "Recursos exclusivos da mentoria" (as marcações ✓ / ✕ são editadas direto no index.html)
-  ment1_name: `Diagnóstico completo e individual`,
-  ment2_name: `Acesso individual ao WhatsApp da Nazli`,
-  ment3_name: `Acompanhamento individual com a Nazli`,
-  ment4_name: `Sessões ao vivo em grupo com a Nazli`,
+  cat2_label: `Suporte e acesso`,                           // Categoria 2
 
   // Itens da categoria "Suporte e acesso" (valores e marcações são editados direto no index.html)
   sup1_name: `Período de acesso às aulas e aos materiais`,
-  sup2_name: `Período de acesso aos recursos exclusivos da mentoria`,
-  sup3_name: `Suporte no fórum de dúvidas (dúvidas sobre o método)`,
-  sup4_name: `Suporte por WhatsApp (dúvidas sobre seu caso pessoal)`,
+  sup2_name: `Suporte no fórum de dúvidas (dúvidas sobre o método)`,
 
   // Linha de investimento (rodapé da tabela)
   price_label: `Investimento`,                       // Rótulo da linha
-  price_desc: `Escolha a melhor opção para você`,          // Descrição da linha
+  price_desc: `Acesso completo por 12 meses`,          // Descrição da linha
   price_value: `R$ 997<small>ou 12x de R$ 103,11</small>`, // Valor do CURSO (o <small> é a observação menor abaixo)
   price_btn_curso: `Entrar agora`,                    // Botão de compra do curso
-  price_mentoria_label: `Vagas limitadas`,                    // Texto acima do botão da mentoria (a mentoria não exibe valor)
-  price_btn_mentoria: `Entrar na lista de espera`,          // Botão da mentoria
-  price_upgrade_note: `<span class="note-emoji">💡</span> <strong>Quer a Mentoria?</strong><br>
-  Entre no Curso agora e comece a aplicar o método desde já.
-  <br>
-  Quando sua vaga na Mentoria for liberada, o valor do Curso à vista vira desconto integral no upgrade.`, // Aviso sobre o upgrade do curso para a mentoria
 
   /* ---------- DEPOIMENTOS ---------- */
   testi_eyebrow: `Depoimentos`,                              // Texto pequeno acima do título
@@ -200,27 +181,13 @@ Agora estou aqui para te ensinar a construir o seu próprio sistema de estudos, 
            • “O curso é MARAVILHOSO ❤️❤️. São detalhes que fazem muita diferença. Muito obrigada por dividir tanto conhecimento. ❤️ Estou amando o curso!” (Nayanny Cruz, aluna da T0)`,
   faq6_q: `Eu não ia bem na escola/faculdade. Ainda tenho esperança de ser aprovado(a)?`,
   faq6_a: `<strong>Com certeza!</strong> O que veremos não depende do seu histórico até aqui. Colocando em prática o que aprenderemos, você terá condições de ser aprovado(a) nos concursos dos seus sonhos!`,
-  faq7_q: `Qual é a diferença entre o curso e a mentoria?`,
-  faq7_a: `Tanto o curso quanto a mentoria ensinam exatamente os mesmos conteúdos técnicos. 
-           Em ambos você aprenderá a se planejar e estudar de modo eficiente e efetivo em pré e pós-edital. 
-           <strong>Ambos têm conteúdo suficiente para a sua aprovação.</strong>
-           <br><br>
-           A diferença da mentoria é o diagnóstico e acompanhamento individuais, acesso privado ao WhatsApp da Nazli e sessões ao vivo em grupo.`,
-  faq8_q: `Por quanto tempo terei acesso?`,
-  faq8_a: `No curso, o acesso às aulas e ao material é liberado por 12 meses após a inscrição, incluindo todas as atualizações do conteúdo. <br><br>
-           Na mentoria, o acompanhamento individual, o acesso privado ao WhatsApp da Nazli e as sessões ao vivo em grupo são disponibilizados por 6 meses. Já o acesso às aulas e ao material é liberado por 12 meses após a inscrição, incluindo todas as atualizações do conteúdo.`,
-  faq9_q: `Como funciona a lista de espera da mentoria?`,
-  faq9_a: `A inscrição é feita <u><strong><a href="https://forms.gle/w4GXwxcodELVWpbD6" target="_blank" rel="noopener">neste link</a></strong></u>. Semanalmente, novas vagas são liberadas e você será notificado(a) por e-mail e/ou WhatsApp. <br><br>
-           Não há garantia do prazo exato para chegar sua vez, mas, nos últimos meses, a lista de espera foi de cerca de 3 meses. 
-           <strong>É por isso que recomendo fortemente que você entre desde já no curso</strong>, pois, no tempo da espera, já conseguirá avanços significativos nos estudos. Inclusive, aproveitará melhor a mentoria com a bagagem do curso.`,
-  faq10_q: `Como funciona o upgrade do curso para a mentoria?`,
-  faq10_a: `Estando no curso, você pode fazer o upgrade para a mentoria. Para isso, é necessário se inscrever na lista de espera da mentoria e aguardar (leia a pergunta anterior). <br><br>
-           Quando chegar sua vez, você receberá um desconto na mentoria equivalente ao preço do curso à vista.`,
-  faq11_q: `Como acesso as aulas?`,
-  faq11_a: `Assim que se tornar aluno(a), você receberá um login e senha por e-mail (cheque o spam). <br><br>
+  faq7_q: `Por quanto tempo terei acesso?`,
+  faq7_a: `O acesso às aulas e ao material é liberado por 12 meses após a inscrição, incluindo todas as atualizações do conteúdo.`,
+  faq8_q: `Como acesso as aulas?`,
+  faq8_a: `Assim que se tornar aluno(a), você receberá um login e senha por e-mail (cheque o spam). <br><br>
             As aulas são acessadas pelo site <u><strong><a href="https://www.nazlisetton.com.br/" target="_blank" rel="noopener">nazlisetton.com.br</a></strong></u>. Você também pode acessar pelo botão <strong>Área do aluno</strong> no topo desta página.`,
-  faq12_q: `Como funciona a garantia?`,
-  faq12_a: `Você tem 7 dias para testar o Estudo Total. Se não gostar, o valor integral é devolvido sem burocracia. Basta solicitar seu reembolso <u><strong><a href="https://refund.hotmart.com/" target="_blank" rel="noopener">neste link</a></strong></u>.`,
+  faq9_q: `Como funciona a garantia?`,
+  faq9_a: `Você tem 7 dias para testar o Estudo Total. Se não gostar, o valor integral é devolvido sem burocracia. Basta solicitar seu reembolso <u><strong><a href="https://refund.hotmart.com/" target="_blank" rel="noopener">neste link</a></strong></u>.`,
 
   /* ---------- CHAMADA FINAL (CTA) ---------- */
   cta_eyebrow: `A APROVAÇÃO COMEÇA COM MÉTODO`,                 // Texto pequeno acima do título
@@ -230,8 +197,7 @@ Agora estou aqui para te ensinar a construir o seu próprio sistema de estudos, 
   Aprenda o método. Construa sua preparação. Conquiste a aprovação.`, // Apoio
   // cta_text:    `Junte-se aos alunos que passaram a estudar de modo eficiente e com segurança.`, // Apoio
   cta_btn: `Quero me inscrever no Estudo Total desde já →`,    // Botão
-  cta_guarantee: `Garantia incondicional de 7 dias. Comece agora sem risco.`, // Texto de garantia entre os botões
-  cta_btn2: `Lista de espera da mentoria`,    // Botão secundário (mentoria)
+  cta_guarantee: `Garantia incondicional de 7 dias. Comece agora sem risco.`, // Texto de garantia abaixo do botão
 
   /* ---------- RODAPÉ ---------- */
   footer_tagline: `Desempenho de outro mundo`, // Frase abaixo do logo
