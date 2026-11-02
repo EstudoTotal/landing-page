@@ -22,25 +22,31 @@ window.BF_CONTENT = {
   videoMetodo: '-ywjjqygiGk',   // "Entender como funciona" (só aparece se videoLive estiver vazio)
   videoLive: 'Bjk-9YN53HE',     // live de lançamento (youtube.com/watch?v=Bjk-9YN53HE)
 
-  // Horário de Brasília
-  live: { data: '03/11', hora: '20h', inicio: '2026-11-03T20:00:00-03:00' },
+  // Horário de Brasília. A live vai das 19h às 20h; o lote especial abre no fim dela.
+  live: { data: '03/11', hora: '19h', inicio: '2026-11-03T19:00:00-03:00' },
 
   especial: {
+    hora: '20h', inicio: '2026-11-03T20:00:00-03:00',
     per: '03/11 20h a 04/11 20h', fim: '2026-11-04T20:00:00-03:00',
     preco: '597', parcela: '61,02', bonusMeses: 3,
     checkout: 'https://pay.hotmart.com/R105136958K?off=9ivbee23'
   },
 
   lotes: [
-    { n: 1, per: '04 a 10/11', virada: '04/11', abre: 'Abre em 04/11 às 20h', fim: '2026-11-10T23:59:59-03:00',
+    { n: 1, per: '04 a 14/11', virada: '04/11', abre: 'Abre em 04/11 às 20h', fim: '2026-11-14T20:00:00-03:00',
       preco: '697', parcela: '71,24', bonusMeses: 3,
       checkout: 'https://pay.hotmart.com/R105136958K?off=tf2q8ggk' },
-    { n: 2, per: '11 a 20/11', virada: '11/11', abre: 'Virada em 11/11 à 00h', fim: '2026-11-20T23:59:59-03:00',
+    { n: 2, per: '14 a 24/11', virada: '14/11', abre: 'Virada em 14/11 às 20h', fim: '2026-11-24T20:00:00-03:00',
       preco: '797', parcela: '81,46', bonusMeses: 2,
       checkout: 'https://pay.hotmart.com/R105136958K?off=csjkdue3' },
-    { n: 3, per: '21 a 30/11', virada: '21/11', abre: 'Virada em 21/11 à 00h', fim: '2026-11-30T23:59:59-03:00',
+    { n: 3, per: '24 a 30/11', virada: '24/11', abre: 'Virada em 24/11 às 20h', fim: '2026-11-30T20:00:00-03:00',
       preco: '847', parcela: '86,57', bonusMeses: 1,
       checkout: 'https://pay.hotmart.com/R105136958K?off=sz5gr6mr' }
-  ]
+  ],
+
+  // Prorrogação surpresa: até o fim do Lote 3 (30/11 20h) a página diz que a Black termina em 30/11.
+  // Depois, mostra "prorrogada" e continua vendendo nas condições do Lote 3 até `fim`.
+  // Para não prorrogar, troque por null.
+  prorrogacao: { data: '04/12', hora: '20h', fim: '2026-12-04T20:00:00-03:00' }
 
 };
