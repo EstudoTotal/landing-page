@@ -10,16 +10,16 @@ src="https://www.facebook.com/tr?id=1943797192974506&ev=PageView&noscript=1"
 <!-- End Meta Pixel Code -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nazli · Estudo Total — Método de estudo para concursos</title>
-<meta name="description" content="Método de estudo para concursos públicos da Nazli.">
+<title>Black Friday · Estudo Total</title>
+<meta name="description" content="Black Friday do Estudo Total, o método de estudo da Nazli para concursos públicos.">
 <link rel="icon" type="image/png" href="assets/images/estudototal_favicon.png">
 <link rel="canonical" href="https://et.nazlisetton.com.br/">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://et.nazlisetton.com.br/">
 <meta property="og:site_name" content="Estudo Total">
-<meta property="og:title" content="Nazli · Estudo Total — Método de estudo para concursos">
-<meta property="og:description" content="Método de estudo para concursos públicos da Nazli.">
+<meta property="og:title" content="Black Friday · Estudo Total">
+<meta property="og:description" content="Black Friday do Estudo Total, o método de estudo da Nazli para concursos públicos.">
 <meta property="og:image" content="https://et.nazlisetton.com.br/assets/images/estudototal_landscape.png">
 <meta property="og:locale" content="pt_BR">
 
@@ -27,439 +27,324 @@ src="https://www.facebook.com/tr?id=1943797192974506&ev=PageView&noscript=1"
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=bf26">
 </head>
 <body>
 
-<!-- ===================== HEADER ===================== -->
-<header>
-  <div class="wrap nav">
-    <a href="#" class="logo" data-content="logo"><span class="g">E</span>studo <span class="g">T</span>otal</a>
-    <nav class="nav-links" id="navLinks">
-      <a href="#" data-content="nav_metodo">O método</a>
-      <a href="#mentora" data-content="nav_mentora">A Nazli</a>
-      <a href="#conteudo" data-content="nav_conteudo">Conteúdo</a>
-      <a href="#depoimentos" data-content="nav_depoimentos">Depoimentos</a>
-      <a href="#faq" data-content="nav_faq">FAQ</a>
-      <!-- Link de login dentro do menu (aparece só no mobile) -->
-      <a href="https://www.nazlisetton.com.br/login" class="nav-login" target="_blank" rel="noopener" data-content="nav_login_menu">Área do aluno</a>
-    </nav>
-    <div class="nav-cta">
-      <!-- Botão de login (link externo da plataforma) — troque a URL abaixo -->
-      <a href="https://www.nazlisetton.com.br/login" class="btn btn-ghost btn-login" target="_blank" rel="noopener" data-content="nav_login">Área do aluno</a>
-      <a href="#inscricao" class="btn btn-primary" data-content="nav_cta">Quero o Estudo Total</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
-        <span></span><span></span><span></span>
+<!-- ===================== TOPO FIXO ===================== -->
+<div class="top">
+  <div class="strip">
+    <span data-bf="stripLabel">Black Friday do Estudo Total</span>
+    <span class="strip-cd" data-if="contando" data-cd-txt hidden>00d 00h 00m 00s</span>
+  </div>
+  <header class="hdr">
+    <div class="wrap hdr-in">
+      <span class="logo"><span class="g">E</span>studo <span class="g">T</span>otal</span>
+      <a class="hdr-cta" data-if="temCta" data-cta data-bf="headerCta" target="_blank" rel="noopener" hidden></a>
+    </div>
+  </header>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="wrap hero-in">
+    <div class="hero-col">
+      <div class="eyebrow eyebrow-green" data-bf="eyebrow"></div>
+      <h1 class="hero-h1">Black<br>Friday</h1>
+
+      <div class="hero-off" data-if="vendendo" hidden>
+        <span class="hero-pct" data-bf="pctTxt"></span>
+        <span class="hero-off-txt">no Estudo Total, o método por trás de 12 aprovações no topo das listas.</span>
+      </div>
+      <div class="hero-reveal" data-if="!vendendo" data-bf="heroReveal" hidden></div>
+
+      <div class="hero-nazli">
+        <img src="assets/images/nazli.jpg" alt="Nazli" class="hero-avatar">
+        <div>
+          <b>Com a Nazli</b>
+          <span>01 da área fiscal e de controle · 12 aprovações no topo das listas</span>
+        </div>
+      </div>
+
+      <button type="button" class="video-row" id="videoRow">
+        <span class="video-thumb">
+          <img alt="" id="videoThumb">
+          <span class="play"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+        </span>
+        <span class="video-txt">
+          <b data-bf="videoTitulo"></b>
+          <span data-bf="videoSub"></span>
+        </span>
       </button>
     </div>
-  </div>
-</header>
 
-<!-- ===================== HERO / MÉTODO ===================== -->
-<section class="hero" id="topo">
-  <div class="wrap hero-grid">
-    <div class="hero-intro" data-reveal>
-      <span class="eyebrow" data-content="hero_eyebrow">O MÉTODO POR TRÁS DE 12 APROVAÇÕES NO TOPO DAS LISTAS</span>
-      <h1 data-content="hero_title">Construa um sistema de estudo autônomo e eficiente.<br><em> Estruture sua preparação em um sistema previsível e adaptado à sua realidade. Aumente seu percentual de acertos sem ficar refém de cronogramas engessados.</em></h1>
-      <p class="lead" data-content="hero_lead">Assista ao vídeo para entender a lógica do Estudo Total!</p>
-      <div class="hero-actions">
-        <a href="#inscricao" class="btn btn-primary" data-content="hero_btn_primary">Quero o Estudo Total →</a>
-        <a href="#metodo" class="btn btn-ghost" data-content="hero_btn_ghost" id="watchVideoBtn">Entender como funciona</a>
+    <!-- cartão de oferta -->
+    <div class="offer" id="oferta">
+      <!-- oferta aberta -->
+      <div class="offer-body" data-if="vendendo" hidden>
+        <div class="offer-head">
+          <span class="tag" data-bf="loteTag"></span>
+          <span class="offer-per" data-bf="lotePer"></span>
+        </div>
+        <div>
+          <div class="offer-from">De <s>R$ <span data-bf="precoCheio"></span></s> por</div>
+          <div class="offer-price-row">
+            <span class="offer-price" data-bf="precoTxt"></span>
+            <span class="pill-green" data-bf="pctTxt"></span>
+          </div>
+          <div class="offer-parc" data-bf="parcTxt"></div>
+          <div class="offer-month">
+            <b data-bf="mesTxt"></b>
+            <span data-bf="mesSub"></span>
+          </div>
+        </div>
+        <div class="checks">
+          <div><span class="ck">✓</span><span><b data-bf="acessoTotal"></b> <span data-bf="acessoDet"></span></span></div>
+          <div><span class="ck">✓</span><span>Os 15 módulos do método e o fórum de dúvidas</span></div>
+          <div><span class="ck">✓</span><span><b>Grupo de WhatsApp com a Nazli</b> (bônus Black Friday)</span></div>
+          <div><span class="ck">✓</span><span>Garantia incondicional de 7 dias</span></div>
+        </div>
+        <a class="btn-green" data-cta data-bf="ctaOferta" target="_blank" rel="noopener"></a>
       </div>
-      <!-- <div class="hero-stats">
-        <div><div class="num" data-content="hero_stat1_num">+5.000</div><div class="lbl" data-content="hero_stat1_label">alunos preparados</div></div>
-        <div><div class="num" data-content="hero_stat2_num">8</div><div class="lbl" data-content="hero_stat2_label">módulos completos</div></div>
-        <div><div class="num" data-content="hero_stat3_num">4,9★</div><div class="lbl" data-content="hero_stat3_label">avaliação média</div></div>
-      </div> -->
-    </div>
 
-    <div class="hero-video" data-reveal>
-      <div class="video-card" id="metodo" data-embed-src="https://www.youtube.com/embed/-ywjjqygiGk?rel=0">
-        <!-- <span class="video-tag" data-content="hero_video_tag">▶ Apresentação do Estudo Total</span> -->
-        <div class="video-ratio">
-          <button type="button" class="video-facade" id="heroVideoFacade" aria-label="Reproduzir vídeo: Apresentação do Estudo Total">
-            <img id="heroVideoThumb" src="https://i.ytimg.com/vi/-ywjjqygiGk/maxresdefault.jpg" alt="" loading="lazy">
-            <span class="play-ic" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
-            </span>
-          </button>
+      <!-- esquenta -->
+      <div class="offer-body offer-wait" data-if="espera" hidden>
+        <span class="tag tag-self" data-bf="liveTag"></span>
+        <div class="offer-title">Entre no grupo de esquenta</div>
+        <p class="offer-p">No grupo do WhatsApp você recebe o link da live e o acesso ao lote especial assim que a oferta for revelada.</p>
+        <a class="btn-green" data-cta target="_blank" rel="noopener">Entrar no grupo do WhatsApp →</a>
+      </div>
+
+      <!-- lote encerrado, aguardando o deploy do próximo -->
+      <div class="offer-body offer-wait" data-if="loteFechado" hidden>
+        <span class="tag tag-self" data-bf="fechadoTag"></span>
+        <div class="offer-title" data-bf="fechadoTitulo"></div>
+        <p class="offer-p" data-bf="fechadoTexto"></p>
+        <button type="button" class="btn-green" data-if="aguardando" data-reload hidden>Atualizar página</button>
+      </div>
+
+      <div class="offer-cd" data-if="contando" hidden>
+        <div class="cd-label" data-bf="cdLabel"></div>
+        <div class="cd cd-dark">
+          <div><b data-cd="d">00</b><span>dias</span></div>
+          <div><b data-cd="h">00</b><span>horas</span></div>
+          <div><b data-cd="m">00</b><span>min</span></div>
+          <div><b data-cd="s">00</b><span>seg</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== MENTORA ===================== -->
-<section class="section mentor" id="mentora">
-  <div class="wrap mentor-grid">
-    <div class="mentor-photo" data-reveal>
-      <!-- A foto real fica em assets/images/nazli.jpg. Se o arquivo não existir, aparece o placeholder abaixo. -->
-      <img src="assets/images/nazli.jpg" alt="Nazli" id="mentorPhoto">
-      <span class="ph" data-content="mentor_photo_placeholder">[ Foto da mentora Nazli ]</span>
-      <!-- <div class="mentor-badge" data-content="mentor_badge">Mentora <b>Nazli</b></div> -->
-    </div>
-    <div data-reveal>
-      <span class="eyebrow" data-content="mentor_eyebrow">Quem vai te guiar</span>
-      <h2 data-content="mentor_title">Conheça a Nazli</h2>
-      <div class="role" data-content="mentor_role">01 da área fiscal e de controle <br> Mentora e especialista em métodos de estudo</div>
-      <p class="mentor-achievements" data-content="mentor_p1">🏆 1º lugar TCU <br> 🏆 1º lugar SEFAZ-SP <br> 🏆 1º lugar ISS-SP <br> 🏆 3º lugar CGU <br> 🏆 6º lugar RFB  <br> 🏆 5º lugar TCDF <br> 🏆  6º lugar TCE-RJ <br> 🏆 1º lugar ISS Guarulhos <br> 🏆 6º lugar ISS Campinas <br> 🏆 14º lugar ISS Campo Grande <br> 🏆 1º lugar ISS Valinhos <br> 🏆 3º lugar ISS Itapevi</p>
-      <p data-content="mentor_p2">Engenheira de formação. Auditora de profissão. Mais de 8 anos de experiência em concursos públicos.
-<br><br>
-Mais do que acumular aprovações, dediquei anos para entender o que realmente faz um candidato evoluir até a aprovação.
-<br><br>
-Ao longo da minha preparação, desenvolvi um sistema para decidir o que estudar, quando revisar e como medir o progresso — sem depender de cronogramas rígidos ou métodos genéricos.
-<br><br>
-Esse sistema me levou a 12 aprovações no topo das listas e deu origem ao Estudo Total.
-
-Agora estou aqui para te ensinar a construir o seu próprio sistema de estudos, adaptado à sua realidade.</p>
-      <!-- <ul class="mentor-creds">
-        <li><span class="ck">✓</span> <span data-content="mentor_cred1">Método validado com milhares de alunos</span></li>
-        <li><span class="ck">✓</span> <span data-content="mentor_cred2">Foco em diagnóstico e plano de estudo individual</span></li>
-        <li><span class="ck">✓</span> <span data-content="mentor_cred3">Conteúdo direto, sem enrolação e aplicável desde a primeira aula</span></li>
-      </ul> -->
+<!-- ===================== CONHEÇA A NAZLI ===================== -->
+<section class="sec sec-gray">
+  <div class="wrap two-col center">
+    <div class="portrait"><img src="assets/images/nazli.jpg" alt="Nazli" loading="lazy"></div>
+    <div>
+      <div class="eyebrow">Quem vai te guiar</div>
+      <h2 class="h2">Conheça a Nazli</h2>
+      <div class="mentor-sub">01 da área fiscal e de controle<br>Mentora e especialista em métodos de estudo</div>
+      <p class="awards">🏆 1º lugar TCU<br>🏆 1º lugar SEFAZ-SP<br>🏆 1º lugar ISS-SP<br>🏆 3º lugar CGU<br>🏆 6º lugar RFB<br>🏆 5º lugar TCDF<br>🏆 6º lugar TCE-RJ<br>🏆 1º lugar ISS Guarulhos<br>🏆 6º lugar ISS Campinas<br>🏆 14º lugar ISS Campo Grande<br>🏆 1º lugar ISS Valinhos<br>🏆 3º lugar ISS Itapevi</p>
+      <p class="bio">Engenheira de formação. Auditora de profissão. Mais de 8 anos de experiência em concursos públicos.<br><br>Esse sistema me levou a 12 aprovações no topo das listas e deu origem ao Estudo Total. Agora estou aqui para te ensinar a construir o seu próprio sistema de estudos, adaptado à sua realidade.</p>
     </div>
   </div>
 </section>
 
-<!-- ===================== CONTEÚDO / TABELA ===================== -->
-<section class="section modules" id="conteudo">
+<!-- ===================== LOTES ===================== -->
+<section class="sec sec-ink">
   <div class="wrap">
-    <div class="modules-head-grid" data-reveal>
-      <div class="section-head">
-        <span class="eyebrow" data-content="modules_eyebrow">Tudo o que você precisa para a aprovação em termos de técnica e método</span>
-        <h2 data-content="modules_title">O que é o Estudo Total?</h2>
-        <p data-content="modules_subtitle">Um método para você aprender a estudar com autonomia e tomar melhores decisões na sua preparação.
-  <br><br>
-  É o sistema que desenvolvi para conquistar 12 aprovações no topo das listas. Ele nasceu da minha busca por entender o que faz um candidato evoluir, aumentar seu percentual de acertos e construir uma preparação consistente.
-  <br><br>
-  <strong>Aqui você encontra um método lógico, estruturado passo a passo, para aprender a decidir o que estudar, quando revisar, como acompanhar sua evolução e adaptar sua estratégia à sua realidade.</strong></p>
-      </div>
-      <div class="modules-highlight">
-        <div class="highlight-spacer" aria-hidden="true">
-          <span class="eyebrow" data-content="modules_eyebrow">Tudo o que você precisa para a aprovação em termos de técnica e método</span>
-          <h2 data-content="modules_title">O que é o Estudo Total?</h2>
+    <div class="eyebrow eyebrow-green">Lotes</div>
+    <h2 class="h2">Quanto antes, menor o preço</h2>
+    <p class="lead">Um lote especial de 24 horas na live e mais três lotes. O preço sobe a cada virada. As condições de cada lote só são reveladas no dia em que ele abre.</p>
+
+    <div class="esp-wrap">
+      <!-- especial acontecendo -->
+      <div class="esp esp-now" data-if="espAtual" hidden>
+        <div>
+          <div class="esp-head"><b>Lote especial · 24 horas</b><span class="pill-black">Agora</span></div>
+          <div class="esp-price-row"><span class="esp-price" data-bf="precoTxt"></span><span class="pill-black pill-lg" data-bf="pctTxt"></span></div>
+          <div class="esp-parc"><span data-bf="parcTxt"></span> · <span data-bf="bonusCurto"></span> · menor valor da Black Friday</div>
         </div>
-        <div class="highlight-card">
-          <p class="highlight-lead" data-content="modules_highlight_lead">O que você recebe no Estudo Total</p>
-          <div class="curso-features">
-            <div class="feature-item">
-              <div class="feature-text">
-                <h4 data-content="modules_hl1_title">Método completo</h4>
-                <p data-content="modules_hl1_desc">Aprenda o método passo a passo e comece a aplicar um sistema de estudos mais estratégico desde já.</p>
-              </div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-text">
-                <h4 data-content="modules_hl2_title">12 meses de acesso</h4>
-                <p data-content="modules_hl2_desc">Acesso às aulas e aos materiais por 12 meses após a inscrição, incluindo todas as atualizações do conteúdo.</p>
-              </div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-text">
-                <h4 data-content="modules_hl3_title">Suporte e garantia</h4>
-                <p data-content="modules_hl3_desc">Fórum para tirar suas dúvidas sobre o método e garantia incondicional de 7 dias.</p>
-              </div>
-            </div>
+        <div>
+          <div class="esp-cd-label">Termina em</div>
+          <div class="cd cd-black">
+            <div><b data-cd="d">00</b><span>dias</span></div>
+            <div><b data-cd="h">00</b><span>horas</span></div>
+            <div><b data-cd="m">00</b><span>min</span></div>
+            <div><b data-cd="s">00</b><span>seg</span></div>
           </div>
         </div>
       </div>
+      <!-- especial ainda vai abrir -->
+      <div class="esp esp-soon" data-if="espFuturo" hidden>
+        <div class="lock lock-64"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+        <div class="esp-soon-txt">
+          <b>Lote especial · 24 horas</b>
+          <div class="esp-soon-title">A condição mais baixa da Black Friday</div>
+          <div class="esp-soon-sub" data-bf="espAbre"></div>
+        </div>
+      </div>
+      <!-- especial encerrado -->
+      <div class="esp-done" data-if="espPassado" hidden><b>Lote especial · 24 horas</b><span>Encerrado</span></div>
     </div>
 
-    <div data-reveal>
-      <div class="table-scroll">
-        <table class="compare">
-          <colgroup>
-            <col class="col-name">
-            <col class="col-check">
-          </colgroup>
-          <thead>
-            <tr>
-              <th data-content="th_modulo">Módulos</th>
-              <th class="center" data-content="th_curso">Curso</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="cat-row"><td colspan="2" data-content="cat1_label">Conteúdo do Estudo Total</td></tr>
-            <tr>
-              <td><details class="mod-toggle"><summary><div class="mod-name" data-content="mod1_name">1 · Fases do estudo (novo, sólido e final)</div><span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary><div class="mod-desc" data-content="mod1_desc">Como estudar no pré e no pós-edital, como revisar de modo eficiente e eficaz, como aumentar seu percentual de acertos, como avaliar se está pronto(a) para uma prova, como ser aprovado(a) sem estudar tudo, como estudar o que realmente cai.</div></details></td>
-              <td class="center"><span class="yes">✓</span></td>
-            </tr>
-            <tr>
-              <td><details class="mod-toggle"><summary><div class="mod-name" data-content="mod2_name">2 · Planejamento</div><span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary><div class="mod-desc" data-content="mod2_desc">Como montar e evoluir um ciclo de estudos realmente personalizado para você, como estabelecer metas desafiadoras e realistas.</div></details></td>
-              <td class="center"><span class="yes">✓</span></td>
-            </tr>
-            <tr>
-              <td><details class="mod-toggle"><summary><div class="mod-name" data-content="mod3_name">3 · Disciplina e Foco</div><span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary><div class="mod-desc" data-content="mod3_desc">Como criar e manter a disciplina e o foco necessários para a aprovação, aplicativos e ferramentas úteis, como maximizar o tempo de estudo, como diminuir e se recuperar de distrações, como mudar seus hábitos, como parar de procrastinar.</div></details></td>
-              <td class="center"><span class="yes">✓</span></td>
-            </tr>
-            <tr>
-              <td><details class="mod-toggle"><summary><div class="mod-name" data-content="mod4_name">4 · Métricas e Acompanhamento</div><span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary><div class="mod-desc" data-content="mod4_desc">Quais são as poucas métricas que realmente importam, como acompanhar e agir a partir dessas métricas.</div></details></td>
-              <td class="center"><span class="yes">✓</span></td>
-            </tr>
-            <tr>
-              <td><details class="mod-toggle"><summary><div class="mod-name" data-content="mod5_name">5 · Discursivas</div><span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary><div class="mod-desc" data-content="mod5_desc">Como estudar para discursivas, receitas de bolo que funcionam, como corrigir suas próprias discursivas.</div></details></td>
-              <td class="center"><span class="yes">✓</span></td>
-            </tr>
-            <tr>
-              <td><details class="mod-toggle"><summary><div class="mod-name" data-content="mod6_name">6 · Recursos</div><span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary><div class="mod-desc" data-content="mod6_desc">Como fazer bons recursos de provas objetivas e discursivas (isso economiza muito dinheiro – acredite!).</div></details></td>
-              <td class="center"><span class="yes">✓</span></td>
-            </tr>
-            <tr>
-              <td><details class="mod-toggle"><summary><div class="mod-name" data-content="mod7_name">7 · Estudo com IA</div><span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary><div class="mod-desc" data-content="mod7_desc">Como usar a inteligência artificial para alavancar seus estudos de modo seguro.</div></details></td>
-              <td class="center"><span class="yes">✓</span></td>
-            </tr>
-            <tr>
-              <td><details class="mod-toggle"><summary><div class="mod-name" data-content="mod8_name">8 · Como voltar a estudar depois de muito tempo</div><span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary><div class="mod-desc" data-content="mod8_desc">Como retomar os estudos depois de um tempo parado(a) sem recomeçar do zero.</div></details></td>
-              <td class="center"><span class="yes">✓</span></td>
-            </tr>
-            <tr>
-              <td><details class="mod-toggle"><summary><div class="mod-name" data-content="mod9_name">9 · Migrando de área</div><span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary><div class="mod-desc" data-content="mod9_desc">Como avaliar se faz sentido mudar de área, como fazê-lo de modo inteligente e eficiente.</div></details></td>
-              <td class="center"><span class="yes">✓</span></td>
-            </tr>
-            <tr>
-              <td><details class="mod-toggle"><summary><div class="mod-name" data-content="mod10_name">10 · Bem-estar nos estudos</div><span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary><div class="mod-desc" data-content="mod10_desc">Como manter a saúde física e mental durante os estudos com tempo tão limitado.</div></details></td>
-              <td class="center"><span class="yes">✓</span></td>
-            </tr>
+    <div class="lotes" id="lotes"></div>
+  </div>
+</section>
 
-            <tr class="cat-row"><td colspan="2" data-content="cat2_label">Suporte e acesso</td></tr>
-            <tr>
-              <td><div class="mod-name" data-content="sup1_name">Período de acesso às aulas e aos materiais</div></td>
-              <td class="center">12 meses</td>
-            </tr>
-            <tr>
-              <td><div class="mod-name" data-content="sup2_name">Suporte no fórum de dúvidas (dúvidas sobre o método)</div></td>
-              <td class="center"><span class="yes">✓</span></td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr class="price-row">
-              <td><div class="mod-name" data-content="price_label">Investimento</div><div class="mod-desc" data-content="price_desc">Acesso completo por 12 meses</div></td>
-              <td class="center">
-                <div class="price" data-content="price_value">R$ 997<small>ou 12x de R$ 103,11</small></div>
-                <a href="#inscricao" class="btn btn-primary btn-sm" data-content="price_btn_curso">Entrar agora</a>
-              </td>
-            </tr>
-          </tfoot>
-        </table>
+<!-- ===================== O QUE VOCÊ RECEBE ===================== -->
+<section class="sec sec-white">
+  <div class="wrap two-col">
+    <div>
+      <div class="eyebrow">O que você recebe</div>
+      <h2 class="h2">O que é o Estudo Total?</h2>
+      <p class="desc">Um método para você aprender a estudar com autonomia e tomar melhores decisões na sua preparação.</p>
+
+      <div class="bonus-list">
+        <div class="bonus" data-if="aberta" hidden>
+          <div class="bonus-head"><b>Grupo de WhatsApp com a Nazli</b><span class="pill-green pill-sm">Bônus Black Friday</span></div>
+          <div class="bonus-txt">Grupo exclusivo para quem se inscrever na Black Friday.</div>
+        </div>
+        <div class="bonus" data-if="aberta" hidden>
+          <div class="bonus-head"><b data-bf="bonusMesesTit"></b><span class="pill-green pill-sm">Bônus Black Friday</span></div>
+          <div class="bonus-txt" data-bf="bonusMesesTxt"></div>
+        </div>
+        <div class="bonus bonus-locked" data-if="espera" hidden>
+          <div class="lock lock-44"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+          <div><b>Bônus Black Friday</b><div class="bonus-txt" data-bf="bonusRevela"></div></div>
+        </div>
+        <div class="support">
+          <div><b>Suporte</b><div>Fórum para tirar suas dúvidas sobre o método.</div></div>
+          <div><b>Garantia</b><div>Garantia incondicional de 7 dias. Se não gostar, o valor é devolvido.</div></div>
+        </div>
       </div>
     </div>
+
+    <ol class="modules">
+      <li><span>1</span><b>Fases do estudo (novo, sólido e final)</b></li>
+      <li><span>2</span><b>Planejamento</b></li>
+      <li><span>3</span><b>Disciplina e Foco</b></li>
+      <li><span>4</span><b>Métricas e Acompanhamento</b></li>
+      <li><span>5</span><b>Discursivas</b></li>
+      <li><span>6</span><b>Recursos</b></li>
+      <li><span>7</span><b>Estudo com IA</b></li>
+      <li><span>8</span><b>Como voltar a estudar depois de muito tempo</b></li>
+      <li><span>9</span><b>Migrando de área</b></li>
+      <li><span>10</span><b>Bem-estar nos estudos</b></li>
+    </ol>
   </div>
 </section>
 
 <!-- ===================== DEPOIMENTOS ===================== -->
-<section class="section testi" id="depoimentos">
+<section class="sec sec-black">
   <div class="wrap">
-    <div class="section-head" data-reveal>
-      <span class="eyebrow" data-content="testi_eyebrow">Depoimentos</span>
-      <h2 data-content="testi_title">O que dizem os alunos</h2>
-      <p data-content="testi_subtitle">Histórias reais de Estudantes Totais.</p>
+    <div class="eyebrow eyebrow-green">Depoimentos</div>
+    <h2 class="h2">O que dizem os alunos</h2>
+    <div class="quotes">
+      <figure class="quote">
+        <svg viewBox="0 0 32 22" width="28" fill="currentColor" aria-hidden="true"><path d="M7 0C10.87 0 14 3.13 14 7 14 13 7 22 7 22 7 22 0 13 0 7 0 3.13 3.13 0 7 0Z"/><path d="M25 0C28.87 0 32 3.13 32 7 32 13 25 22 25 22 25 22 18 13 18 7 18 3.13 21.13 0 25 0Z"/></svg>
+        <blockquote>A Nazli foi fundamental na minha trajetória. Segui a metodologia dela à risca para discursivas e os resultados vieram: hoje sou Auditor do TCU e fui nomeado na SEFAZ-CE. Podem confiar de olhos fechados.</blockquote>
+        <figcaption><b>Luiz Leão</b><span>Aprovado para Auditor do TCU e da SEFAZ-CE</span></figcaption>
+      </figure>
+      <figure class="quote">
+        <svg viewBox="0 0 32 22" width="28" fill="currentColor" aria-hidden="true"><path d="M7 0C10.87 0 14 3.13 14 7 14 13 7 22 7 22 7 22 0 13 0 7 0 3.13 3.13 0 7 0Z"/><path d="M25 0C28.87 0 32 3.13 32 7 32 13 25 22 25 22 25 22 18 13 18 7 18 3.13 21.13 0 25 0Z"/></svg>
+        <blockquote>Os ensinamentos da Nazli foram fundamentais na minha preparação. Aprendi a estudar com menos quantidade e mais qualidade, a estruturar revisões e a usar planilha para entender meus erros e ajustar a preparação.</blockquote>
+        <figcaption><b>Eduardo</b><span>Aprovado para Escrevente no TJ-SP</span></figcaption>
+      </figure>
+      <figure class="quote">
+        <svg viewBox="0 0 32 22" width="28" fill="currentColor" aria-hidden="true"><path d="M7 0C10.87 0 14 3.13 14 7 14 13 7 22 7 22 7 22 0 13 0 7 0 3.13 3.13 0 7 0Z"/><path d="M25 0C28.87 0 32 3.13 32 7 32 13 25 22 25 22 25 22 18 13 18 7 18 3.13 21.13 0 25 0Z"/></svg>
+        <blockquote>Com a ajuda da Nazli, consegui montar um planejamento de estudos e adaptá-lo ao longo do tempo, focando nas matérias que eu mais precisava e deixando minha rotina mais produtiva e direcionada.</blockquote>
+        <figcaption><b>Fabio</b><span>Aprovado para Técnico Bancário na Caixa Econômica Federal</span></figcaption>
+      </figure>
+      <figure class="quote">
+        <svg viewBox="0 0 32 22" width="28" fill="currentColor" aria-hidden="true"><path d="M7 0C10.87 0 14 3.13 14 7 14 13 7 22 7 22 7 22 0 13 0 7 0 3.13 3.13 0 7 0Z"/><path d="M25 0C28.87 0 32 3.13 32 7 32 13 25 22 25 22 25 22 18 13 18 7 18 3.13 21.13 0 25 0Z"/></svg>
+        <blockquote>Já percebi uma melhora significativa em decorrência do ET!! Consegui uns 10 pontos acima da média que vinha fazendo.</blockquote>
+        <figcaption><b>Geraldo Rodeiguez</b><span>Aluno da Turma 0, com menos de 2 meses de ET</span></figcaption>
+      </figure>
+      <figure class="quote">
+        <svg viewBox="0 0 32 22" width="28" fill="currentColor" aria-hidden="true"><path d="M7 0C10.87 0 14 3.13 14 7 14 13 7 22 7 22 7 22 0 13 0 7 0 3.13 3.13 0 7 0Z"/><path d="M25 0C28.87 0 32 3.13 32 7 32 13 25 22 25 22 25 22 18 13 18 7 18 3.13 21.13 0 25 0Z"/></svg>
+        <blockquote>Esse curso ET está sendo o divisor de águas pra mim. Agora estou estudando com direção e sabendo o passo a passo. Muito obrigado, Nazli.</blockquote>
+        <figcaption><b>José Emerson</b><span>Aluno da Turma 0</span></figcaption>
+      </figure>
     </div>
-
-    <div class="track" id="track" data-reveal>
-      <div class="quote">
-        <svg class="qmark" viewBox="0 0 32 22" aria-hidden="true"><path d="M7 0C10.87 0 14 3.13 14 7 14 13 7 22 7 22 7 22 0 13 0 7 0 3.13 3.13 0 7 0Z"/><path d="M25 0C28.87 0 32 3.13 32 7 32 13 25 22 25 22 25 22 18 13 18 7 18 3.13 21.13 0 25 0Z"/></svg>
-        <p data-content="t1_text">A Nazli foi fundamental na minha trajetória. <br><br>
-  Segui a metodologia dela à risca para discursivas e os resultados vieram: hoje sou Auditor do TCU e fui nomeado na SEFAZ-CE. <br><br>
-  Podem confiar de olhos fechados.</p>
-        <div class="who"><div><b data-content="t1_name">Luiz Leão</b><span data-content="t1_role">Aprovado para Auditor do TCU e da SEFAZ-CE</span></div></div>
-      </div>
-      <div class="quote">
-        <svg class="qmark" viewBox="0 0 32 22" aria-hidden="true"><path d="M7 0C10.87 0 14 3.13 14 7 14 13 7 22 7 22 7 22 0 13 0 7 0 3.13 3.13 0 7 0Z"/><path d="M25 0C28.87 0 32 3.13 32 7 32 13 25 22 25 22 25 22 18 13 18 7 18 3.13 21.13 0 25 0Z"/></svg>
-        <p data-content="t2_text">Os ensinamentos da Nazli foram fundamentais na minha preparação. Aprendi a estudar com menos quantidade e mais qualidade, a estruturar revisões e a usar planilha para entender meus erros e ajustar a preparação. Com metas realistas, mantive a motivação sem perder o ritmo. Não recebi só orientação — construí uma bagagem que vai me acompanhar nos próximos concursos.</p>
-        <div class="who"><div><b data-content="t2_name">Eduardo</b><span data-content="t2_role">Aprovado para Escrevente no TJ-SP</span></div></div>
-      </div>
-      <div class="quote">
-        <svg class="qmark" viewBox="0 0 32 22" aria-hidden="true"><path d="M7 0C10.87 0 14 3.13 14 7 14 13 7 22 7 22 7 22 0 13 0 7 0 3.13 3.13 0 7 0Z"/><path d="M25 0C28.87 0 32 3.13 32 7 32 13 25 22 25 22 25 22 18 13 18 7 18 3.13 21.13 0 25 0Z"/></svg>
-        <p data-content="t3_text">Com a ajuda da Nazli, consegui montar um planejamento de estudos e adaptá-lo ao longo do tempo, focando nas matérias que eu mais precisava e deixando minha rotina mais produtiva e direcionada. Ela também me ajudou com dicas de como organizar minhas anotações e criar meu próprio material para a revisão final pré-prova.</p>
-        <div class="who"><div><b data-content="t3_name">Fabio</b><span data-content="t3_role">Aprovado para Técnico Bancário na Caixa Econômica Federal</span></div></div>
-      </div>
-      <div class="quote">
-        <svg class="qmark" viewBox="0 0 32 22" aria-hidden="true"><path d="M7 0C10.87 0 14 3.13 14 7 14 13 7 22 7 22 7 22 0 13 0 7 0 3.13 3.13 0 7 0Z"/><path d="M25 0C28.87 0 32 3.13 32 7 32 13 25 22 25 22 25 22 18 13 18 7 18 3.13 21.13 0 25 0Z"/></svg>
-        <p data-content="t4_text">Já percebi uma melhora significativa em decorrência do ET!! Consegui uns 10 pontos acima da média que vinha fazendo.</p>
-        <div class="who"><div><b data-content="t4_name">Geraldo Rodeiguez</b><span data-content="t4_role">Aluno da Turma 0, com menos de 2 meses de ET</span></div></div>
-      </div>
-      <div class="quote">
-        <svg class="qmark" viewBox="0 0 32 22" aria-hidden="true"><path d="M7 0C10.87 0 14 3.13 14 7 14 13 7 22 7 22 7 22 0 13 0 7 0 3.13 3.13 0 7 0Z"/><path d="M25 0C28.87 0 32 3.13 32 7 32 13 25 22 25 22 25 22 18 13 18 7 18 3.13 21.13 0 25 0Z"/></svg>
-        <p data-content="t5_text">Melhorei 1000% os meus horários e estou rendendo muito mais. Agora eu consigo terminar de estudar bem mais cedo (cumprindo todas as metas). Estou muito mais seguro com seu método e seguindo o que você ensina. É bizarro como eu não tinha segurança alguma no jeito que eu estava estudando. Tenho certeza que sem isso, eu "bateria cabeça" em diversos pontos. Estou aprendendo muito agora.</p>
-        <div class="who"><div><b data-content="t5_name">Antenor</b><span data-content="t5_role">Aluno da Turma 0</span></div></div>
-      </div>
-      <div class="quote">
-        <svg class="qmark" viewBox="0 0 32 22" aria-hidden="true"><path d="M7 0C10.87 0 14 3.13 14 7 14 13 7 22 7 22 7 22 0 13 0 7 0 3.13 3.13 0 7 0Z"/><path d="M25 0C28.87 0 32 3.13 32 7 32 13 25 22 25 22 25 22 18 13 18 7 18 3.13 21.13 0 25 0Z"/></svg>
-        <p data-content="t6_text">Esse curso ET está sendo o divisor de águas pra mim. Agora estou estudando com direção e sabendo o passo a passo. Muito obrigado, Nazli.</p>
-        <div class="who"><div><b data-content="t6_name">José Emerson</b><span data-content="t6_role">Aluno da Turma 0</span></div></div>
-      </div>
-      <div class="quote">
-        <svg class="qmark" viewBox="0 0 32 22" aria-hidden="true"><path d="M7 0C10.87 0 14 3.13 14 7 14 13 7 22 7 22 7 22 0 13 0 7 0 3.13 3.13 0 7 0Z"/><path d="M25 0C28.87 0 32 3.13 32 7 32 13 25 22 25 22 25 22 18 13 18 7 18 3.13 21.13 0 25 0Z"/></svg>
-        <p data-content="t7_text">Os vídeos dela explodem a mente da gente. Só dá vontade de agradecer enquanto assisto.</p>
-        <div class="who"><div><b data-content="t7_name">Audy</b><span data-content="t7_role">Aluno da Turma 0</span></div></div>
-      </div>
-      <div class="quote">
-        <svg class="qmark" viewBox="0 0 32 22" aria-hidden="true"><path d="M7 0C10.87 0 14 3.13 14 7 14 13 7 22 7 22 7 22 0 13 0 7 0 3.13 3.13 0 7 0Z"/><path d="M25 0C28.87 0 32 3.13 32 7 32 13 25 22 25 22 25 22 18 13 18 7 18 3.13 21.13 0 25 0Z"/></svg>
-        <p data-content="t8_text">Top demais viu!! Conheço muitas mentorias, mas ninguém apresentou um material como o seu!! Muito feliz com o investimento!</p>
-        <div class="who"><div><b data-content="t8_name">Karla</b><span data-content="t8_role">Aluna da Turma 0</span></div></div>
-      </div>
-      <div class="quote">
-        <svg class="qmark" viewBox="0 0 32 22" aria-hidden="true"><path d="M7 0C10.87 0 14 3.13 14 7 14 13 7 22 7 22 7 22 0 13 0 7 0 3.13 3.13 0 7 0Z"/><path d="M25 0C28.87 0 32 3.13 32 7 32 13 25 22 25 22 25 22 18 13 18 7 18 3.13 21.13 0 25 0Z"/></svg>
-        <p data-content="t9_text">Simplesmente FAN-TÁS-TI-CO! AMEI!</p>
-        <div class="who"><div><b data-content="t9_name">Aparício Geraldes</b><span data-content="t9_role">Aluno da Turma 0</span></div></div>
-      </div>
-      <div class="quote">
-        <svg class="qmark" viewBox="0 0 32 22" aria-hidden="true"><path d="M7 0C10.87 0 14 3.13 14 7 14 13 7 22 7 22 7 22 0 13 0 7 0 3.13 3.13 0 7 0Z"/><path d="M25 0C28.87 0 32 3.13 32 7 32 13 25 22 25 22 25 22 18 13 18 7 18 3.13 21.13 0 25 0Z"/></svg>
-        <p data-content="t10_text">O curso é MARAVILHOSO ❤️❤️. <br><br> São detalhes que fazem muita diferença. Tenho certeza de que, com as suas instruções e muitas horas de estudo, alcançarei meu objetivo de ser Auditora. Muito obrigada por dividir tanto conhecimento. Estou amando o curso ❤️!</p>
-        <div class="who"><div><b data-content="t10_name">Nayanny Cruz</b><span data-content="t10_role">Aluna da Turma 0</span></div></div>
-      </div>
-      <div class="quote">
-        <svg class="qmark" viewBox="0 0 32 22" aria-hidden="true"><path d="M7 0C10.87 0 14 3.13 14 7 14 13 7 22 7 22 7 22 0 13 0 7 0 3.13 3.13 0 7 0Z"/><path d="M25 0C28.87 0 32 3.13 32 7 32 13 25 22 25 22 25 22 18 13 18 7 18 3.13 21.13 0 25 0Z"/></svg>
-        <p data-content="t11_text">Não é à toa que você é o “Pelé dos concursos”. Tem tantos detalhes que eu sei que vou rever mais de uma vez com calma, porque cada vírgula ali importa muito, ensinamentos de um mestre. Pessoas que já estão há anos na mesma metodologia sabem o quanto é difícil confiar e mudar baseado em outro método, corrigir vícios antigos, manias, desconstruir, mas você é literalmente de outro planeta (ET). Já admirava. Após o cuidado e profissionalismo com que você fez o curso, admiro mais ainda.</p>
-        <div class="who"><div><b data-content="t11_name">Ricardo</b><span data-content="t11_role">Aluno da Turma 0</span></div></div>
-      </div>
-      <div class="quote">
-        <svg class="qmark" viewBox="0 0 32 22" aria-hidden="true"><path d="M7 0C10.87 0 14 3.13 14 7 14 13 7 22 7 22 7 22 0 13 0 7 0 3.13 3.13 0 7 0Z"/><path d="M25 0C28.87 0 32 3.13 32 7 32 13 25 22 25 22 25 22 18 13 18 7 18 3.13 21.13 0 25 0Z"/></svg>
-        <p data-content="t12_text">Só passando pra dar o feedback que assisti todos os vídeos liberados e dizer que AMEI o conteúdo. Muito obrigada por tanta informação! Simplesmente IMPECÁVEL! Pra cima 👏🏻😍🚀🚀</p>
-        <div class="who"><div><b data-content="t12_name">Georgia</b><span data-content="t12_role">Aluna da Turma 0</span></div></div>
-      </div>
-      <div class="quote">
-        <svg class="qmark" viewBox="0 0 32 22" aria-hidden="true"><path d="M7 0C10.87 0 14 3.13 14 7 14 13 7 22 7 22 7 22 0 13 0 7 0 3.13 3.13 0 7 0Z"/><path d="M25 0C28.87 0 32 3.13 32 7 32 13 25 22 25 22 25 22 18 13 18 7 18 3.13 21.13 0 25 0Z"/></svg>
-        <p data-content="t13_text">Suas aulas são excelentes e sua técnica é absurda de boa!</p>
-        <div class="who"><div><b data-content="t13_name">Thais</b><span data-content="t13_role">Aluna da Turma 0</span></div></div>
-      </div>
-    </div>
-
-    <div class="carousel-controls" data-reveal>
-      <button id="prevBtn" aria-label="Anterior">‹</button>
-      <div class="dots" id="dots"></div>
-      <button id="nextBtn" aria-label="Próximo">›</button>
-    </div>
+    <div class="drag-hint">Arraste para ver mais →</div>
   </div>
 </section>
 
 <!-- ===================== FAQ ===================== -->
-<section class="section faq" id="faq">
-  <div class="wrap">
-    <div class="section-head" style="margin:0 auto 48px;text-align:center" data-reveal>
-      <span class="eyebrow" style="justify-content:center" data-content="faq_eyebrow">Tire suas dúvidas</span>
-      <h2 data-content="faq_title">Perguntas frequentes</h2>
-    </div>
-    <div class="faq-list" data-reveal>
-      <details class="faq-item" open>
-        <summary><span data-content="faq1_q">Para quem é o Estudo Total?</span> <span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary>
-        <div class="ans" data-content="faq1_a">Para qualquer pessoa que esteja estudando para concursos públicos, do iniciante absoluto a quem já estuda, mas não alcança os resultados desejados.
-           <br><br> O Estudo Total NÃO é para quem sente que está no caminho certo e que conseguirá atingir a aprovação desejada mantendo seus estudos atual. Nesse caso, continue o que está fazendo.</div>
+<section class="sec sec-white">
+  <div class="wrap wrap-narrow">
+    <h2 class="h2 h2-center">Perguntas frequentes</h2>
+    <div class="faq">
+      <details open>
+        <summary><span data-bf="faq1Q"></span><i>+</i></summary>
+        <div data-bf="faq1A"></div>
       </details>
-      <details class="faq-item">
-        <summary><span data-content="faq2_q">Sou bem iniciante. O Estudo Total é para mim?</span> <span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary>
-        <div class="ans" data-content="faq2_a">Sem dúvidas! O Estudo Total é ideal para você, começando agora. Você aprenderá como organizar seus estudos de modo eficiente e independente, do zero, antes de ter vícios de estudo. <br><br>
-  Inclusive, vou contar uma curiosidade sobre mim. Decidi estudar para concursos em 2017, no último ano da faculdade. Mas eu tinha decidido começar os estudos mesmo em 2018, quando me formasse, pois em 2017 estava conciliando estudo, trabalho e TCC. <br><br>
-  De qualquer forma, tive alguns meses entre a decisão de estudar e o início dos estudos de fato. Nesse período, fiquei só pesquisando e aprendendo sobre técnicas de estudo, para já começar do modo certo. Isso me ajudou muito a ganhar velocidade no início dos estudos, pois evitei muitos erros comuns. Depois, ao longo da trajetória, fui aperfeiçoando essas técnicas e construí o método que me trouxe mais de 10 aprovações em concursos públicos. <br><br>
-  Você também tem essa oportunidade agora. 😊</div>
+      <details>
+        <summary>Quando vira cada lote?<i>+</i></summary>
+        <div>O lote especial abre na live de 03/11 às 20h e dura 24 horas. Depois vêm o Lote 1 (até 10/11), o Lote 2 (a partir de 11/11) e o Lote 3 (a partir de 21/11), no horário de Brasília. As condições de cada lote só são reveladas no dia em que ele abre, e o preço sobe a cada virada.</div>
       </details>
-      <details class="faq-item">
-        <summary><span data-content="faq3_q">Já estudo há algum tempo. O Estudo Total é para mim?</span> <span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary>
-        <div class="ans" data-content="faq3_a"><strong>Depende!</strong> Preciso ser transparente com você. O Estudo Total pode ou não ser para você, a depender da sua bagagem e dos seus resultados até agora. <br><br>
-  <strong>Se você estuda há algum tempo, mas se sente perdido(a), acha que está cometendo erros ou ainda não conseguiu aprovações, sim</strong>, o Estudo Total vai ajudá-lo(a) muito a corrigir os desvios de percurso e melhorar seu rendimento! <br><br>
-  Porém, <strong>se você estuda há algum tempo e já conseguiu algumas aprovações, vamos pensar em dois cenários:</strong> <br><br>
-  • <strong>Você tem aprovações, como para cargos de técnicos e analista, mas precisa levar seu estudo para o próximo nível para ser aprovado(a) em concursos que exigem mais ainda (auditor, carreiras jurídicas, etc) e não sabe como fazer isso: o Estudo Total irá ajudá-lo(a) dar esse upgrade nos estudos.</strong> Vale comentar que o conteúdo será bem dividido em módulos e assuntos, de modo que você poderá priorizar suas deficiências maiores de modo fácil. <br><br>
-  • <strong>Você sente que está no caminho certo e que conseguirá atingir suas metas mantendo seus estudos atual: nesse caso, o Estudo Total NÃO é para você.</strong> Mantenha-se fazendo o que já está dando resultado e funcionou para você, ok?</div>
+      <details>
+        <summary>Para quem é o Estudo Total?<i>+</i></summary>
+        <div>Para qualquer pessoa que esteja estudando para concursos públicos, do iniciante absoluto a quem já estuda, mas não alcança os resultados desejados.<br><br>O Estudo Total NÃO é para quem sente que está no caminho certo e que conseguirá atingir a aprovação desejada mantendo seus estudos atual. Nesse caso, continue o que está fazendo.</div>
       </details>
-      <details class="faq-item">
-        <summary><span data-content="faq4_q">O Estudo Total serve para qualquer concurso?</span> <span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary>
-        <div class="ans" data-content="faq4_a"><strong>Com certeza!</strong> Apesar de eu ter focado na área fiscal e de controle, o conteúdo é aplicável para qualquer área de concurso público. Eu já ajudei concurseiros a serem aprovados não só nas áreas fiscal e de controle, mas também nas áreas bancária, de tribunais e de TI, por exemplo.</div>
-      </details>
-      <details class="faq-item">
-        <summary><span data-content="faq5_q">Já fiz vários cursos e/ou mentorias. O que o Estudo Total tem de diferente?</span> <span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary>
-        <div class="ans" data-content="faq5_a">O Estudo Total sai do padrão dos cursos e mentorias atuais, no conteúdo, no modo de ensinar e no modo de pensar a preparação para concursos.
-           <br><br> Diferentemente de mentorias/consultorias que desejam que você se torne dependente e seja aluno por muito tempo, meu foco é te ensinar a estudar de modo autônomo e independente. Não quero ficar pescando por você até a sua aprovação - quero te ensinar a pescar! 
-           Meu objetivo é que, em 6 meses, você tenha segurança de caminhar com as próprias pernas e não precise mais de mim ou de outro serviço de mentoria/consultoria.
-           Veja o que alguns alunos que passaram por outros cursos/mentorias/consultorias disseram:<br><br>
-           • “Top demais viu!! Conheço muitas mentorias mas ninguém apresentou um material como o seu!! Muito feliz com o investimento!!” (Karla, aluna da T0)<br><br>
-           • “Você consegue me trazer clareza e segurança, resolver meus anseios e inseguranças. Todas as outras mentorias que eu fiz não entregaram um décimo do que você entrega.” (Veronica Bocalon, aluna da T0)<br><br>
-           • “O curso é MARAVILHOSO ❤️❤️. São detalhes que fazem muita diferença. Muito obrigada por dividir tanto conhecimento. ❤️ Estou amando o curso!” (Nayanny Cruz, aluna da T0)</div>
-      </details>
-      <details class="faq-item">
-        <summary><span data-content="faq6_q">Eu não ia bem na escola/faculdade. Ainda tenho esperança de ser aprovado(a)?</span> <span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary>
-        <div class="ans" data-content="faq6_a"><strong>Com certeza!</strong> O que veremos não depende do seu histórico até aqui. Colocando em prática o que aprenderemos, você terá condições de ser aprovado(a) nos concursos dos seus sonhos!</div>
-      </details>
-      <details class="faq-item">
-        <summary><span data-content="faq7_q">Por quanto tempo terei acesso?</span> <span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary>
-        <div class="ans" data-content="faq7_a">O acesso às aulas e ao material é liberado por 12 meses após a inscrição, incluindo todas as atualizações do conteúdo.</div>
-      </details>
-      <details class="faq-item">
-        <summary><span data-content="faq8_q">Como acesso as aulas?</span> <span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary>
-        <div class="ans" data-content="faq8_a">Assim que se tornar aluno(a), você receberá um login e senha por e-mail (cheque o spam). <br><br>
-            As aulas são acessadas pelo site <u><strong><a href="https://www.nazlisetton.com.br/" target="_blank" rel="noopener">nazlisetton.com.br</a></strong></u>. Você também pode acessar pelo botão <strong>Área do aluno</strong> no topo desta página.</div>
-      </details>
-      <details class="faq-item">
-        <summary><span data-content="faq9_q">Como funciona a garantia?</span> <span class="ic"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span></summary>
-        <div class="ans" data-content="faq9_a">Você tem 7 dias para testar o Estudo Total. Se não gostar, o valor integral é devolvido sem burocracia. Basta solicitar seu reembolso <u><strong><a href="https://refund.hotmart.com/" target="_blank" rel="noopener">neste link</a></strong></u>.</div>
+      <details>
+        <summary>Como funciona a garantia?<i>+</i></summary>
+        <div>Você tem 7 dias para testar o Estudo Total. Se não gostar, o valor integral é devolvido sem burocracia. Basta solicitar seu reembolso <a href="https://refund.hotmart.com/" target="_blank" rel="noopener">neste link</a>.</div>
       </details>
     </div>
   </div>
 </section>
 
 <!-- ===================== CTA FINAL ===================== -->
-<section class="section cta-final" id="inscricao">
-  <div class="wrap" data-reveal>
-    <span class="eyebrow" style="justify-content:center" data-content="cta_eyebrow">A APROVAÇÃO COMEÇA COM MÉTODO</span>
-    <h2 style="margin-top:16px" data-content="cta_title">Construa um sistema de estudo que funciona</h2>
-    <p data-content="cta_text">Pare de "bater cabeça" nos estudos e construa uma preparação com autonomia, clareza e eficiência.
-  <br><br>
-  Aprenda o método. Construa sua preparação. Conquiste a aprovação.</p>
-    <div class="cta-actions">
-      <a href="https://pay.hotmart.com/R105136958K" class="btn btn-dark btn-lg" target="_blank" rel="noopener" data-content="cta_btn">Quero me inscrever no Estudo Total →</a>
-      <p class="cta-guarantee" data-content="cta_guarantee">Garantia incondicional de 7 dias. Comece agora sem risco.</p>
+<section class="final">
+  <div class="wrap wrap-narrow final-in">
+    <div class="final-label" data-if="contando" data-bf="cdLabel" hidden></div>
+    <div class="cd cd-final" data-if="contando" hidden>
+      <div><b data-cd="d">00</b><span>dias</span></div>
+      <div><b data-cd="h">00</b><span>horas</span></div>
+      <div><b data-cd="m">00</b><span>min</span></div>
+      <div><b data-cd="s">00</b><span>seg</span></div>
     </div>
+    <h2 class="final-h2">Construa um sistema de estudo que funciona</h2>
+    <div class="final-line" data-bf="ctaFinalLinha"></div>
+    <a class="btn-black" data-if="temCta" data-cta data-bf="ctaFinal" target="_blank" rel="noopener" hidden></a>
+    <button type="button" class="btn-black" data-if="aguardando" data-reload hidden>Atualizar página</button>
+    <div class="final-note">Garantia incondicional de 7 dias. Comece agora sem risco.</div>
   </div>
 </section>
 
-<!-- ===================== FOOTER ===================== -->
-<footer>
-  <div class="wrap">
-    <div class="foot-grid">
-      <div style="max-width:300px">
-        <div class="logo" data-content="logo"><span class="g">E</span>studo <span class="g">T</span>otal</div>
-        <p style="font-size:.92rem" data-content="footer_tagline">Desempenho de outro mundo</p>
-      </div>
-      <div class="foot-links">
-        <div class="foot-col">
-          <h4 data-content="footer_nav_title">Navegação</h4>
-          <a href="#" data-content="footer_nav_metodo">O método</a>
-          <a href="#mentora" data-content="footer_nav_mentora">A Nazli</a>
-          <a href="#conteudo" data-content="footer_nav_conteudo">Conteúdo</a>
-          <a href="#depoimentos" data-content="footer_nav_depoimentos">Depoimentos</a>
-          <a href="#faq" data-content="footer_nav_faq">FAQ</a>
-        </div>
-        <div class="foot-col">
-          <h4 data-content="footer_contact_title">Contato</h4>
-          <a href="https://www.instagram.com/nazlisetton/" target="_blank" rel="noopener" data-content="footer_contact_1">Instagram</a>
-          <a href="https://www.youtube.com/@nazlisetton" target="_blank" rel="noopener" data-content="footer_contact_2">YouTube</a>
-          <a href="https://nazlisetton-newsletter.beehiiv.com/" target="_blank" rel="noopener" data-content="footer_contact_3">Newsletter</a>
-          <!-- <a href="#" data-content="footer_contact_4">E-mail</a> -->
-        </div>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <span>© <span id="year"></span> <span data-content="footer_copy">Estudo Total · Nazli. Todos os direitos reservados.</span></span>
-      <span data-content="footer_made">Feito com tecnologia alienígena.</span>
-    </div>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span><b class="logo logo-sm"><span class="g">E</span>studo <span class="g">T</span>otal</b> · Desempenho de outro mundo</span>
+    <span class="foot-links"><a href="https://www.nazlisetton.com.br/login" target="_blank" rel="noopener">Área do aluno</a><span>© <span id="year">2026</span> Estudo Total · Nazli. Todos os direitos reservados.</span></span>
   </div>
 </footer>
 
-<div class="video-modal" id="videoModal" aria-hidden="true">
-  <div class="video-modal-backdrop" data-modal-close></div>
-  <div class="video-modal-dialog" role="dialog" aria-modal="true" aria-label="Apresentação do Estudo Total">
-    <button class="video-modal-close" data-modal-close aria-label="Fechar vídeo">✕</button>
-    <div class="video-ratio">
-      <iframe
-        title="Apresentação do Estudo Total"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
+<!-- barra fixa (mobile) -->
+<div class="mbar">
+  <div class="mbar-txt">
+    <b data-bf="barTop"></b>
+    <span data-bf="barSub"></span>
+  </div>
+  <a class="mbar-cta" data-if="temCta" data-cta data-bf="barCta" target="_blank" rel="noopener" hidden></a>
+  <button type="button" class="mbar-cta" data-if="aguardando" data-reload hidden>Atualizar</button>
+</div>
+
+<!-- modal do vídeo -->
+<div class="modal" id="videoModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="videoModalTitle">
+  <div class="modal-box">
+    <div class="modal-head">
+      <b id="videoModalTitle" data-bf="videoTitulo"></b>
+      <button type="button" class="modal-x" data-modal-close aria-label="Fechar vídeo">✕</button>
     </div>
+    <div class="modal-frame" id="videoFrame"></div>
   </div>
 </div>
 
-<script src="content.js"></script>
-<script src="app.js"></script>
+<script src="content.js?v=bf26"></script>
+<script src="app.js?v=bf26"></script>
 </body>
 </html>
