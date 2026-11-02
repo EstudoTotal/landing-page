@@ -20,7 +20,7 @@ window.BF_CONTENT = {
 
   whatsapp: 'https://chat.whatsapp.com/H1TpnKd51X2LCtWywkqLvj',
   videoMetodo: '-ywjjqygiGk',   // "Entender como funciona" (só aparece se videoLive estiver vazio)
-  videoLive: 'BpFBnPYa8gI',     // live de lançamento (youtube.com/live/BpFBnPYa8gI)
+  videoLive: 'Bjk-9YN53HE',     // live de lançamento (youtube.com/watch?v=Bjk-9YN53HE)
 
   // Horário de Brasília
   live: { data: '03/11', hora: '20h', inicio: '2026-11-03T20:00:00-03:00' },
