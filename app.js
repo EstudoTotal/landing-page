@@ -96,8 +96,8 @@
         : prorrogado ? `Black Friday prorrogada até ${P.data}`
         : atual ? `Lote ${atual.n} de 3 · ${atual.per}` : 'Black Friday · encerrada',
       liveTag: aoVivo ? 'Live de lançamento · no ar agora' : `Live de lançamento · ${quando}`,
-      espAbre: `Abre junto com a live, em ${C.live.data} às ${C.especial.hora}, e vai até ${C.especial.per.split(' a ')[1]}.`,
-      suporteTxt: espera ? 'Fórum para tirar suas dúvidas sobre o método.' : 'Fórum + Grupo de WhatsApp para tirar suas dúvidas sobre o método.',
+      espAbre: `Abre durante a live, em ${C.live.data} às ${C.especial.hora}, e vai até ${C.especial.per.split(' a ')[1]}.`,
+      suporteTxt: k === -2 ? 'Fórum para tirar suas dúvidas sobre o método.' : 'Fórum + Grupo de WhatsApp para tirar suas dúvidas sobre o método.',
       bonusRevela: `Revelados na live de lançamento, em ${quando}.`,
       headerCta: espera ? 'Entrar no grupo' : 'Garantir desconto',
       barCta: espera ? 'Entrar no grupo' : 'Garantir →',
@@ -110,7 +110,7 @@
         : especial ? 'A live de lançamento da Black Friday, ao vivo e depois na íntegra.' : 'A live de lançamento da Black Friday, na íntegra.',
       faq1Q: espera ? 'Quando a oferta será revelada?' : 'Até quando vale a oferta?',
       faq1A: espera
-        ? `Na live de lançamento, em ${quando}. O lote especial abre junto com a live, e o link é enviado no grupo do WhatsApp.`
+        ? `Na live de lançamento, em ${quando}. O lote especial abre às ${C.especial.hora}, durante a live, e o link é enviado no grupo do WhatsApp.`
         : encerrada ? `A Black Friday terminou em ${fimBlack}, no horário de Brasília.`
         : prorrogado
           ? `A Black Friday foi prorrogada até ${fimBlack}, no horário de Brasília, nas condições do Lote 3.`
@@ -123,7 +123,7 @@
         cdLabel: aoVivo ? 'O lote especial abre em' : 'A live começa em',
         heroReveal: aoVivo ? `A live está no ar! O lote especial abre às ${C.especial.hora}.` : `A oferta será revelada na live de lançamento, em ${C.live.data}.`,
         ctaFinal: 'Entrar no grupo do WhatsApp →',
-        ctaFinalLinha: aoVivo ? `O lote especial abre às ${C.especial.hora}, no fim da live.` : `A oferta será revelada na live de lançamento, em ${quando}.`,
+        ctaFinalLinha: aoVivo ? `O lote especial abre às ${C.especial.hora}, durante a live.` : `A oferta será revelada na live de lançamento, em ${quando}.`,
         barTop: aoVivo ? 'Live no ar agora' : `Live ${C.live.data} · ${C.live.hora}`
       });
     } else if (vendendo) {

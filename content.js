@@ -22,12 +22,12 @@ window.BF_CONTENT = {
   videoMetodo: '-ywjjqygiGk',   // "Entender como funciona" (só aparece se videoLive estiver vazio)
   videoLive: 'Bjk-9YN53HE',     // live de lançamento (youtube.com/watch?v=Bjk-9YN53HE)
 
-  // Horário de Brasília. A live vai das 19h às 20h; o lote especial abre junto com ela.
+  // Horário de Brasília. A live vai das 19h às 20h; o lote especial abre no meio dela, às 19h30.
   live: { data: '03/11', hora: '19h', inicio: '2026-11-03T19:00:00-03:00' },
 
   especial: {
-    hora: '19h', inicio: '2026-11-03T19:00:00-03:00',
-    per: '03/11 19h a 04/11 20h', fim: '2026-11-04T20:00:00-03:00',
+    hora: '19h30', inicio: '2026-11-03T19:30:00-03:00',
+    per: '03/11 19h30 a 04/11 20h', fim: '2026-11-04T20:00:00-03:00',
     preco: '597', parcela: '61,02', bonusMeses: 3,
     checkout: 'https://pay.hotmart.com/R105136958K?off=9ivbee23'
   },
