@@ -185,6 +185,7 @@
         <div class="lote-per">${s.atual.per}</div>
         <div class="lote-price">R$ ${l.preco}</div>
         <div class="lote-parc">ou 12x de R$ ${l.parcela}</div>
+        <a class="btn-lote" href="${s.ctaHref}" target="_blank" rel="noopener">Garantir o Lote ${l.n} →</a>
       </div>`;
     if (l.n < s.loteNum) return `
       <div class="lote lote-done">

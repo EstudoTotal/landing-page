@@ -243,6 +243,14 @@
   .lote-now{background:var(--green);color:var(--black)}
   .lote-price{font-weight:900;font-size:40px;line-height:1;letter-spacing:-.03em;margin-top:10px;white-space:nowrap}
   .lote-parc{font-size:14px}
+  .btn-lote{
+    display:inline-flex;justify-content:center;align-self:stretch;
+    background:var(--black);color:var(--white);font-weight:800;font-size:15px;
+    padding:13px 20px;border-radius:100px;margin-top:auto;transition:color .18s ease;
+  }
+  .lote-now .btn-lote{margin-top:16px}
+  .esp-now .btn-lote{margin-top:18px;padding:14px 28px}
+  .btn-lote:hover{color:var(--green)}
   .lote-done{border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.45)}
   .lote-closed{font-weight:800;font-size:22px;line-height:1;letter-spacing:.02em;margin-top:12px;text-transform:uppercase}
   .lote-soon{border:1.5px dashed rgba(255,255,255,.22)}
