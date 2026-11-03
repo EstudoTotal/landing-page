@@ -96,7 +96,8 @@
         : prorrogado ? `Black Friday prorrogada até ${P.data}`
         : atual ? `Lote ${atual.n} de 3 · ${atual.per}` : 'Black Friday · encerrada',
       liveTag: aoVivo ? 'Live de lançamento · no ar agora' : `Live de lançamento · ${quando}`,
-      espAbre: `Abre no fim da live, em ${C.live.data} às ${C.especial.hora}, e dura só 24 horas.`,
+      espAbre: `Abre junto com a live, em ${C.live.data} às ${C.especial.hora}, e vai até ${C.especial.per.split(' a ')[1]}.`,
+      suporteTxt: espera ? 'Fórum para tirar suas dúvidas sobre o método.' : 'Fórum + Grupo de WhatsApp para tirar suas dúvidas sobre o método.',
       bonusRevela: `Revelados na live de lançamento, em ${quando}.`,
       headerCta: espera ? 'Entrar no grupo' : 'Garantir desconto',
       barCta: espera ? 'Entrar no grupo' : 'Garantir →',
@@ -106,10 +107,10 @@
       videoSub: !live ? 'Assista ao vídeo para entender a lógica do Estudo Total!'
         : aoVivo ? 'Assista agora à live de lançamento da Black Friday.'
         : espera ? `${quando}, ao vivo no YouTube.`
-        : especial ? 'A live de lançamento da Black Friday, na íntegra.' : 'A live de lançamento da Black Friday, na íntegra.',
+        : especial ? 'A live de lançamento da Black Friday, ao vivo e depois na íntegra.' : 'A live de lançamento da Black Friday, na íntegra.',
       faq1Q: espera ? 'Quando a oferta será revelada?' : 'Até quando vale a oferta?',
       faq1A: espera
-        ? `Na live de lançamento, em ${quando}. O lote especial abre às ${C.especial.hora}, no fim da live, e o link é enviado no grupo do WhatsApp.`
+        ? `Na live de lançamento, em ${quando}. O lote especial abre junto com a live, e o link é enviado no grupo do WhatsApp.`
         : encerrada ? `A Black Friday terminou em ${fimBlack}, no horário de Brasília.`
         : prorrogado
           ? `A Black Friday foi prorrogada até ${fimBlack}, no horário de Brasília, nas condições do Lote 3.`
@@ -145,12 +146,13 @@
         parcTxt: `ou 12x de R$ ${atual.parcela}`,
         pctTxt: pct,
         mesTxt: `R$ ${brl(mes)} por mês`,
-        mesSub: `${Math.round((1 - mes / mesBase) * 100)}% a menos por mês de acesso (antes R$ ${brl(mesBase)})`,
+        mesPct: `${Math.round((1 - mes / mesBase) * 100)}% a menos`,
+        mesSub: `por mês de acesso (antes R$ ${brl(mesBase)})`,
         acessoTotal: `${meses} meses de acesso`,
         acessoDet: `(12 meses + ${bonus.slice(1)} de bônus Black Friday)`,
         bonusCurto: `${bonus} de acesso`,
         bonusMesesTit: `${bonus} de acesso`,
-        bonusMesesTxt: `Acesso às aulas e aos materiais por ${meses} meses após a inscrição, no lugar de 12, incluindo todas as atualizações do conteúdo.`,
+        bonusMesesTxt: `Acesso às aulas e aos materiais por ${meses} meses após a inscrição, em vez de 12, incluindo todas as atualizações do conteúdo.`,
         ctaOferta: cta,
         ctaFinal: cta,
         ctaFinalLinha: `De R$ ${C.precoCheio} por R$ ${atual.preco} ou 12x de R$ ${atual.parcela}`,
