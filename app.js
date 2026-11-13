@@ -50,7 +50,7 @@
   // ---------- UTM ----------
   // Preserva os parâmetros de campanha no link do checkout (Hotmart), já que ele fica em domínio externo.
   // fbclid vai junto para o pixel da Hotmart atribuir a compra ao anúncio (cookie _fbc não cruza domínios).
-  const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'fbclid'];
+  const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'fbclid', 'src', 'sck'];
   const utm = {};
   UTM_KEYS.forEach(k => { if (qs.has(k)) utm[k] = qs.get(k); });
   if (Object.keys(utm).length) {
@@ -60,7 +60,16 @@
     if (stored) Object.assign(utm, JSON.parse(stored));
     else { utm.utm_source = 'et-black'; utm.utm_medium = 'referral'; }
   }
-  const comUtm = url => url + (url.includes('?') ? '&' : '?') + new URLSearchParams(utm).toString();
+  // Hotmart: o relatório de vendas mostra a origem por SRC e SCK (as UTMs só aparecem no Analytics).
+  const limpa = v => String(v || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9_-]+/g, '_').slice(0, 60);
+  const src = limpa(utm.src) || limpa([utm.utm_source, utm.utm_medium].filter(Boolean).join('_')) || 'et-black_referral';
+  const sck = limpa(utm.sck) || limpa(utm.utm_content || utm.utm_campaign) || 'direto';
+  const comUtm = url => {
+    const p = new URLSearchParams(utm);
+    p.set('src', src);
+    p.set('sck', sck);
+    return url + (url.includes('?') ? '&' : '?') + p.toString();
+  };
 
   // ---------- estado de cada etapa ----------
   const estado = k => {

@@ -23,6 +23,10 @@
     params.set('utm_medium', 'offline');
     params.set('utm_campaign', 'black-friday');
   }
+  // Hotmart: o relatório de vendas mostra a origem por SRC e SCK
+  var limpa = function (v) { return String(v || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9_-]+/g, '_').slice(0, 60); };
+  params.set('src', limpa(params.get('src')) || limpa([params.get('utm_source'), params.get('utm_medium')].filter(Boolean).join('_')) || 'qrcode_offline');
+  params.set('sck', limpa(params.get('sck')) || limpa(params.get('utm_content') || params.get('utm_campaign')) || 'black-friday');
 
   var url = '/';
   if (alvo && alvo.checkout) url = alvo.checkout + (alvo.checkout.indexOf('?') >= 0 ? '&' : '?') + params.toString();
